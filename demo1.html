@@ -1,0 +1,1336 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<script>document.documentElement.classList.add('js-ready');</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bakırcı Ocakbaşı — Otuz Yıllık Tek Ocak | Vitrin48 Demo</title>
+<meta name="description" content="Bakırcı Ocakbaşı — 1996'dan beri tek ocakta, dokuz taburede, günlük değişen menüyle hazırlanan mahalle ocakbaşısı. Vitrin48 portföy demosu.">
+<link rel="canonical" href="https://vitrin48.com/demo/bakirci-ocakbasi">
+<meta name="theme-color" content="#17130F">
+<meta name="robots" content="noindex, nofollow">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="tr_TR">
+<meta property="og:title" content="Bakırcı Ocakbaşı — Otuz Yıllık Tek Ocak">
+<meta property="og:description" content="Dokuz taburelik ocakbaşımızda menü her sabah yeniden yazılır. 1996'dan beri tek ocak, tek usta.">
+<meta property="og:url" content="https://vitrin48.com/demo/bakirci-ocakbasi">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Bakırcı Ocakbaşı — Otuz Yıllık Tek Ocak">
+<meta name="twitter:description" content="Dokuz taburelik ocakbaşımızda menü her sabah yeniden yazılır. 1996'dan beri tek ocak, tek usta.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Restaurant",
+  "name": "Bakırcı Ocakbaşı",
+  "description": "1996'dan beri tek ocakta, dokuz taburede, günlük değişen menüyle hazırlanan mahalle ocakbaşısı.",
+  "servesCuisine": ["Türk Mutfağı", "Ocakbaşı", "Izgara"],
+  "priceRange": "₺₺",
+  "openingHoursSpecification": [
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Tuesday", "Wednesday", "Thursday"], "opens": "12:00", "closes": "23:00" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Friday", "Saturday"], "opens": "12:00", "closes": "23:30" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Sunday"], "opens": "12:00", "closes": "22:30" }
+  ]
+}
+</script>
+
+<style>
+  :root{
+    --ink:#17130F;
+    --paper:#F4EFE6;
+    --paper-2:#E7DCCA;
+    --ember:#B4441E;
+    --ember-soft:#D9683C;
+    --olive:#5B6046;
+    --muted:#8A7C6B;
+    --muted-soft:#6E6252;
+    --line:rgba(23,19,15,.14);
+    --line-soft:rgba(244,239,230,.18);
+    --f-display:'Instrument Serif', serif;
+    --f-body:'Inter Tight', sans-serif;
+    --ease-out:cubic-bezier(.22,1,.36,1);
+    --ease-in-out:cubic-bezier(.65,0,.35,1);
+    --ease-pop:cubic-bezier(.34,1.56,.64,1);
+    --container: 1180px;
+  }
+
+  *,*::before,*::after{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--f-body);
+    font-weight:400;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  @media (prefers-reduced-motion:reduce){
+    html{ scroll-behavior:auto; }
+  }
+  img,svg{ display:block; max-width:100%; }
+  a{ color:inherit; }
+  ul,ol{ list-style:none; margin:0; padding:0; }
+  h1,h2,h3,h4{ margin:0; font-family:var(--f-display); font-weight:400; }
+  p{ margin:0; }
+  button{ font:inherit; color:inherit; background:none; border:none; cursor:pointer; }
+  input,select,textarea{ font:inherit; color:inherit; }
+  em, .i{ font-style:italic; }
+
+  .container{ max-width:var(--container); margin:0 auto; padding:0 clamp(1.25rem,4vw,3rem); }
+
+  /* ---------- Skip link ---------- */
+  .skip-link{
+    position:fixed; top:-4rem; left:1rem; z-index:1000;
+    background:var(--ink); color:var(--paper);
+    padding:.8rem 1.2rem; font-size:.85rem; letter-spacing:.02em;
+    transition:top .25s var(--ease-out);
+    border:1px solid var(--ember-soft);
+  }
+  .skip-link:focus{ top:1rem; }
+
+  /* ---------- Focus ---------- */
+  :focus-visible{ outline:2px solid var(--ember); outline-offset:3px; }
+  :focus:not(:focus-visible){ outline:none; }
+
+  /* ---------- Noise overlay ---------- */
+  .noise-overlay{
+    position:fixed; inset:0; z-index:2; pointer-events:none;
+    opacity:.045; mix-blend-mode:multiply;
+  }
+
+  /* ================= REVEALS ================= */
+  html.js-ready [data-reveal]{ opacity:0; will-change:transform,opacity; }
+  html.js-ready [data-reveal="rise"]{ transform:translateY(30px); transition:opacity .8s var(--ease-out), transform .8s var(--ease-out); }
+  html.js-ready [data-reveal="drop"]{ transform:translateY(-26px); transition:opacity .75s var(--ease-out), transform .75s var(--ease-out); }
+  html.js-ready [data-reveal="left"]{ transform:translateX(-36px); transition:opacity .8s var(--ease-out), transform .8s var(--ease-out); }
+  html.js-ready [data-reveal="right"]{ transform:translateX(36px); transition:opacity .8s var(--ease-out), transform .8s var(--ease-out); }
+  html.js-ready [data-reveal="zoom"]{ transform:scale(.93); transition:opacity .7s var(--ease-out), transform .7s var(--ease-out); }
+  html.js-ready [data-reveal="tilt"]{ transform:rotate(-2.2deg) translateY(18px); transform-origin:left bottom; transition:opacity .8s var(--ease-out), transform .8s var(--ease-out); }
+  html.js-ready [data-reveal].is-visible{ opacity:1; transform:none; }
+
+  html.js-ready .clip-line{ overflow:hidden; display:block; }
+  html.js-ready .clip-line > span{
+    display:block; transform:translateY(112%); transition:transform .85s var(--ease-out);
+  }
+  html.js-ready .clip-line.is-visible > span{ transform:translateY(0); }
+
+  @media (prefers-reduced-motion:reduce){
+    html.js-ready [data-reveal],
+    html.js-ready [data-reveal].is-visible{ opacity:1 !important; transform:none !important; transition:none !important; }
+    html.js-ready .clip-line > span{ transform:none !important; transition:none !important; }
+  }
+
+  /* ================= HEADER ================= */
+  .site-header{
+    position:fixed; top:0; left:0; right:0; z-index:100;
+    padding:clamp(.9rem,2vw,1.4rem) 0;
+    background:transparent;
+    border-bottom:1px solid transparent;
+    transition:background .4s var(--ease-in-out), border-color .4s var(--ease-in-out), padding .3s var(--ease-in-out);
+  }
+  .site-header.is-scrolled{
+    background:rgba(244,239,230,.96);
+    border-bottom-color:var(--line);
+    padding:.7rem 0;
+  }
+  .header-progress{
+    position:absolute; left:0; bottom:-1px; height:2px; width:0%;
+    background:var(--ember); transition:width .1s linear;
+  }
+  .header-row{ display:flex; align-items:center; justify-content:space-between; gap:1.5rem; }
+  .brand{
+    font-family:var(--f-display); font-style:italic; font-size:clamp(1.3rem,2vw,1.7rem);
+    letter-spacing:.01em; text-decoration:none;
+  }
+  .brand b{ font-style:normal; font-weight:400; }
+  .primary-nav{ display:flex; align-items:center; gap:clamp(1.2rem,2vw,2.4rem); }
+  .primary-nav a{
+    text-decoration:none; font-size:.82rem; text-transform:uppercase; letter-spacing:.12em;
+    position:relative; padding-bottom:.3rem;
+  }
+  .primary-nav a::after{
+    content:''; position:absolute; left:0; bottom:0; width:0; height:1px; background:var(--ember);
+    transition:width .3s var(--ease-out);
+  }
+  .primary-nav a:hover::after, .primary-nav a:focus-visible::after{ width:100%; }
+  .header-actions{ display:flex; align-items:center; gap:.9rem; }
+  .btn{
+    display:inline-flex; align-items:center; gap:.5rem;
+    font-size:.78rem; text-transform:uppercase; letter-spacing:.1em;
+    padding:.85rem 1.5rem; border:1px solid var(--ink);
+    text-decoration:none; transition:background .3s var(--ease-out), color .3s var(--ease-out), border-color .3s var(--ease-out), transform .2s var(--ease-out);
+    white-space:nowrap;
+  }
+  .btn-solid{ background:var(--ember); border-color:var(--ember); color:var(--paper); }
+  .btn-solid:hover{ background:var(--ink); border-color:var(--ink); transform:translateY(-2px); }
+  .btn-outline{ background:transparent; }
+  .btn-outline:hover{ background:var(--ink); color:var(--paper); transform:translateY(-2px); }
+  .btn-outline.on-dark{ border-color:var(--paper-2); color:var(--paper); }
+  .btn-outline.on-dark:hover{ background:var(--paper); color:var(--ink); }
+
+  .burger{
+    display:none; width:2.4rem; height:2.4rem; position:relative; z-index:110;
+  }
+  .burger span{
+    position:absolute; left:.4rem; right:.4rem; height:1px; background:var(--ink);
+    transition:transform .3s var(--ease-in-out), opacity .3s var(--ease-in-out), top .3s var(--ease-in-out);
+  }
+  .burger span:nth-child(1){ top:.85rem; }
+  .burger span:nth-child(2){ top:1.25rem; }
+  .burger span:nth-child(3){ top:1.65rem; }
+  .burger[aria-expanded="true"] span:nth-child(1){ top:1.25rem; transform:rotate(45deg); }
+  .burger[aria-expanded="true"] span:nth-child(2){ opacity:0; }
+  .burger[aria-expanded="true"] span:nth-child(3){ top:1.25rem; transform:rotate(-45deg); }
+
+  .mobile-nav{
+    position:fixed; inset:0; top:0; z-index:105;
+    background:var(--paper);
+    display:flex; flex-direction:column; justify-content:center; gap:2rem;
+    padding:2rem clamp(1.5rem,8vw,3rem);
+    transform:translateY(-100%);
+    transition:transform .45s var(--ease-in-out);
+  }
+  .mobile-nav.is-open{ transform:translateY(0); }
+  .mobile-nav a{
+    font-family:var(--f-display); font-size:clamp(2rem,9vw,3rem); text-decoration:none; border-bottom:1px solid var(--line); padding-bottom:.6rem;
+  }
+  @media (prefers-reduced-motion:reduce){
+    .mobile-nav, .burger span{ transition:none; }
+  }
+
+  /* ================= HERO ================= */
+  .hero{
+    padding:clamp(7.5rem,16vw,10.5rem) 0 clamp(3rem,6vw,4.5rem);
+    position:relative;
+  }
+  .hero-grid{
+    display:grid; grid-template-columns:1.35fr .85fr; gap:clamp(2rem,5vw,4rem); align-items:start;
+  }
+  .hero-eyebrow{
+    display:block; font-size:.78rem; text-transform:uppercase; letter-spacing:.24em; color:var(--ember);
+    margin-bottom:1.2rem; font-weight:600;
+  }
+  .hero-title{
+    font-size:clamp(2.8rem,7.4vw,6.2rem); line-height:.98; letter-spacing:-.01em; font-weight:400;
+  }
+  .hero-title em{ color:var(--ember); }
+  .hero-desc{
+    max-width:34rem; margin-top:1.8rem; font-size:clamp(1rem,1.3vw,1.15rem); color:var(--muted-soft);
+  }
+  .hero-actions{ display:flex; flex-wrap:wrap; gap:1rem; margin-top:2.2rem; }
+
+  .today-card{
+    background:var(--paper-2); border:1px solid var(--line); padding:clamp(1.4rem,2.4vw,2rem);
+    position:relative;
+  }
+  .today-card::before{
+    content:''; position:absolute; top:.5rem; left:.5rem; right:.5rem; bottom:.5rem;
+    border:1px solid var(--line); pointer-events:none;
+  }
+  .today-head{ display:flex; align-items:baseline; justify-content:space-between; margin-bottom:1.1rem; }
+  .today-label{ font-size:.72rem; text-transform:uppercase; letter-spacing:.18em; color:var(--muted-soft); }
+  .today-date{ font-family:var(--f-display); font-style:italic; font-size:1.05rem; }
+  .today-title{ font-family:var(--f-display); font-size:clamp(1.5rem,2.6vw,1.85rem); margin-bottom:1.1rem; }
+  .today-list{ display:flex; flex-direction:column; gap:.6rem; }
+  .today-row{
+    display:flex; align-items:baseline; gap:.5rem; font-size:.92rem;
+    border-bottom:1px dotted var(--line); padding-bottom:.55rem;
+  }
+  .today-row .name{ white-space:nowrap; }
+  .today-row .fill{ flex:1; border-bottom:1px dotted transparent; }
+  .today-row .tag{
+    font-size:.62rem; text-transform:uppercase; letter-spacing:.08em; color:var(--ember);
+    border:1px solid var(--ember); padding:.12rem .4rem; margin-right:.4rem; white-space:nowrap;
+  }
+  .today-row .price{ font-family:var(--f-display); font-size:1.05rem; white-space:nowrap; }
+  .today-foot{ margin-top:1rem; font-size:.78rem; color:var(--muted-soft); font-style:italic; }
+
+  .info-strip{
+    margin-top:clamp(3rem,6vw,4.5rem);
+    background:var(--ink); color:var(--paper);
+    display:grid; grid-template-columns:repeat(4,1fr);
+  }
+  .info-cell{
+    padding:clamp(1.3rem,2.4vw,2rem); border-right:1px solid var(--line-soft);
+  }
+  .info-cell:last-child{ border-right:none; }
+  .info-num{ font-family:var(--f-display); font-style:italic; font-size:clamp(1.8rem,3vw,2.4rem); color:var(--ember-soft); }
+  .info-cap{ font-size:.74rem; text-transform:uppercase; letter-spacing:.12em; color:var(--paper-2); margin-top:.4rem; }
+
+  /* ================= TICKER ================= */
+  .ticker{
+    background:var(--ink); color:var(--paper); overflow:hidden;
+    padding:1.1rem 0; border-top:1px solid var(--line-soft); border-bottom:1px solid var(--line-soft);
+  }
+  .ticker-track{ display:flex; width:max-content; will-change:transform; }
+  .ticker-set{ display:flex; align-items:center; white-space:nowrap; }
+  .ticker-set span{ font-family:var(--f-display); font-style:italic; font-size:clamp(1.1rem,2vw,1.5rem); padding:0 1.4rem; }
+  .ticker-set span.sep{ color:var(--ember-soft); font-style:normal; }
+
+  /* ================= SECTION HEADS ================= */
+  section{ position:relative; }
+  .section-pad{ padding:clamp(4rem,9vw,7rem) 0; }
+  .kicker{ display:block; font-size:.76rem; text-transform:uppercase; letter-spacing:.22em; color:var(--ember); font-weight:600; margin-bottom:.9rem; }
+  .section-title{ font-size:clamp(2.1rem,4.6vw,3.4rem); line-height:1.05; max-width:26ch; }
+  .section-head{ margin-bottom:clamp(2.4rem,5vw,3.6rem); }
+  .section-head.split{ display:flex; justify-content:space-between; align-items:flex-end; gap:2rem; flex-wrap:wrap; }
+  .section-note{ max-width:26rem; color:var(--muted-soft); font-size:.95rem; }
+
+  /* ================= MENU ================= */
+  .menu{ background:var(--paper); }
+  .tablist{ display:flex; flex-wrap:wrap; gap:.4rem; border-bottom:1px solid var(--line); margin-bottom:clamp(2rem,4vw,3rem); }
+  .tab{
+    padding:.9rem 1.3rem; font-size:.86rem; text-transform:uppercase; letter-spacing:.06em;
+    color:var(--muted-soft); border-bottom:2px solid transparent; margin-bottom:-1px;
+    transition:color .25s var(--ease-out), border-color .25s var(--ease-out);
+  }
+  .tab[aria-selected="true"]{ color:var(--ink); border-bottom-color:var(--ember); font-weight:600; }
+  .tab:hover{ color:var(--ink); }
+
+  .panel{ display:grid; grid-template-columns:repeat(2,1fr); gap:1.6rem 3.2rem; }
+  .panel[hidden]{ display:none; }
+  .panel-enter{ opacity:0; transform:translateY(14px); }
+  .panel-enter-active{ opacity:1; transform:none; transition:opacity .5s var(--ease-out), transform .5s var(--ease-out); }
+  @media (prefers-reduced-motion:reduce){ .panel-enter, .panel-enter-active{ transition:none; transform:none; opacity:1; } }
+
+  .dish{ border-bottom:1px dotted var(--line); padding-bottom:.8rem; }
+  .dish-row{ display:flex; align-items:baseline; gap:.5rem; }
+  .dish-name{ font-family:var(--f-display); font-size:1.18rem; white-space:nowrap; }
+  .dish-fill{ flex:1; border-bottom:1px dotted var(--line); transform:translateY(-.35rem); }
+  .dish-price{ font-family:var(--f-display); font-size:1.18rem; white-space:nowrap; color:var(--ember); }
+  .dish-desc{ font-size:.86rem; color:var(--muted-soft); margin-top:.3rem; }
+  .dish-tag{
+    font-size:.6rem; text-transform:uppercase; letter-spacing:.08em; color:var(--olive);
+    border:1px solid var(--olive); padding:.08rem .35rem; margin-right:.4rem; vertical-align:middle;
+  }
+  .dish-tag.hot{ color:var(--ember); border-color:var(--ember); }
+
+  /* ================= OCAK & USTA ================= */
+  .oven-section{ background:var(--ink); color:var(--paper); }
+  .oven-grid{ display:grid; grid-template-columns:1.15fr .85fr; gap:clamp(2.5rem,5vw,4.5rem); align-items:start; }
+  .story p{ margin-bottom:1.1rem; color:var(--paper-2); font-size:1.02rem; }
+  .story .drop{
+    float:left; font-family:var(--f-display); font-style:italic; font-size:4.6rem; line-height:.8;
+    padding:.15rem .5rem 0 0; color:var(--ember-soft);
+  }
+  .spec-list{ margin-top:2rem; border-top:1px solid var(--line-soft); }
+  .spec-row{
+    display:flex; justify-content:space-between; gap:1rem; padding:.75rem 0; border-bottom:1px solid var(--line-soft);
+    font-size:.9rem;
+  }
+  .spec-row dt{ color:var(--muted); }
+  .spec-row dd{ margin:0; text-align:right; color:var(--paper); font-weight:500; }
+  .oven-figure{ border:1px solid var(--line-soft); padding:1.2rem; }
+  .oven-figure figcaption{ margin-top:.9rem; font-size:.8rem; color:var(--muted); text-align:center; font-style:italic; }
+
+  /* ================= MEKAN ================= */
+  .venue-grid{
+    display:grid; grid-template-columns:repeat(12,1fr); gap:clamp(1rem,2vw,1.6rem);
+  }
+  .venue-item{ position:relative; background:var(--paper-2); border:1px solid var(--line); overflow:hidden; }
+  .venue-item .frame{ width:100%; height:100%; }
+  .venue-item figcaption{
+    position:absolute; left:0; bottom:0; right:0; padding:.9rem 1.1rem;
+    background:linear-gradient(to top, rgba(23,19,15,.72), rgba(23,19,15,0));
+    color:var(--paper); font-size:.85rem; letter-spacing:.02em;
+  }
+  .v1{ grid-column:span 5; aspect-ratio:4/5; }
+  .v2{ grid-column:span 4; aspect-ratio:1/1; }
+  .v3{ grid-column:span 3; aspect-ratio:3/4; }
+  .v4{ grid-column:span 7; aspect-ratio:16/9; }
+  .v5{ grid-column:span 5; aspect-ratio:5/4; }
+
+  /* ================= ZIYARET ================= */
+  .visit-section{ background:var(--paper-2); }
+  .visit-grid{ display:grid; grid-template-columns:.85fr 1.15fr; gap:clamp(2.5rem,5vw,4rem); align-items:start; }
+  .hours-table{ width:100%; border-collapse:collapse; }
+  .hours-table tr{ border-bottom:1px solid var(--line); }
+  .hours-table td{ padding:.85rem .2rem; font-size:.95rem; }
+  .hours-table td:last-child{ text-align:right; font-family:var(--f-display); font-size:1.05rem; }
+  .hours-table tr.is-today{ color:var(--ember); font-weight:600; }
+  .hours-table tr.is-today td:first-child::after{ content:' — bugün'; font-size:.7rem; text-transform:uppercase; letter-spacing:.08em; }
+  .visit-note{ margin-top:1.4rem; font-size:.88rem; color:var(--muted-soft); }
+  .map-wrap{ border:1px solid var(--line); background:var(--paper); padding:1.1rem; }
+  .map-wrap svg{ width:100%; height:auto; }
+  .map-actions{ display:flex; align-items:center; justify-content:space-between; gap:1rem; margin-top:1rem; flex-wrap:wrap; }
+  .map-legend{ font-size:.78rem; color:var(--muted-soft); }
+  .pin-ring{ transform-origin:center; animation:pinPulse 2.4s var(--ease-in-out) infinite; }
+  @keyframes pinPulse{
+    0%{ transform:scale(.7); opacity:.9; }
+    70%{ transform:scale(1.9); opacity:0; }
+    100%{ transform:scale(1.9); opacity:0; }
+  }
+  @media (prefers-reduced-motion:reduce){ .pin-ring{ animation:none; opacity:.4; } }
+
+  /* ================= REZERVASYON ================= */
+  .reservation-section{ background:var(--ink); color:var(--paper); }
+  .reservation-grid{ display:grid; grid-template-columns:.9fr 1.1fr; gap:clamp(2.5rem,5vw,4.5rem); }
+  .reservation-side p{ color:var(--paper-2); font-size:.98rem; margin-bottom:1rem; }
+  .rule-box{ border-left:2px solid var(--ember-soft); padding-left:1rem; margin-top:1.6rem; }
+  .rule-box p{ font-size:.85rem; color:var(--muted); margin:0; }
+
+  .form-wrap{ position:relative; }
+  .rform{ display:grid; grid-template-columns:1fr 1fr; gap:1.4rem 1.6rem; }
+  .field{ display:flex; flex-direction:column; gap:.45rem; }
+  .field.full{ grid-column:1/-1; }
+  .field label{ font-size:.78rem; text-transform:uppercase; letter-spacing:.1em; color:var(--paper-2); }
+  .field .hint{ font-size:.76rem; color:var(--muted); }
+  .field input, .field select, .field textarea{
+    background:transparent; border:none; border-bottom:1px solid var(--line-soft); color:var(--paper);
+    padding:.7rem .1rem; font-size:1rem; transition:border-color .25s var(--ease-out);
+  }
+  .field select{ appearance:none; -webkit-appearance:none; background-image:none; }
+  .field select option{ color:var(--ink); }
+  .field input:focus, .field select:focus, .field textarea:focus{ border-color:var(--ember-soft); }
+  .field textarea{ resize:vertical; min-height:4.5rem; font-family:var(--f-body); }
+  .field.has-error input, .field.has-error select, .field.has-error textarea{ border-color:var(--ember-soft); }
+  .field-error{ min-height:1.1em; font-size:.78rem; color:var(--ember-soft); margin:0; }
+  .rform .submit-row{ display:flex; align-items:center; gap:1rem; margin-top:.4rem; }
+  .form-status{ font-size:.82rem; color:var(--muted); }
+
+  .success-panel{
+    border:1px solid var(--line-soft); padding:clamp(1.6rem,3vw,2.4rem);
+  }
+  .success-panel[hidden]{ display:none; }
+  .success-kicker{ font-size:.76rem; text-transform:uppercase; letter-spacing:.18em; color:var(--ember-soft); margin-bottom:.6rem; display:block; }
+  .success-title{ font-family:var(--f-display); font-size:clamp(1.6rem,3vw,2.1rem); margin-bottom:1.2rem; }
+  .summary-list{ display:flex; flex-direction:column; gap:.6rem; margin-bottom:1.6rem; }
+  .summary-row{ display:flex; justify-content:space-between; gap:1rem; border-bottom:1px dotted var(--line-soft); padding-bottom:.5rem; font-size:.92rem; }
+  .summary-row .k{ color:var(--muted); }
+  .summary-row .v{ text-align:right; }
+  .res-code{ font-family:var(--f-display); font-style:italic; color:var(--ember-soft); }
+
+  /* ================= FOOTER ================= */
+  .site-footer{ background:var(--ink); color:var(--paper); padding-top:clamp(3.5rem,7vw,5.5rem); }
+  .footer-logo{ font-family:var(--f-display); font-style:italic; font-size:clamp(3rem,11vw,7rem); line-height:.9; letter-spacing:-.01em; }
+  .footer-grid{ display:grid; grid-template-columns:1.4fr repeat(2,1fr); gap:2.5rem; margin-top:clamp(2.5rem,5vw,3.5rem); padding-bottom:2.5rem; border-bottom:1px solid var(--line-soft); }
+  .footer-col h3{ font-size:.76rem; text-transform:uppercase; letter-spacing:.14em; color:var(--muted); margin-bottom:1rem; font-family:var(--f-body); font-weight:600; }
+  .footer-col ul{ display:flex; flex-direction:column; gap:.65rem; }
+  .footer-col a{ text-decoration:none; font-size:.94rem; color:var(--paper-2); transition:color .2s var(--ease-out); }
+  .footer-col a:hover{ color:var(--ember-soft); }
+  .footer-lead{ color:var(--paper-2); font-size:.95rem; max-width:26rem; }
+  .social-row{ display:flex; gap:.8rem; margin-top:1.4rem; }
+  .social-row a{
+    width:2.4rem; height:2.4rem; border:1px solid var(--line-soft); display:flex; align-items:center; justify-content:center;
+    transition:border-color .2s var(--ease-out), transform .2s var(--ease-out);
+  }
+  .social-row a:hover{ border-color:var(--ember-soft); transform:translateY(-2px); }
+  .footer-bottom{ display:flex; justify-content:space-between; gap:1rem; flex-wrap:wrap; padding:1.6rem 0 6rem; font-size:.78rem; color:var(--muted); }
+
+  /* ================= FLOATING UI ================= */
+  .whatsapp-fab{
+    position:fixed; right:clamp(1rem,3vw,2rem); bottom:clamp(1rem,3vw,2rem); z-index:90;
+    width:3.4rem; height:3.4rem; border-radius:50%; background:var(--olive); color:var(--paper);
+    display:flex; align-items:center; justify-content:center; border:1px solid var(--ink);
+    transition:transform .25s var(--ease-pop), background .25s var(--ease-out);
+  }
+  .whatsapp-fab:hover{ transform:translateY(-3px) scale(1.04); background:var(--ember); }
+
+  .demo-badge{
+    position:fixed; left:.9rem; bottom:.9rem; z-index:90;
+    background:var(--ink); color:var(--paper); border:1px solid var(--ember-soft);
+    font-size:.68rem; letter-spacing:.06em; padding:.5rem .7rem;
+    max-width:2.6rem; overflow:hidden; white-space:nowrap;
+    transition:max-width .4s var(--ease-in-out), padding .4s var(--ease-in-out);
+    cursor:default;
+  }
+  .demo-badge:hover, .demo-badge:focus-within{ max-width:22rem; }
+  .demo-badge .full{ opacity:0; transition:opacity .3s var(--ease-out) .1s; }
+  .demo-badge:hover .full, .demo-badge:focus-within .full{ opacity:1; }
+
+  .toast-region{
+    position:fixed; left:50%; bottom:1.4rem; transform:translateX(-50%); z-index:200;
+    display:flex; flex-direction:column; gap:.5rem; pointer-events:none; width:min(92vw,26rem);
+  }
+  .toast{
+    background:var(--ink); color:var(--paper); border:1px solid var(--ember-soft);
+    padding:.8rem 1.1rem; font-size:.85rem; text-align:center;
+    opacity:0; transform:translateY(14px); transition:opacity .35s var(--ease-out), transform .35s var(--ease-out);
+  }
+  .toast.is-visible{ opacity:1; transform:translateY(0); }
+  @media (prefers-reduced-motion:reduce){ .toast, .demo-badge{ transition:none; } }
+
+  /* ================= RESPONSIVE ================= */
+  @media (max-width:1100px){
+    .hero-grid{ grid-template-columns:1fr; }
+    .today-card{ max-width:32rem; }
+    .oven-grid{ grid-template-columns:1fr; }
+    .oven-figure{ max-width:28rem; }
+    .reservation-grid{ grid-template-columns:1fr; }
+    .visit-grid{ grid-template-columns:1fr; }
+    .footer-grid{ grid-template-columns:1fr 1fr; }
+  }
+  @media (max-width:860px){
+    .primary-nav{ display:none; }
+    .header-actions .btn-outline.nav-cta{ display:none; }
+    .burger{ display:block; }
+    .info-strip{ grid-template-columns:repeat(2,1fr); }
+    .info-cell:nth-child(2){ border-right:none; }
+    .panel{ grid-template-columns:1fr; }
+    .v1,.v2,.v3,.v4,.v5{ grid-column:span 12; aspect-ratio:4/3; }
+    .footer-grid{ grid-template-columns:1fr; gap:2rem; }
+  }
+  @media (max-width:620px){
+    .rform{ grid-template-columns:1fr; }
+    .section-head.split{ flex-direction:column; align-items:flex-start; }
+    .hero-actions{ flex-direction:column; align-items:stretch; }
+    .today-row{ flex-wrap:wrap; }
+  }
+  @media (max-width:380px){
+    .info-strip{ grid-template-columns:1fr; }
+    .info-cell{ border-right:none; border-bottom:1px solid var(--line-soft); }
+  }
+</style>
+</head>
+<body>
+
+<a class="skip-link" href="#icerik">İçeriğe geç</a>
+
+<svg class="noise-overlay" aria-hidden="true" focusable="false">
+  <filter id="noiseFilter">
+    <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" stitchTiles="stitch"></feTurbulence>
+    <feColorMatrix type="saturate" values="0"></feColorMatrix>
+  </filter>
+  <rect width="100%" height="100%" filter="url(#noiseFilter)"></rect>
+</svg>
+
+<header class="site-header" id="siteHeader">
+  <div class="header-progress" id="headerProgress"></div>
+  <div class="container header-row">
+    <a href="#icerik" class="brand"><b>Bakırcı</b> <span class="i">Ocakbaşı</span></a>
+    <nav class="primary-nav" aria-label="Ana menü">
+      <a href="#menu">Menü</a>
+      <a href="#ocak">Ocak &amp; Usta</a>
+      <a href="#mekan">Mekân</a>
+      <a href="#ziyaret">Ziyaret</a>
+    </nav>
+    <div class="header-actions">
+      <a href="#rezervasyon" class="btn btn-outline nav-cta">Rezervasyon</a>
+      <button class="burger" id="burgerBtn" aria-expanded="false" aria-controls="mobileNav" aria-label="Menüyü aç">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<nav class="mobile-nav" id="mobileNav" aria-label="Mobil menü">
+  <a href="#menu">Menü</a>
+  <a href="#ocak">Ocak &amp; Usta</a>
+  <a href="#mekan">Mekân</a>
+  <a href="#ziyaret">Ziyaret</a>
+  <a href="#rezervasyon">Rezervasyon</a>
+</nav>
+
+<main id="icerik">
+
+  <!-- ================= HERO ================= -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <span class="hero-eyebrow" data-reveal="rise">Mahalle Ocakbaşısı · 1996'dan Beri</span>
+        <h1 class="hero-title">
+          <span class="clip-line"><span>Kor sönmez,</span></span>
+          <span class="clip-line"><span>sofra <em class="i">hiç</em></span></span>
+          <span class="clip-line"><span><em class="i">eksilmez.</em></span></span>
+        </h1>
+        <p class="hero-desc" data-reveal="rise">
+          Dokuz taburelik ocağımızda menü her sabah yeniden yazılır. Pazardan ne
+          gelirse ustanın elinde o pişer — zincir restoran değil, otuz yıldır
+          aynı ateşin başında duran tek bir ocak.
+        </p>
+        <div class="hero-actions" data-reveal="rise">
+          <a href="#menu" class="btn btn-solid">Bugünkü Menüyü Gör</a>
+          <a href="#rezervasyon" class="btn btn-outline">Tabure Ayırt</a>
+        </div>
+      </div>
+
+      <aside class="today-card" data-reveal="right" aria-label="Bugün ocakta">
+        <div class="today-head">
+          <span class="today-label">Bugün Ocakta</span>
+          <span class="today-date" id="todayDate">—</span>
+        </div>
+        <h2 class="today-title" style="font-size:clamp(1.5rem,2.6vw,1.85rem);">Ustanın günlük seçkisi</h2>
+        <div class="today-list">
+          <div class="today-row">
+            <span class="tag">Günün</span>
+            <span class="name">Kaburga Şiş</span>
+            <span class="fill"></span>
+            <span class="price">620 ₺</span>
+          </div>
+          <div class="today-row">
+            <span class="tag hot">Acı</span>
+            <span class="name">Adana Kebap</span>
+            <span class="fill"></span>
+            <span class="price">380 ₺</span>
+          </div>
+          <div class="today-row">
+            <span class="name">Ali Nazik</span>
+            <span class="fill"></span>
+            <span class="price">260 ₺</span>
+          </div>
+          <div class="today-row">
+            <span class="name">Közde Patlıcan Salatası</span>
+            <span class="fill"></span>
+            <span class="price">90 ₺</span>
+          </div>
+          <div class="today-row">
+            <span class="tag">İki Kişilik</span>
+            <span class="name">Ocakbaşı Karışık</span>
+            <span class="fill"></span>
+            <span class="price">820 ₺</span>
+          </div>
+        </div>
+        <p class="today-foot">Liste tahtadan alınmıştır; akşama doğru bazı kalemler biter.</p>
+      </aside>
+    </div>
+
+    <div class="container">
+      <div class="info-strip" data-reveal="zoom">
+        <div class="info-cell">
+          <div class="info-num">1996</div>
+          <div class="info-cap">Kuruluş</div>
+        </div>
+        <div class="info-cell">
+          <div class="info-num">Tek Ocak</div>
+          <div class="info-cap">Meşe Kömürü</div>
+        </div>
+        <div class="info-cell">
+          <div class="info-num">12–23</div>
+          <div class="info-cap">Çalışma Saatleri</div>
+        </div>
+        <div class="info-cell">
+          <div class="info-num">9</div>
+          <div class="info-cap">Tabure</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= TICKER ================= -->
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker-track" id="tickerTrack">
+      <div class="ticker-set">
+        <span>Kaburga Şiş — 620 ₺</span><span class="sep">·</span>
+        <span>Adana Kebap — 380 ₺</span><span class="sep">·</span>
+        <span>Kuzu Pirzola — 720 ₺</span><span class="sep">·</span>
+        <span>Ciğer Şiş — 340 ₺</span><span class="sep">·</span>
+        <span>Közde Patlıcan — 140 ₺</span><span class="sep">·</span>
+        <span>Ali Nazik — 260 ₺</span><span class="sep">·</span>
+        <span>Urfa Kebap — 370 ₺</span><span class="sep">·</span>
+      </div>
+      <div class="ticker-set">
+        <span>Kaburga Şiş — 620 ₺</span><span class="sep">·</span>
+        <span>Adana Kebap — 380 ₺</span><span class="sep">·</span>
+        <span>Kuzu Pirzola — 720 ₺</span><span class="sep">·</span>
+        <span>Ciğer Şiş — 340 ₺</span><span class="sep">·</span>
+        <span>Közde Patlıcan — 140 ₺</span><span class="sep">·</span>
+        <span>Ali Nazik — 260 ₺</span><span class="sep">·</span>
+        <span>Urfa Kebap — 370 ₺</span><span class="sep">·</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= MENU ================= -->
+  <section id="menu" class="menu section-pad">
+    <div class="container">
+      <div class="section-head split">
+        <div>
+          <span class="kicker" data-reveal="rise">Tahtadaki Liste</span>
+          <h2 class="section-title clip-line" data-reveal="rise"><span>Tahtada ne yazıyorsa o var.</span></h2>
+        </div>
+        <p class="section-note" data-reveal="rise">Fiyatlar günlük alıma göre küçük farklar gösterebilir; ok tuşlarıyla kategoriler arasında gezinebilirsiniz.</p>
+      </div>
+
+      <div class="tablist" role="tablist" aria-label="Menü kategorileri" id="menuTabs">
+        <button class="tab" role="tab" id="tab-baslangic" aria-controls="panel-baslangic" aria-selected="true" tabindex="0">Başlangıçlar</button>
+        <button class="tab" role="tab" id="tab-ocakbasi" aria-controls="panel-ocakbasi" aria-selected="false" tabindex="-1">Ocakbaşı</button>
+        <button class="tab" role="tab" id="tab-pide" aria-controls="panel-pide" aria-selected="false" tabindex="-1">Pideler</button>
+        <button class="tab" role="tab" id="tab-tatli" aria-controls="panel-tatli" aria-selected="false" tabindex="-1">Tatlı</button>
+        <button class="tab" role="tab" id="tab-icecek" aria-controls="panel-icecek" aria-selected="false" tabindex="-1">İçecek</button>
+      </div>
+
+      <div class="panel" role="tabpanel" id="panel-baslangic" aria-labelledby="tab-baslangic" tabindex="0">
+        <div class="dish"><div class="dish-row"><span class="dish-name">Ezme</span><span class="dish-fill"></span><span class="dish-price">65 ₺</span></div><p class="dish-desc"><span class="dish-tag hot">Acı</span>Domates, biber, nar ekşisi; taş havanda günlük dövülür.</p></div>
+        <div class="dish"><div class="dish-row"><span class="dish-name">Humus</span><span class="dish-fill"></span><span class="dish-price">75 ₺</span></div><p class="dish-desc">Nohut, tahin, közlenmiş sarımsak; üzeri tereyağıyla.</p></div>
+        <div class="dish"><div class="dish-row"><span class="dish-name">Közde Patlıcan Salatası</span><span class="dish-fill"></span><span class="dish-price">90 ₺</span></div><p class="dish-desc">Odun korunda közlenir, yoğurt ve sarımsakla karılır.</p></div>
+        <div class="dish"><div class="dish-row"><span class="dish-name">Çoban Kavurma</span><span class="dish-fill"></span><span class="dish-price">120 ₺</span></div><p class="dish-desc"><span class="dish-tag">Günün</span>Kuşbaşı sığır, biber ve domatesle sacda kavrulur.</p></div>
+        <div class="dish"><div class="dish-row"><span class="dish-name">Zeytinyağlı Yaprak Sarma</span><span class="dish-fill"></span><span class="dish-price">85 ₺</span></div><p class="dish-desc">Günlük sarılır, oda sıcaklığında servis edilir.</p></div>
+      </div>
+
+      <div class="panel" role="tabpanel" id="panel-ocakbasi" aria-labelledby="tab-ocakbasi" tabindex="0" hidden>
+        <div class="dish"><div class="dish-row"><span class="dish-name">Adana Kebap</span><span class="dish-fill"></span><span class="dish-price">380 ₺</span></div><p class="dish-desc"><span class="dish-tag hot">Acı</span>Çift kıyım, kuyruk yağı beşte bir; közde biber ve lavaşla.</p></div>
+        <div class="dish"><div class="dish-row"><span class="dish-name">Urfa Kebap</span><span class="dish-fill"></span><span class="dish-price">370 ₺</span></div><p class="dish-desc">Aynı kıyma, baharatsız; acısız isteyenler için.</p></div>
+        <div class="dish"><div class="dish-row"><span class="dish-name">Kaburga Şiş</span><span class="dish-fill"></span><span class="dish-price">620 ₺</span></div><p class="dish-desc"><span class="dish-tag">Günün</span>Kırk sekiz saat dinlendirilmiş kuzu; kemikten ayrılıp şişe dizilir.</p></div>
+        <div class="dish"><div class="dish-row"><span class="dish-name">Kuzu Pirzola</span><span class="dish-fill"></span><span class="dish-price">720 ₺</span></div><p class="dish-desc">Tuz dışında baharat girmez; orta pişmiş önerilir.</p></div>
+        <div class="dish"><div class="dish-row"><span class="dish-name">Ciğer Şiş</span><span class="dish-fill"></span><span class="dish-price">340 ₺</span></div><p class="dish-desc">İnce dilimlenir, kuyruk yağıyla sarılıp hızlı pişirilir.</p></div>
+        <div class="dish"><div class="dish-row"><span class="dish-name">Ocakbaşı Karışık</span><span class="dish-fill"></span><span class="dish-price">820 ₺</span></div><p class="dish-desc"><span class="dish-tag">İki Kişilik</span>Şef seçimi dört çeşit et, közde sebze ile.</p></div>
+      </div>
+
+      <div class="panel" role="tabpanel" id="panel-pide" aria-labelledby="tab-pide" tabindex="0" hidden>
+        <div class="dish"><div class="dish-row"><span class="dish-name">Kuşbaşılı Pide</span><span class="dish-fill"></span><span class="dish-price">260 ₺</span></div><p class="dish-desc">Taş fırında, ince hamur üzerine kuşbaşı et.</p></div>
+        <div class="dish"><div class="dish-row"><span class="dish-name">Kıymalı Pide</span><span class="dish-fill"></span><span class="dish-price">220 ₺</span></div><p class="dish-desc">Günlük çekilen kıyma, soğan ve maydanozla.</p></div>
+        <div class="dish"><div class="dish-row"><span class="dish-name">Kaşarlı Pide</span><span class="dish-fill"></span><span class="dish-price">210 ₺</span></div><p class="dish-desc">Bol kaşar, tereyağıyla fırından çıkar çıkmaz servis.</p></div>
+        <div class="dish"><div class="dish-row"><span class="dish-name">Sucuklu Pide</span><span class="dish-fill"></span><span class="dish-price">230 ₺</span></div><p class="dish-desc">Ev yapımı sucuk, üzerine yumurta eklenebilir.</p></div>
+        <div class="dish"><div class="dish-row"><span class="dish-name">Karışık Pide</span><span class="dish-fill"></span><span class="dish-price">280 ₺</span></div><p class="dish-desc">Kıyma, sucuk, kaşar; ocağın en çok istenen pidesi.</p></div>
+      </div>
+
+      <div class="panel" role="tabpanel" id="panel-tatli" aria-labelledby="tab-tatli" tabindex="0" hidden>
+        <div class="dish"><div class="dish-row"><span class="dish-name">Fıstıklı Baklava</span><span class="dish-fill"></span><span class="dish-price">150 ₺</span></div><p class="dish-desc">İnce yufka, günlük şerbet; oda sıcaklığında servis.</p></div>
+        <div class="dish"><div class="dish-row"><span class="dish-name">Kazandibi</span><span class="dish-fill"></span><span class="dish-price">110 ₺</span></div><p class="dish-desc">Altı hafif yanık, süt tatlısı geleneği.</p></div>
+        <div class="dish"><div class="dish-row"><span class="dish-name">Künefe</span><span class="dish-fill"></span><span class="dish-price">140 ₺</span></div><p class="dish-desc">Sipariş üzerine ocakta hazırlanır, sıcak servis edilir.</p></div>
+        <div class="dish"><div class="dish-row"><span class="dish-name">Aşure</span><span class="dish-fill"></span><span class="dish-price">90 ₺</span></div><p class="dish-desc"><span class="dish-tag">Mevsimsel</span>Sadece belirli aylarda tahtada.</p></div>
+      </div>
+
+      <div class="panel" role="tabpanel" id="panel-icecek" aria-labelledby="tab-icecek" tabindex="0" hidden>
+        <div class="dish"><div class="dish-row"><span class="dish-name">Ayran</span><span class="dish-fill"></span><span class="dish-price">35 ₺</span></div><p class="dish-desc">Günlük çalkalanır, bakır maşrapada servis edilir.</p></div>
+        <div class="dish"><div class="dish-row"><span class="dish-name">Şalgam</span><span class="dish-fill"></span><span class="dish-price">40 ₺</span></div><p class="dish-desc"><span class="dish-tag hot">Acı</span>İsteyen tatlısını, isteyen acısını seçer.</p></div>
+        <div class="dish"><div class="dish-row"><span class="dish-name">Türk Kahvesi</span><span class="dish-fill"></span><span class="dish-price">55 ₺</span></div><p class="dish-desc">Közde kumda pişer, yanında lokumla gelir.</p></div>
+        <div class="dish"><div class="dish-row"><span class="dish-name">Çay</span><span class="dish-fill"></span><span class="dish-price">25 ₺</span></div><p class="dish-desc">İnce belli bardakta, demini alarak.</p></div>
+        <div class="dish"><div class="dish-row"><span class="dish-name">Taze Nane Limonata</span><span class="dish-fill"></span><span class="dish-price">60 ₺</span></div><p class="dish-desc">Günlük sıkım limon, ezilmiş nane yapraklarıyla.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= OCAK & USTA ================= -->
+  <section id="ocak" class="oven-section section-pad">
+    <div class="container oven-grid">
+      <div>
+        <span class="kicker" data-reveal="left">Ocak &amp; Usta</span>
+        <h2 class="section-title clip-line" style="color:var(--paper);" data-reveal="left"><span>Ateşin ritmini ustadan başka kimse bilmez.</span></h2>
+        <div class="story" style="margin-top:1.6rem;" data-reveal="rise">
+          <p><span class="drop">O</span>tuz yıla yaklaşan ocak, kuruluşundan bu yana hiç söndürülmedi denecek kadar
+          az söndü. Kömür meşe ve pelit karışımı; her sabah dokuzda ateşe alınır, kor
+          yatağı yaklaşık doksan dakikada oturur ve servis boyunca aynı ısıda tutulur.
+          Kıyma günlük iki kez orta çekimden geçer, kuyruk yağı oranı beşte birde
+          sabit tutulur. Etler servisten kırk sekiz saat önce kesilip soğuk
+          dinlendirmeye alınır; ocağa çıkmadan önce oda sıcaklığına döner.</p>
+          <p>Menüde değişmeyen tek şey yöntemdir — malzeme pazara, hava sıcaklığına,
+          günün gidişine göre değişir. Usta, tezgâhın ucundan ocağı, ocaktan
+          taburedeki misafiri aynı anda takip eder.</p>
+        </div>
+        <dl class="spec-list" data-reveal="rise">
+          <div class="spec-row"><dt>Kömür</dt><dd>Meşe + pelit karışımı</dd></div>
+          <div class="spec-row"><dt>Ateşe alma</dt><dd>Her sabah 09:00</dd></div>
+          <div class="spec-row"><dt>Kor oturma süresi</dt><dd>Yaklaşık 90 dakika</dd></div>
+          <div class="spec-row"><dt>Kıyma çekimi</dt><dd>Günde iki kez, orta çekim</dd></div>
+          <div class="spec-row"><dt>Kuyruk yağı oranı</dt><dd>1/5</dd></div>
+          <div class="spec-row"><dt>Dinlendirme</dt><dd>48 saat, +2/+4°C</dd></div>
+        </dl>
+      </div>
+
+      <figure class="oven-figure" data-reveal="right">
+        <svg viewBox="0 0 320 400" role="img" aria-labelledby="ovenSvgTitle">
+          <title id="ovenSvgTitle">Ocağın elle çizilmiş kesit şeması</title>
+          <g fill="none" stroke="var(--paper-2)" stroke-width="1.4">
+            <path d="M40 40 L280 40 L230 110 L90 110 Z" />
+            <line x1="160" y1="6" x2="160" y2="40" />
+            <rect x="130" y="4" width="60" height="10" />
+            <line x1="90" y1="110" x2="90" y2="150" />
+            <line x1="230" y1="110" x2="230" y2="150" />
+          </g>
+          <g stroke="var(--ember-soft)" stroke-width="1.2">
+            <line x1="105" y1="150" x2="95" y2="230" />
+            <line x1="130" y1="150" x2="122" y2="230" />
+            <line x1="155" y1="150" x2="150" y2="230" />
+            <line x1="180" y1="150" x2="178" y2="230" />
+            <line x1="205" y1="150" x2="206" y2="230" />
+            <line x1="225" y1="150" x2="230" y2="230" />
+          </g>
+          <rect x="70" y="230" width="180" height="60" fill="var(--ember)" opacity=".22" stroke="var(--ember-soft)" stroke-width="1.2" />
+          <g fill="var(--ember-soft)" opacity=".9">
+            <circle cx="95" cy="255" r="2.4" /><circle cx="118" cy="265" r="2" /><circle cx="140" cy="250" r="2.6" />
+            <circle cx="165" cy="262" r="2.1" /><circle cx="188" cy="252" r="2.3" /><circle cx="210" cy="264" r="2" />
+            <circle cx="230" cy="254" r="2.5" />
+          </g>
+          <rect x="70" y="290" width="180" height="16" fill="none" stroke="var(--paper-2)" stroke-width="1.2" />
+          <rect x="130" y="306" width="60" height="26" fill="none" stroke="var(--paper-2)" stroke-width="1.2" />
+          <line x1="140" y1="319" x2="180" y2="319" stroke="var(--paper-2)" stroke-width="1.2" />
+          <g fill="var(--muted)" font-family="Inter Tight, sans-serif" font-size="9" letter-spacing="1">
+            <text x="150" y="26">DAVLUMBAZ</text>
+            <text x="98" y="145">ŞİŞ SIRASI</text>
+            <text x="105" y="245">KOR YATAĞI</text>
+            <text x="132" y="322">KÜL ÇEKMECESİ</text>
+          </g>
+        </svg>
+        <figcaption>Ocağın kesiti — davlumbaz, şiş sırası, kor yatağı, kül çekmecesi.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ================= MEKAN ================= -->
+  <section id="mekan" class="section-pad">
+    <div class="container">
+      <div class="section-head">
+        <span class="kicker" data-reveal="rise">İçerisi</span>
+        <h2 class="section-title clip-line" data-reveal="rise"><span>Dokuz tabure, tek sıra, ocağa bakan herkes.</span></h2>
+      </div>
+
+      <div class="venue-grid">
+        <figure class="venue-item v1" data-reveal="left">
+          <svg class="frame" viewBox="0 0 300 375" preserveAspectRatio="xMidYMid slice" role="img" aria-labelledby="v1t">
+            <title id="v1t">Ocağın önündeki tabure sırası</title>
+            <rect width="300" height="375" fill="var(--paper-2)"/>
+            <g stroke="var(--ink)" stroke-width="1.3" fill="none" opacity=".75">
+              <ellipse cx="60" cy="230" rx="34" ry="10"/><line x1="34" y1="230" x2="30" y2="300"/><line x1="86" y1="230" x2="90" y2="300"/>
+              <ellipse cx="150" cy="220" rx="34" ry="10"/><line x1="124" y1="220" x2="120" y2="300"/><line x1="176" y1="220" x2="180" y2="300"/>
+              <ellipse cx="240" cy="230" rx="34" ry="10"/><line x1="214" y1="230" x2="210" y2="300"/><line x1="266" y1="230" x2="270" y2="300"/>
+            </g>
+            <line x1="0" y1="300" x2="300" y2="300" stroke="var(--muted)" stroke-width="1"/>
+          </svg>
+          <figcaption>Tabure sırası — ocağa dönük tek servis hattı</figcaption>
+        </figure>
+
+        <figure class="venue-item v2" data-reveal="zoom">
+          <svg class="frame" viewBox="0 0 300 300" preserveAspectRatio="xMidYMid slice" role="img" aria-labelledby="v2t">
+            <title id="v2t">Bakır maşrapa çizimi</title>
+            <rect width="300" height="300" fill="var(--paper)"/>
+            <g fill="none" stroke="var(--ember)" stroke-width="1.4">
+              <path d="M120 100 Q110 180 130 220 Q150 240 175 220 Q195 180 180 100 Z"/>
+              <path d="M180 130 Q210 140 205 165 Q200 185 175 180"/>
+              <ellipse cx="150" cy="100" rx="30" ry="8"/>
+            </g>
+          </svg>
+          <figcaption>Bakır maşrapa — ayranın servis edildiği kap</figcaption>
+        </figure>
+
+        <figure class="venue-item v3" data-reveal="right">
+          <svg class="frame" viewBox="0 0 240 320" preserveAspectRatio="xMidYMid slice" role="img" aria-labelledby="v3t">
+            <title id="v3t">Kayın tezgah dokusu</title>
+            <rect width="240" height="320" fill="var(--paper-2)"/>
+            <g stroke="var(--muted)" stroke-width="1" opacity=".6">
+              <path d="M0 40 Q120 30 240 46"/><path d="M0 80 Q120 68 240 84"/>
+              <path d="M0 120 Q120 108 240 124"/><path d="M0 160 Q120 150 240 164"/>
+              <path d="M0 200 Q120 190 240 204"/><path d="M0 240 Q120 230 240 244"/>
+            </g>
+            <rect x="20" y="20" width="200" height="260" fill="none" stroke="var(--ink)" stroke-width="1.4"/>
+          </svg>
+          <figcaption>Kayın tezgâh — servis hattının kesme yüzeyi</figcaption>
+        </figure>
+
+        <figure class="venue-item v4" data-reveal="tilt">
+          <svg class="frame" viewBox="0 0 480 270" preserveAspectRatio="xMidYMid slice" role="img" aria-labelledby="v4t">
+            <title id="v4t">Kor yatağı dokusu</title>
+            <rect width="480" height="270" fill="var(--ink)"/>
+            <rect x="30" y="90" width="420" height="110" fill="var(--ember)" opacity=".28"/>
+            <g fill="var(--ember-soft)">
+              <circle cx="80" cy="140" r="3"/><circle cx="120" cy="160" r="2.4"/><circle cx="160" cy="130" r="3.2"/>
+              <circle cx="205" cy="155" r="2.6"/><circle cx="250" cy="138" r="3"/><circle cx="295" cy="162" r="2.4"/>
+              <circle cx="335" cy="132" r="3.2"/><circle cx="378" cy="150" r="2.6"/><circle cx="415" cy="140" r="3"/>
+            </g>
+            <g stroke="var(--paper-2)" stroke-width="1" opacity=".4">
+              <line x1="30" y1="90" x2="450" y2="90"/><line x1="30" y1="200" x2="450" y2="200"/>
+            </g>
+          </svg>
+          <figcaption>Kömür yatağı — servis boyunca sabit ısıda tutulur</figcaption>
+        </figure>
+
+        <figure class="venue-item v5" data-reveal="rise">
+          <svg class="frame" viewBox="0 0 300 240" preserveAspectRatio="xMidYMid slice" role="img" aria-labelledby="v5t">
+            <title id="v5t">Cam kenarı masa</title>
+            <rect width="300" height="240" fill="var(--paper)"/>
+            <rect x="20" y="20" width="260" height="140" fill="none" stroke="var(--olive)" stroke-width="1.4"/>
+            <line x1="150" y1="20" x2="150" y2="160" stroke="var(--olive)" stroke-width="1"/>
+            <rect x="60" y="170" width="180" height="10" fill="none" stroke="var(--ink)" stroke-width="1.2"/>
+            <line x1="80" y1="180" x2="80" y2="215" stroke="var(--ink)" stroke-width="1.2"/>
+            <line x1="220" y1="180" x2="220" y2="215" stroke="var(--ink)" stroke-width="1.2"/>
+          </svg>
+          <figcaption>Cam kenarı masa — sokağa bakan iki kişilik köşe</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= ZIYARET ================= -->
+  <section id="ziyaret" class="visit-section section-pad">
+    <div class="container visit-grid">
+      <div data-reveal="left">
+        <span class="kicker">Ziyaret</span>
+        <h2 class="section-title" style="margin-bottom:1.6rem;">Haftalık düzen</h2>
+        <table class="hours-table" id="hoursTable">
+          <tbody>
+            <tr data-day="0"><td>Pazartesi</td><td>Kapalı</td></tr>
+            <tr data-day="1"><td>Salı</td><td>12:00–23:00</td></tr>
+            <tr data-day="2"><td>Çarşamba</td><td>12:00–23:00</td></tr>
+            <tr data-day="3"><td>Perşembe</td><td>12:00–23:00</td></tr>
+            <tr data-day="4"><td>Cuma</td><td>12:00–23:30</td></tr>
+            <tr data-day="5"><td>Cumartesi</td><td>12:00–23:30</td></tr>
+            <tr data-day="6"><td>Pazar</td><td>12:00–22:30</td></tr>
+          </tbody>
+        </table>
+        <p class="visit-note">Ocak pazartesi günleri yanmaz; kömür o gün dinlenir. Yoğun akşamlarda kısa bekleme olabilir, tabure sırayla açılır.</p>
+      </div>
+
+      <div data-reveal="right">
+        <div class="map-wrap">
+          <svg viewBox="0 0 480 320" role="img" aria-labelledby="mapt">
+            <title id="mapt">Stilize mahalle haritası</title>
+            <rect width="480" height="320" fill="var(--paper-2)"/>
+            <g stroke="var(--muted)" stroke-width="1" opacity=".55">
+              <line x1="0" y1="80" x2="480" y2="80"/>
+              <line x1="0" y1="200" x2="480" y2="200"/>
+              <line x1="140" y1="0" x2="140" y2="320"/>
+              <line x1="330" y1="0" x2="330" y2="320"/>
+            </g>
+            <g fill="var(--paper)" stroke="var(--ink)" stroke-width="1">
+              <rect x="20" y="20" width="90" height="40"/>
+              <rect x="170" y="20" width="120" height="40"/>
+              <rect x="360" y="20" width="100" height="40"/>
+              <rect x="20" y="110" width="90" height="70"/>
+              <rect x="350" y="110" width="110" height="70"/>
+              <rect x="20" y="220" width="90" height="80"/>
+              <rect x="170" y="220" width="120" height="80"/>
+              <rect x="360" y="220" width="100" height="80"/>
+            </g>
+            <path d="M60 60 L60 110" stroke="var(--muted-soft)" stroke-width="2" stroke-dasharray="4 5"/>
+            <path d="M60 110 Q120 150 200 150" stroke="var(--muted-soft)" stroke-width="2" stroke-dasharray="4 5" fill="none"/>
+            <path d="M200 150 Q240 150 240 200" stroke="var(--muted-soft)" stroke-width="2" stroke-dasharray="4 5" fill="none"/>
+            <g font-family="Inter Tight, sans-serif" font-size="10" fill="var(--muted-soft)" letter-spacing=".5">
+              <text x="30" y="45">ÇARŞI</text>
+              <text x="200" y="45">MEYDAN</text>
+              <text x="30" y="150">OTOPARK</text>
+              <text x="378" y="150">DURAK</text>
+            </g>
+            <circle class="pin-ring" cx="240" cy="200" r="8" fill="none" stroke="var(--ember)" stroke-width="2"/>
+            <circle cx="240" cy="200" r="6" fill="var(--ember)"/>
+          </svg>
+        </div>
+        <div class="map-actions">
+          <span class="map-legend">Konum ve yol tarifi canlı sitede etkileşimli görünür.</span>
+          <button class="btn btn-outline" id="directionsBtn" data-demo>Yol Tarifi</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= REZERVASYON ================= -->
+  <section id="rezervasyon" class="reservation-section section-pad">
+    <div class="container reservation-grid">
+      <div class="reservation-side" data-reveal="left">
+        <span class="kicker">Rezervasyon</span>
+        <h2 class="section-title" style="color:var(--paper); margin-bottom:1.2rem;">Dokuz tabureden birini ayırtın.</h2>
+        <p>Formu doldurun, talebiniz ustaya iletilsin. Onay için ekranda özet göreceksiniz — bu bir demo formudur, gerçek bir rezervasyon oluşturmaz.</p>
+        <div class="rule-box">
+          <p>Pazartesi günleri ocak kapalıdır. Geçmiş bir tarih için rezervasyon alınmaz. Zorunlu alanlar boş bırakılamaz.</p>
+        </div>
+      </div>
+
+      <div class="form-wrap" data-reveal="right">
+        <form class="rform" id="resForm" novalidate>
+          <div class="field">
+            <label for="f-name">Adınız Soyadınız</label>
+            <input type="text" id="f-name" name="name" aria-describedby="hint-name err-name" aria-invalid="false">
+            <span class="hint" id="hint-name">Rezervasyonun kime ait olduğunu yazın.</span>
+            <p class="field-error" id="err-name" role="alert"></p>
+          </div>
+          <div class="field">
+            <label for="f-guests">Kişi Sayısı</label>
+            <select id="f-guests" name="guests" aria-describedby="err-guests" aria-invalid="false">
+              <option value="">Seçiniz</option>
+              <option value="1">1 Kişi</option>
+              <option value="2">2 Kişi</option>
+              <option value="3">3 Kişi</option>
+              <option value="4">4 Kişi</option>
+              <option value="5">5 Kişi</option>
+              <option value="6+">6 ve üzeri</option>
+            </select>
+            <p class="field-error" id="err-guests" role="alert"></p>
+          </div>
+          <div class="field">
+            <label for="f-date">Tarih</label>
+            <input type="date" id="f-date" name="date" aria-describedby="hint-date err-date" aria-invalid="false">
+            <span class="hint" id="hint-date">Pazartesi günleri seçilemez.</span>
+            <p class="field-error" id="err-date" role="alert"></p>
+          </div>
+          <div class="field">
+            <label for="f-time">Saat</label>
+            <select id="f-time" name="time" aria-describedby="err-time" aria-invalid="false">
+              <option value="">Seçiniz</option>
+              <option value="12:00">12:00</option>
+              <option value="13:00">13:00</option>
+              <option value="18:00">18:00</option>
+              <option value="19:00">19:00</option>
+              <option value="19:30">19:30</option>
+              <option value="20:00">20:00</option>
+              <option value="20:30">20:30</option>
+              <option value="21:00">21:00</option>
+            </select>
+            <p class="field-error" id="err-time" role="alert"></p>
+          </div>
+          <div class="field full">
+            <label for="f-note">Not <span class="hint">(opsiyonel)</span></label>
+            <textarea id="f-note" name="note" aria-describedby="hint-note"></textarea>
+            <span class="hint" id="hint-note">Alerji, kutlama veya özel bir istek varsa buraya yazın.</span>
+          </div>
+          <div class="field full submit-row">
+            <button type="submit" class="btn btn-solid" id="submitBtn">Rezervasyon Talebi Gönder</button>
+            <span class="form-status" id="formStatus" aria-live="polite"></span>
+          </div>
+        </form>
+
+        <div class="success-panel" id="successPanel" hidden aria-live="polite">
+          <span class="success-kicker">Talep Alındı</span>
+          <h3 class="success-title">Tabureniz ustaya bildirildi.</h3>
+          <div class="summary-list">
+            <div class="summary-row"><span class="k">Ad Soyad</span><span class="v" id="sum-name">—</span></div>
+            <div class="summary-row"><span class="k">Kişi Sayısı</span><span class="v" id="sum-guests">—</span></div>
+            <div class="summary-row"><span class="k">Tarih</span><span class="v" id="sum-date">—</span></div>
+            <div class="summary-row"><span class="k">Saat</span><span class="v" id="sum-time">—</span></div>
+            <div class="summary-row"><span class="k">Not</span><span class="v" id="sum-note">—</span></div>
+            <div class="summary-row"><span class="k">Rezervasyon Kodu</span><span class="v res-code" id="sum-code">—</span></div>
+          </div>
+          <button type="button" class="btn btn-outline on-dark" id="newResBtn">Yeni Rezervasyon Oluştur</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-logo">Bakırcı</div>
+    <div class="footer-grid">
+      <div>
+        <p class="footer-lead">1996'dan beri tek ocak, tek usta. Menü her gün yeniden yazılır; sofra hiç eksilmez.</p>
+        <div class="social-row" aria-label="Sosyal medya (demo)">
+          <a href="#" data-demo aria-label="Instagram (demo)">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1"/></svg>
+          </a>
+          <a href="#" data-demo aria-label="Facebook (demo)">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 8h-2a2 2 0 0 0-2 2v3H9v3h2v6h3v-6h2.2l.5-3H14v-2.4c0-.7.3-1.1 1.2-1.1H16V8Z"/></svg>
+          </a>
+          <a href="#" data-demo aria-label="Paylaş (demo)">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="6" cy="12" r="2.4"/><circle cx="18" cy="6" r="2.4"/><circle cx="18" cy="18" r="2.4"/><line x1="8.1" y1="10.8" x2="15.9" y2="7.2"/><line x1="8.1" y1="13.2" x2="15.9" y2="16.8"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h3>Site</h3>
+        <ul>
+          <li><a href="#menu">Menü</a></li>
+          <li><a href="#ocak">Ocak &amp; Usta</a></li>
+          <li><a href="#mekan">Mekân</a></li>
+          <li><a href="#ziyaret">Ziyaret</a></li>
+          <li><a href="#rezervasyon">Rezervasyon</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Vitrin48</h3>
+        <ul>
+          <li><a href="#" data-demo>Bu demo hakkında</a></li>
+          <li><a href="#" data-demo>Paket detayları</a></li>
+          <li><a href="#" data-demo>Diğer çalışmalar</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Bakırcı Ocakbaşı. Tüm hakları saklıdır.</span>
+      <span>Bu sayfa Vitrin48 portföyü için hazırlanmış bir demodur; işletme hayalidir.</span>
+    </div>
+  </div>
+</footer>
+
+<button class="whatsapp-fab" id="waFab" data-demo aria-label="WhatsApp (demo)">
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+    <path d="M4 20l1.4-4.2A8 8 0 1 1 8.3 19L4 20Z"/>
+    <path d="M9 10.2c0 3 2.8 5.8 5.8 5.8.5 0 .9-.4.9-.9v-1.1l-2-.7-.9.9a5.4 5.4 0 0 1-2.9-2.9l.9-.9-.7-2H9Z"/>
+  </svg>
+</button>
+
+<div class="demo-badge" tabindex="0">
+  <span class="short">Vitrin48 · Demo</span><span class="full"> — Bu bir örnek çalışmadır, işletme hayalidir.</span>
+</div>
+
+<div class="toast-region" id="toastRegion" aria-live="polite" aria-atomic="true"></div>
+
+<script>
+(function(){
+  "use strict";
+  var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var gunler = ['Pazar','Pazartesi','Salı','Çarşamba','Perşembe','Cuma','Cumartesi'];
+  var aylar = ['Ocak','Şubat','Mart','Nisan','Mayıs','Haziran','Temmuz','Ağustos','Eylül','Ekim','Kasım','Aralık'];
+
+  /* ---------- Toast ---------- */
+  var toastRegion = document.getElementById('toastRegion');
+  function showToast(msg){
+    if(!toastRegion) return;
+    var t = document.createElement('div');
+    t.className = 'toast';
+    t.textContent = msg;
+    toastRegion.appendChild(t);
+    requestAnimationFrame(function(){ t.classList.add('is-visible'); });
+    setTimeout(function(){
+      t.classList.remove('is-visible');
+      setTimeout(function(){ if(t.parentNode) t.parentNode.removeChild(t); }, reduceMotion ? 0 : 400);
+    }, 3000);
+  }
+  document.querySelectorAll('[data-demo]').forEach(function(el){
+    el.addEventListener('click', function(e){
+      e.preventDefault();
+      if(el.id === 'waFab'){ showToast('WhatsApp bağlantısı canlı sitede aktif olur (demo).'); }
+      else if(el.id === 'directionsBtn'){ showToast('Yol tarifi canlı sitede haritanızı açar (demo).'); }
+      else { showToast('Bu bağlantı demoda pasif tutulmuştur.'); }
+    });
+  });
+
+  /* ---------- Header scroll state + progress ---------- */
+  var header = document.getElementById('siteHeader');
+  var progress = document.getElementById('headerProgress');
+  var ticking = false;
+  function onScroll(){
+    if(ticking) return;
+    ticking = true;
+    requestAnimationFrame(function(){
+      var y = window.scrollY || window.pageYOffset;
+      if(header){ header.classList.toggle('is-scrolled', y > 12); }
+      var docH = document.documentElement.scrollHeight - window.innerHeight;
+      var pct = docH > 0 ? Math.min(100, (y / docH) * 100) : 0;
+      if(progress){ progress.style.width = pct + '%'; }
+      ticking = false;
+    });
+  }
+  window.addEventListener('scroll', onScroll, { passive:true });
+  onScroll();
+
+  /* ---------- Mobile nav ---------- */
+  var burger = document.getElementById('burgerBtn');
+  var mobileNav = document.getElementById('mobileNav');
+  if(burger && mobileNav){
+    burger.addEventListener('click', function(){
+      var open = burger.getAttribute('aria-expanded') === 'true';
+      burger.setAttribute('aria-expanded', String(!open));
+      mobileNav.classList.toggle('is-open', !open);
+      burger.setAttribute('aria-label', open ? 'Menüyü aç' : 'Menüyü kapat');
+    });
+    mobileNav.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('click', function(){
+        burger.setAttribute('aria-expanded','false');
+        mobileNav.classList.remove('is-open');
+        burger.setAttribute('aria-label','Menüyü aç');
+      });
+    });
+    document.addEventListener('keydown', function(e){
+      if(e.key === 'Escape' && mobileNav.classList.contains('is-open')){
+        burger.setAttribute('aria-expanded','false');
+        mobileNav.classList.remove('is-open');
+        burger.focus();
+      }
+    });
+  }
+
+  /* ---------- Reveal on scroll ---------- */
+  var revealEls = document.querySelectorAll('[data-reveal], .clip-line');
+  if('IntersectionObserver' in window && revealEls.length){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          entry.target.classList.add('is-visible');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.16, rootMargin: '0px 0px -8% 0px' });
+    revealEls.forEach(function(el){ io.observe(el); });
+  } else {
+    revealEls.forEach(function(el){ el.classList.add('is-visible'); });
+  }
+
+  /* ---------- Today date + hours highlight ---------- */
+  var now = new Date();
+  var todayDateEl = document.getElementById('todayDate');
+  if(todayDateEl){
+    todayDateEl.textContent = now.getDate() + ' ' + aylar[now.getMonth()] + ' ' + gunler[now.getDay()];
+  }
+  var dayMap = [1,2,3,4,5,6,0]; // displayed row order: Pzt..Paz -> getDay() values
+  var todayIndex = dayMap.indexOf(now.getDay());
+  var hoursTable = document.getElementById('hoursTable');
+  if(hoursTable){
+    var row = hoursTable.querySelector('tr[data-day="' + todayIndex + '"]');
+    if(row){ row.classList.add('is-today'); }
+  }
+
+  /* ---------- Ticker (rAF, pause on hover/focus/touch) ---------- */
+  var track = document.getElementById('tickerTrack');
+  if(track && !reduceMotion){
+    var x = 0, paused = false, rafId = null;
+    var speed = 0.55;
+    function step(){
+      if(!paused){
+        x -= speed;
+        var half = track.scrollWidth / 2;
+        if(Math.abs(x) >= half){ x = 0; }
+        track.style.transform = 'translateX(' + x + 'px)';
+      }
+      rafId = requestAnimationFrame(step);
+    }
+    rafId = requestAnimationFrame(step);
+    var tickerParent = track.parentElement;
+    ['pointerenter','focusin','touchstart'].forEach(function(ev){
+      tickerParent.addEventListener(ev, function(){ paused = true; }, { passive:true });
+    });
+    ['pointerleave','focusout','touchend'].forEach(function(ev){
+      tickerParent.addEventListener(ev, function(){ paused = false; }, { passive:true });
+    });
+  }
+
+  /* ---------- Menu tabs (roving tabindex, arrow keys) ---------- */
+  var tablist = document.getElementById('menuTabs');
+  if(tablist){
+    var tabs = Array.prototype.slice.call(tablist.querySelectorAll('[role="tab"]'));
+    function panelFor(tab){ return document.getElementById(tab.getAttribute('aria-controls')); }
+    function selectTab(tab, focus){
+      tabs.forEach(function(t){
+        var selected = t === tab;
+        t.setAttribute('aria-selected', String(selected));
+        t.tabIndex = selected ? 0 : -1;
+        var p = panelFor(t);
+        if(p){ p.hidden = !selected; }
+      });
+      var activePanel = panelFor(tab);
+      if(activePanel && !reduceMotion){
+        activePanel.classList.add('panel-enter');
+        requestAnimationFrame(function(){
+          requestAnimationFrame(function(){
+            activePanel.classList.add('panel-enter-active');
+          });
+        });
+        setTimeout(function(){
+          activePanel.classList.remove('panel-enter','panel-enter-active');
+        }, 550);
+      }
+      if(focus){ tab.focus(); }
+    }
+    tabs.forEach(function(tab, i){
+      tab.addEventListener('click', function(){ selectTab(tab, false); });
+      tab.addEventListener('keydown', function(e){
+        var idx = i;
+        if(e.key === 'ArrowRight'){ idx = (i + 1) % tabs.length; }
+        else if(e.key === 'ArrowLeft'){ idx = (i - 1 + tabs.length) % tabs.length; }
+        else if(e.key === 'Home'){ idx = 0; }
+        else if(e.key === 'End'){ idx = tabs.length - 1; }
+        else { return; }
+        e.preventDefault();
+        selectTab(tabs[idx], true);
+      });
+    });
+  }
+
+  /* ---------- Reservation form ---------- */
+  var form = document.getElementById('resForm');
+  var successPanel = document.getElementById('successPanel');
+  var submitBtn = document.getElementById('submitBtn');
+  var formStatus = document.getElementById('formStatus');
+  var newResBtn = document.getElementById('newResBtn');
+
+  function setError(fieldId, errId, msg){
+    var field = document.getElementById(fieldId);
+    var err = document.getElementById(errId);
+    if(field){
+      var wrap = field.closest('.field');
+      if(wrap){ wrap.classList.toggle('has-error', !!msg); }
+      field.setAttribute('aria-invalid', msg ? 'true' : 'false');
+    }
+    if(err){ err.textContent = msg || ''; }
+  }
+
+  function parseLocalDate(value){
+    if(!value) return null;
+    var parts = value.split('-');
+    if(parts.length !== 3) return null;
+    return new Date(parseInt(parts[0],10), parseInt(parts[1],10) - 1, parseInt(parts[2],10));
+  }
+
+  function genCode(){
+    var chars = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
+    var s = 'BO-';
+    for(var i=0;i<5;i++){ s += chars.charAt(Math.floor(Math.random()*chars.length)); }
+    return s;
+  }
+
+  if(form){
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      var valid = true;
+      var firstInvalid = null;
+
+      var nameVal = form.name.value.trim();
+      if(!nameVal){ setError('f-name','err-name','Lütfen adınızı yazın.'); valid = false; firstInvalid = firstInvalid || form.name; }
+      else { setError('f-name','err-name',''); }
+
+      var guestsVal = form.guests.value;
+      if(!guestsVal){ setError('f-guests','err-guests','Lütfen kişi sayısı seçin.'); valid = false; firstInvalid = firstInvalid || form.guests; }
+      else { setError('f-guests','err-guests',''); }
+
+      var dateVal = form.date.value;
+      var dateErr = '';
+      if(!dateVal){ dateErr = 'Lütfen bir tarih seçin.'; }
+      else {
+        var picked = parseLocalDate(dateVal);
+        var today = new Date(); today.setHours(0,0,0,0);
+        if(picked < today){ dateErr = 'Geçmiş bir tarih seçilemez.'; }
+        else if(picked.getDay() === 1){ dateErr = 'Pazartesi günleri ocağımız kapalıdır.'; }
+      }
+      if(dateErr){ setError('f-date','err-date',dateErr); valid = false; firstInvalid = firstInvalid || form.date; }
+      else { setError('f-date','err-date',''); }
+
+      var timeVal = form.time.value;
+      if(!timeVal){ setError('f-time','err-time','Lütfen bir saat seçin.'); valid = false; firstInvalid = firstInvalid || form.time; }
+      else { setError('f-time','err-time',''); }
+
+      if(!valid){
+        if(formStatus){ formStatus.textContent = 'Formda düzeltilmesi gereken alanlar var.'; }
+        if(firstInvalid){ firstInvalid.focus(); }
+        return;
+      }
+
+      if(submitBtn){ submitBtn.disabled = true; }
+      if(formStatus){ formStatus.textContent = 'Gönderiliyor…'; }
+
+      setTimeout(function(){
+        var noteVal = form.note.value.trim();
+        var picked = parseLocalDate(dateVal);
+        var dateLabel = picked ? (picked.getDate() + ' ' + aylar[picked.getMonth()] + ' ' + picked.getFullYear() + ', ' + gunler[picked.getDay()]) : dateVal;
+
+        document.getElementById('sum-name').textContent = nameVal;
+        document.getElementById('sum-guests').textContent = guestsVal.indexOf('+') > -1 ? guestsVal + ' kişi' : guestsVal + ' kişi';
+        document.getElementById('sum-date').textContent = dateLabel;
+        document.getElementById('sum-time').textContent = timeVal;
+        document.getElementById('sum-note').textContent = noteVal || '—';
+        document.getElementById('sum-code').textContent = genCode();
+
+        form.hidden = true;
+        if(successPanel){ successPanel.hidden = false; }
+        if(formStatus){ formStatus.textContent = ''; }
+        if(submitBtn){ submitBtn.disabled = false; }
+        if(successPanel){ successPanel.focus && successPanel.setAttribute('tabindex','-1'); }
+      }, 900);
+    });
+  }
+
+  if(newResBtn){
+    newResBtn.addEventListener('click', function(){
+      form.reset();
+      ['f-name','f-guests','f-date','f-time'].forEach(function(id){
+        var el = document.getElementById(id);
+        if(el){ el.setAttribute('aria-invalid','false'); var w = el.closest('.field'); if(w){ w.classList.remove('has-error'); } }
+      });
+      ['err-name','err-guests','err-date','err-time'].forEach(function(id){
+        var el = document.getElementById(id);
+        if(el){ el.textContent = ''; }
+      });
+      successPanel.hidden = true;
+      form.hidden = false;
+      form.name.focus();
+    });
+  }
+})();
+</script>
+
+</body>
+</html>

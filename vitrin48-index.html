@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Vitrin48 — Yerel İşletmeniz İçin 48 Saatte Profesyonel Web Sitesi</title>
-<meta name="description" content="Google Haritalar'da görünüyorsunuz ama kendi vitrininiz yok. Vitrin48, yerel işletmelere 48 saatte mobil uyumlu, hızlı ve profesyonel web sitesi kurar. ₺2.500'den başlayan paketler.">
+<meta name="description" content="Google Haritalar'da görünüyorsunuz ama kendi vitrininiz yok. Vitrin48, yerel işletmelere 48 saatte mobil uyumlu, hızlı ve profesyonel web sitesi kurar. ₺5.000'den başlayan paketler.">
 <meta name="keywords" content="web sitesi, yerel işletme, vitrin, 48 saat, profesyonel site, küçük işletme web sitesi">
 <meta name="author" content="Vitrin48">
 <meta name="robots" content="index, follow">
@@ -13,7 +13,7 @@
 <!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:title" content="Vitrin48 — 48 Saatte Profesyonel Web Sitesi">
-<meta property="og:description" content="Google Haritalar'da görünüyorsunuz ama vitrininiz yok. 48 saatte mobil uyumlu, hızlı ve profesyonel web sitesi. ₺2.500'den başlayan paketler.">
+<meta property="og:description" content="Google Haritalar'da görünüyorsunuz ama vitrininiz yok. 48 saatte mobil uyumlu, hızlı ve profesyonel web sitesi. ₺5.000'den başlayan paketler.">
 <meta property="og:url" content="https://vitrin48.com">
 <meta property="og:site_name" content="Vitrin48">
 <meta property="og:locale" content="tr_TR">
@@ -25,7 +25,7 @@
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Vitrin48 — 48 Saatte Profesyonel Web Sitesi">
-<meta name="twitter:description" content="Yerel işletmenize 48 saatte profesyonel vitrin. ₺2.500'den başlayan paketler.">
+<meta name="twitter:description" content="Yerel işletmenize 48 saatte profesyonel vitrin. ₺5.000'den başlayan paketler.">
 <meta name="twitter:image" content="https://vitrin48.com/og-image.png">
 
 <!-- JSON-LD Structured Data -->
@@ -54,21 +54,21 @@
     {
       "@type": "Offer",
       "name": "Başlangıç Paketi",
-      "price": "2500",
+      "price": "5000",
       "priceCurrency": "TRY",
       "description": "Tek sayfalık modern web sitesi"
     },
     {
       "@type": "Offer",
       "name": "Kurumsal Paket",
-      "price": "4500",
+      "price": "9000",
       "priceCurrency": "TRY",
       "description": "3-5 sayfalık kurumsal web sitesi"
     },
     {
       "@type": "Offer",
       "name": "Premium Paket",
-      "price": "7500",
+      "price": "15000",
       "priceCurrency": "TRY",
       "description": "5+ sayfa, yönetim panelli tam donanımlı web sitesi"
     }
@@ -277,19 +277,20 @@ nav a.nl.active{color:var(--amber)}
 /* storefront illustration */
 .shopwrap{position:relative;display:flex;justify-content:center}
 .shop{width:min(480px,100%);filter:drop-shadow(0 24px 60px rgba(255,138,30,.14))}
-.neon-sign{animation:flicker 6s infinite}
+.neon-sign{animation:flicker 6s infinite; animation-play-state: paused;}
 @keyframes flicker{
   0%,100%{opacity:1}
   3%{opacity:.4}4%{opacity:1}
   42%{opacity:1}43%{opacity:.5}44%{opacity:1}
   78%{opacity:1}79%{opacity:.7}80%{opacity:1}
 }
-.draw{stroke-dasharray:600;stroke-dashoffset:600;animation:draw 2.2s ease forwards}
+.draw{stroke-dasharray:600;stroke-dashoffset:600;animation:draw 2.2s ease-in-out infinite alternate; animation-play-state: paused;}
 .draw.d2{animation-delay:.5s}
 .draw.d3{animation-delay:1s}
 .draw.d4{animation-delay:1.4s}
 @keyframes draw{to{stroke-dashoffset:0}}
-.float{animation:float 7s ease-in-out infinite}
+.float{animation:float 7s ease-in-out infinite; animation-play-state: paused;}
+.shop.running .neon-sign, .shop.running .draw, .shop.running.float { animation-play-state: running; }
 @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
 @media(max-width:900px){
   .hero{grid-template-columns:1fr;min-height:auto;padding-top:120px}
@@ -475,7 +476,7 @@ main,#top{scroll-margin-top:0}
 .paynote b{color:var(--amber)}
 
 /* ---------- sektörler ---------- */
-.sectors{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:16px;margin-top:48px}
+.sectors{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:48px} @media (max-width: 900px) { .sectors { grid-template-columns:repeat(2,1fr) } }
 .sector{
   background:var(--card2);border:1px solid var(--line-soft);border-radius:var(--radius);
   padding:26px 22px;text-align:center;transition:transform .3s,border-color .3s,box-shadow .3s;
@@ -494,7 +495,7 @@ main,#top{scroll-margin-top:0}
 .sector p{color:var(--muted);font-size:.82rem;margin-top:5px;position:relative;z-index:1}
 
 /* ---------- örnekler ---------- */
-.demos{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:52px}
+.demos{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:52px;max-width:1050px;margin-inline:auto;}
 .browser{
   background:var(--card);border:1px solid var(--line-soft);border-radius:16px;overflow:hidden;
   transition:transform .35s,border-color .35s,box-shadow .35s;
@@ -765,7 +766,7 @@ dialog#kvkk .btn{margin-top:10px}
     <div class="hero-stats">
       <div class="hstat"><b data-count="48" data-suffix="s">0s</b><span>ortalama teslim</span></div>
       <div class="hstat"><b data-count="2" data-prefix="<" data-suffix="sn">0sn</b><span>açılış hızı</span></div>
-      <div class="hstat"><b data-count="2500" data-prefix="₺" data-suffix="">0</b><span>başlangıç fiyatı</span></div>
+      <div class="hstat"><b data-count="5000" data-prefix="₺" data-suffix="">0</b><span>başlangıç fiyatı</span></div>
     </div>
     <div class="counter-badge"><span class="counter-dot"></span> Yeni açıldık — ilk 5 müşterimize kuruluş indirimi</div>
   </div>
@@ -794,8 +795,8 @@ dialog#kvkk .btn{margin-top:10px}
         <rect class="draw d3" x="92" y="276" width="128" height="72" rx="10" stroke="#42506A" stroke-width="2.5"/>
         <rect class="draw d3" x="240" y="276" width="128" height="72" rx="10" stroke="#42506A" stroke-width="2.5"/>
         <rect class="draw d4" x="92" y="176" width="94" height="0" fill="none"/>
-        <rect class="draw d4" x="268" y="160" width="86" height="28" rx="14" fill="#FFB454"/>
-        <text x="311" y="179" text-anchor="middle" font-family="Manrope,Arial" font-size="11.5" font-weight="800" fill="#1B1206">Hemen Ara</text>
+        <rect class="draw d4" x="208" y="160" width="146" height="28" rx="14" fill="#FFB454"/>
+        <text x="281" y="179" text-anchor="middle" font-family="Manrope,Arial" font-size="10.5" font-weight="800" fill="#1B1206">Hemen İletişime Geçin</text>
       </g>
       <!-- kapı eşiği -->
       <rect x="40" y="392" width="380" height="10" rx="5" fill="#1A2334"/>
@@ -861,7 +862,7 @@ dialog#kvkk .btn{margin-top:10px}
     <div class="plan reveal stagger-1">
       <span class="tag">Başlangıç</span>
       <h3>Tek Sayfa Vitrin</h3>
-      <div class="price">₺2.500</div>
+      <div class="price">₺5.000</div>
       <div class="per">Teslimat: 1-2 gün</div>
       <ul>
         <li>Tek sayfalık modern site</li>
@@ -870,14 +871,14 @@ dialog#kvkk .btn{margin-top:10px}
         <li>Google Harita entegrasyonu</li>
         <li>Temel SEO ayarları</li>
         <li>1 revizyon hakkı</li>
-        <li class="no">Domain &amp; hosting ayrı faturalandırılır</li>
+        <li class="no">Domain &amp; hosting ücretleri ayrıca ödenir</li>
       </ul>
       <a class="btn ghost" href="#iletisim">Bu Paketi Seç</a>
     </div>
     <div class="plan hot reveal stagger-2">
       <span class="tag">En çok tercih edilen</span>
       <h3>Kurumsal</h3>
-      <div class="price">₺4.500</div>
+      <div class="price">₺9.000</div>
       <div class="per">Teslimat: 3-5 gün</div>
       <ul>
         <li>3-5 sayfa (Hakkımızda, Hizmetler, Galeri...)</li>
@@ -886,14 +887,14 @@ dialog#kvkk .btn{margin-top:10px}
         <li>Google Harita + yol tarifi</li>
         <li>Ürün / galeri vitrini</li>
         <li>2 revizyon hakkı</li>
-        <li class="no">Domain &amp; hosting ayrı faturalandırılır</li>
+        <li class="no">Domain &amp; hosting ücretleri ayrıca ödenir</li>
       </ul>
       <a class="btn" href="#iletisim">Bu Paketi Seç</a>
     </div>
     <div class="plan reveal stagger-3">
       <span class="tag">Premium</span>
       <h3>Tam Donanım</h3>
-      <div class="price">₺7.500</div>
+      <div class="price">₺15.000</div>
       <div class="per">Teslimat: 7-10 gün</div>
       <ul>
         <li>5+ sayfa, size özel tasarım</li>
@@ -902,7 +903,7 @@ dialog#kvkk .btn{margin-top:10px}
         <li>Google Analytics kurulumu</li>
         <li>Çok dilli yapıya hazır altyapı</li>
         <li>3 revizyon + kurulum sonrası destek</li>
-        <li class="no">Domain &amp; hosting ayrı faturalandırılır</li>
+        <li class="no">Domain &amp; hosting ücretleri ayrıca ödenir</li>
       </ul>
       <a class="btn ghost" href="#iletisim">Bu Paketi Seç</a>
     </div>
@@ -924,18 +925,19 @@ dialog#kvkk .btn{margin-top:10px}
     <div class="sig-side">
       <div class="sig-price">Teklife göre</div>
       <div class="sig-note">Kapsam projeye özel belirlenir</div>
-      <a class="btn" href="#iletisim">Görüşme Ayarla</a>
+      <a class="btn" href="#iletisim" style="margin-bottom: 12px; display: block; text-align: center;">Görüşme Ayarla</a>
+      <a class="btn ghost" href="https://syvestra.com" target="_blank" rel="noopener" style="font-size: 0.85rem; padding: 10px 16px; display: block; text-align: center;">Örnek Proje: Syvestra →</a>
     </div>
   </div>
   <div class="care reveal">
     <div>
       <span class="care-tag">Tüm paketlere eklenebilir</span>
-      <h3>Vitrin48 Bakım — <b>₺400/ay</b></h3>
+      <h3>Vitrin48 Bakım — <b>₺500/ay</b></h3>
       <p>Domain yenileme, hosting, kesinti takibi ve ayda 2 içerik güncellemesi bizde. Siz işinize bakın, siteniz hep güncel ve açık kalsın. İstediğiniz zaman iptal edebilirsiniz.</p>
     </div>
     <a class="btn ghost" href="#iletisim">Bakımı da İstiyorum</a>
   </div>
-  <p class="paynote reveal">Ödeme: <b>%50 başlangıçta, %50 teslimatta</b> — havale / EFT ile. <b>Siteyi görüp onaylamadan kalan ödeme alınmaz.</b> Revizyon hakkı her pakete dahildir ve yazılı sözleşmeyle güvence altındadır. Fatura kesilir.</p>
+  <p class="paynote reveal">Ödeme: <b>%50 başlangıçta, %50 teslimatta</b> — havale / EFT ile. <b>Siteyi görüp onaylamadan kalan ödeme alınmaz.</b> Revizyon hakkı her pakete dahildir ve yazılı sözleşmeyle güvence altındadır.</p>
 </section>
 
 <!-- ============ SEKTÖRLER ============ -->
@@ -949,49 +951,104 @@ dialog#kvkk .btn{margin-top:10px}
     <div class="sector reveal stagger-1"><div class="ico">🍽️</div><h3>Restoran &amp; Cafe</h3><p>Menü, rezervasyon, yol tarifi</p></div>
     <div class="sector reveal stagger-2"><div class="ico">💈</div><h3>Kuaför &amp; Güzellik</h3><p>Hizmet listesi, randevu, galeri</p></div>
     <div class="sector reveal stagger-3"><div class="ico">🔧</div><h3>Oto Tamir</h3><p>Hizmetler, konum, WhatsApp</p></div>
-    <div class="sector reveal stagger-1"><div class="ico">🏠</div><h3>Emlak</h3><p>Portföy vitrini, iletişim</p></div>
-    <div class="sector reveal stagger-2"><div class="ico">🩺</div><h3>Klinik &amp; Muayenehane</h3><p>Uzmanlık, randevu, güven</p></div>
-    <div class="sector reveal stagger-3"><div class="ico">⚖️</div><h3>Avukat &amp; Danışman</h3><p>Kurumsal görünüm, referans</p></div>
+    <div class="sector reveal stagger-4"><div class="ico">🏠</div><h3>Emlak</h3><p>Portföy vitrini, iletişim</p></div>
+    <div class="sector reveal stagger-1"><div class="ico">🩺</div><h3>Klinik &amp; Muayenehane</h3><p>Uzmanlık, randevu, güven</p></div>
+    <div class="sector reveal stagger-2"><div class="ico">⚖️</div><h3>Avukat &amp; Danışman</h3><p>Kurumsal görünüm, referans</p></div>
+    <div class="sector reveal stagger-3"><div class="ico">🏛️</div><h3>Mimarlık</h3><p>Projeler, vizyon, referanslar</p></div>
+    <div class="sector reveal stagger-4"><div class="ico">🏋️</div><h3>Spor &amp; Fitness</h3><p>Programlar, üyelik, antrenör</p></div>
   </div>
 </section>
 
 <!-- ============ ÖRNEKLER ============ -->
 <section id="ornekler">
   <div class="reveal">
-    <span class="sec-eyebrow">Örnek çalışmalar</span>
+    <span class="sec-eyebrow">Çalışmalarımız / Portföy</span>
     <h2 class="sec-title">Sektörünüz için çalışan demolar.</h2>
-    <p class="sec-sub">Aşağıdaki üç site tamamen bizim tarafımızdan hazırlandı ve gerçekten açılıyor — kartlara dokunup canlı gezebilirsiniz. Anlaştığımızda sizinki de bunlar gibi kendi renginiz, menünüz ve fotoğraflarınızla kurulur.</p>
+    <p class="sec-sub">Aşağıdaki siteler tamamen bizim tarafımızdan hazırlandı ve gerçekten açılıyor — kartlara dokunup canlı gezebilirsiniz. Anlaştığımızda sizinki de bunlar gibi kendi renginiz, menünüz ve fotoğraflarınızla kurulur.</p>
   </div>
+  <style>
+    .iframe-sim { position: relative; width: 100%; padding-top: 55%; overflow: hidden; background: #111; }
+    .iframe-sim iframe { position: absolute; top: 0; left: 0; width: 400%; height: 400%; transform: scale(0.25); transform-origin: top left; border: none; pointer-events: none; }
+  </style>
   <div class="demos">
-    <a class="browser reveal stagger-1" href="demo/restoran.html" target="_blank" rel="noopener">
-      <span class="badge-demo">CANLI DEMO</span>
-      <div class="bbar"><i></i><i></i><i></i><span class="url">lezzet-duragi.vitrin48.com</span></div>
-      <div class="shot"><img src="demo/restoran-thumb.jpg" alt="Lezzet Durağı restoran demo sitesi" loading="lazy"></div>
+    <!-- ROW 1 -->
+    <!-- Başlangıç 1 -->
+    <a class="browser reveal stagger-1" href="demo1.html" target="_blank" rel="noopener">
+      <span class="badge-demo">BAŞLANGIÇ</span>
+      <div class="bbar"><i></i><i></i><i></i><span class="url">demo1.html</span></div>
+      <div class="iframe-sim"><iframe src="demo1.html" tabindex="-1"></iframe></div>
       <div class="case-flow">
-        <span class="b4"><b>İçerik</b> — Menü, WhatsApp sipariş, yol tarifi, galeri</span>
-        <span class="aft"><b>Tarz</b> — Sıcak, iştah açıcı, sektöre özel palet</span>
+        <span class="b4"><b>İçerik</b> — Sekmeli menü, rezervasyon, mekân, konum</span>
+        <span class="aft"><b>Tarz</b> — Editoryal, sıcak kâğıt & kor tonları</span>
+        <span style="font-size: 0.7rem; color: var(--muted); margin-top: 4px; display: block; font-style: italic;">*(Yönetim paneli ve alt sayfalar demo sürümünde gizlenmiştir)*</span>
       </div>
-      <div class="blabel"><b>Restoran</b><span>Canlı demoyu aç →</span></div>
+      <div class="blabel"><b>Ocakbaşı Restoranı (Demo 1)</b><span>Tasarım Önizlemesi →</span></div>
     </a>
-    <a class="browser reveal stagger-2" href="demo/kuafor.html" target="_blank" rel="noopener">
-      <span class="badge-demo">CANLI DEMO</span>
-      <div class="bbar"><i></i><i></i><i></i><span class="url">salon-elit.vitrin48.com</span></div>
-      <div class="shot"><img src="demo/kuafor-thumb.jpg" alt="Salon Elit kuaför demo sitesi" loading="lazy"></div>
+    
+    <!-- Kurumsal 1 -->
+    <a class="browser reveal stagger-2" href="demo3.html" target="_blank" rel="noopener">
+      <span class="badge-demo">KURUMSAL</span>
+      <div class="bbar"><i></i><i></i><i></i><span class="url">demo3.html</span></div>
+      <div class="iframe-sim"><iframe src="demo3.html" tabindex="-1"></iframe></div>
       <div class="case-flow">
-        <span class="b4"><b>İçerik</b> — Hizmet listesi, ekip, yorumlar, randevu</span>
-        <span class="aft"><b>Tarz</b> — Zarif, editöryel, güven veren</span>
+        <span class="b4"><b>İçerik</b> — 5 sayfa, filtreli portföy, fiyat, SSS</span>
+        <span class="aft"><b>Tarz</b> — Moda dergisi editoryali, didone tipografi</span>
+        <span style="font-size: 0.7rem; color: var(--muted); margin-top: 4px; display: block; font-style: italic;">*(Yönetim paneli ve alt sayfalar demo sürümünde gizlenmiştir)*</span>
       </div>
-      <div class="blabel"><b>Kuaför &amp; Güzellik</b><span>Canlı demoyu aç →</span></div>
+      <div class="blabel"><b>Saç & Güzellik Atölyesi (Demo 3)</b><span>Tasarım Önizlemesi →</span></div>
     </a>
-    <a class="browser reveal stagger-3" href="demo/oto.html" target="_blank" rel="noopener">
-      <span class="badge-demo">CANLI DEMO</span>
-      <div class="bbar"><i></i><i></i><i></i><span class="url">usta-oto.vitrin48.com</span></div>
-      <div class="shot"><img src="demo/oto-thumb.jpg" alt="Usta Oto Servis demo sitesi" loading="lazy"></div>
+    
+    <!-- Premium 1 -->
+    <a class="browser reveal stagger-3" href="demo5.html" target="_blank" rel="noopener">
+      <span class="badge-demo">PREMİUM</span>
+      <div class="bbar"><i></i><i></i><i></i><span class="url">demo5.html</span></div>
+      <div class="iframe-sim"><iframe src="demo5.html" tabindex="-1"></iframe></div>
       <div class="case-flow">
-        <span class="b4"><b>İçerik</b> — Hizmet & fiyat, süreç, marka listesi</span>
-        <span class="aft"><b>Tarz</b> — Güçlü, endüstriyel, güven odaklı</span>
+        <span class="b4"><b>İçerik</b> — 7 sayfa, randevu sihirbazı, yönetim paneli, TR/EN</span>
+        <span class="aft"><b>Tarz</b> — Işık/karanlık kontrastı, sinyal turuncusu aksan</span>
+        <span style="font-size: 0.7rem; color: var(--muted); margin-top: 4px; display: block; font-style: italic;">*(Yönetim paneli ve alt sayfalar demo sürümünde gizlenmiştir)*</span>
       </div>
-      <div class="blabel"><b>Oto Servis</b><span>Canlı demoyu aç →</span></div>
+      <div class="blabel"><b>Mimarlık Stüdyosu (Demo 5)</b><span>Tasarım Önizlemesi →</span></div>
+    </a>
+
+    <!-- ROW 2 -->
+    <!-- Başlangıç 2 -->
+    <a class="browser reveal stagger-1" href="demo2.html" target="_blank" rel="noopener">
+      <span class="badge-demo">BAŞLANGIÇ</span>
+      <div class="bbar"><i></i><i></i><i></i><span class="url">demo2.html</span></div>
+      <div class="iframe-sim"><iframe src="demo2.html" tabindex="-1"></iframe></div>
+      <div class="case-flow">
+        <span class="b4"><b>İçerik</b> — İşlem tablosu, süreç, randevu, konum</span>
+        <span class="aft"><b>Tarz</b> — Teknik servis kılavuzu, spec-sheet dizgisi</span>
+        <span style="font-size: 0.7rem; color: var(--muted); margin-top: 4px; display: block; font-style: italic;">*(Yönetim paneli ve alt sayfalar demo sürümünde gizlenmiştir)*</span>
+      </div>
+      <div class="blabel"><b>Oto Servis (Demo 2)</b><span>Tasarım Önizlemesi →</span></div>
+    </a>
+
+    <!-- Kurumsal 2 -->
+    <a class="browser reveal stagger-2" href="demo4.html" target="_blank" rel="noopener">
+      <span class="badge-demo">KURUMSAL</span>
+      <div class="bbar"><i></i><i></i><i></i><span class="url">demo4.html</span></div>
+      <div class="iframe-sim"><iframe src="demo4.html" tabindex="-1"></iframe></div>
+      <div class="case-flow">
+        <span class="b4"><b>İçerik</b> — 5 sayfa, bilgi notu arşivi, çalışma alanları, SSS</span>
+        <span class="aft"><b>Tarz</b> — Hukuki belge dizgisi, fildişi & bordo</span>
+        <span style="font-size: 0.7rem; color: var(--muted); margin-top: 4px; display: block; font-style: italic;">*(Yönetim paneli ve alt sayfalar demo sürümünde gizlenmiştir)*</span>
+      </div>
+      <div class="blabel"><b>Hukuk Bürosu (Demo 4)</b><span>Tasarım Önizlemesi →</span></div>
+    </a>
+
+    <!-- Premium 2 -->
+    <a class="browser reveal stagger-3" href="demo6.html" target="_blank" rel="noopener">
+      <span class="badge-demo">PREMİUM</span>
+      <div class="bbar"><i></i><i></i><i></i><span class="url">demo6.html</span></div>
+      <div class="iframe-sim"><iframe src="demo6.html" tabindex="-1"></iframe></div>
+      <div class="case-flow">
+        <span class="b4"><b>İçerik</b> — 7 sayfa, çok adımlı randevu, yönetim paneli, TR/EN</span>
+        <span class="aft"><b>Tarz</b> — Baskın orman yeşili, porselen ferahlığı</span>
+        <span style="font-size: 0.7rem; color: var(--muted); margin-top: 4px; display: block; font-style: italic;">*(Yönetim paneli ve alt sayfalar demo sürümünde gizlenmiştir)*</span>
+      </div>
+      <div class="blabel"><b>Diş Kliniği (Demo 6)</b><span>Tasarım Önizlemesi →</span></div>
     </a>
   </div>
 </section>
@@ -1046,27 +1103,39 @@ dialog#kvkk .btn{margin-top:10px}
         <div class="hstat"><b>0</b><span>zorunluluk</span></div>
       </div>
     </div>
-    <form class="form" id="contactForm">
-      <div class="input-wrap">
-        <input type="text" id="formName" placeholder="Adınız" required aria-label="Adınız" autocomplete="name">
-        <span class="check-icon" id="nameCheck">✓</span>
+    <div class="contact-methods" style="display:flex; flex-direction:column; gap:24px;">
+      <form class="form" id="contactForm">
+        <div class="input-wrap">
+          <input type="text" id="formName" placeholder="Adınız" required aria-label="Adınız" autocomplete="name">
+          <span class="check-icon" id="nameCheck">✓</span>
+        </div>
+        <div class="input-wrap">
+          <input type="tel" id="formPhone" placeholder="Telefon numaranız" required aria-label="Telefon numaranız" autocomplete="tel">
+          <span class="check-icon" id="phoneCheck">✓</span>
+        </div>
+        <div class="input-wrap">
+          <input type="text" id="formBusiness" placeholder="İşletmenizin adı" required aria-label="İşletmenizin adı">
+          <span class="check-icon" id="businessCheck">✓</span>
+        </div>
+        <textarea placeholder="Kısaca ihtiyacınız (isteğe bağlı)" aria-label="Mesajınız"></textarea>
+        <button class="btn" type="submit">İşletmemi Ücretsiz Analiz Et</button>
+        <a class="btn" href="https://wa.me/905000000000" target="_blank" style="background-color: #25D366; color: white; text-align: center; border-color: #25D366; margin-top:8px;">WhatsApp'tan Ulaşın</a>
+        <div class="trustline">
+          <span>Yazılı sözleşme</span>
+          <span>Onaysız kalan ödeme alınmaz</span>
+        </div>
+      </form>
+      <div class="calendly-box" style="background:var(--card2); border-radius:var(--radius); border:1px solid var(--line-soft); padding: 32px 24px; text-align: center; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+        <h3 style="font-size: 20px; margin-bottom: 12px; color: var(--text);">Takvimden Randevu Alın</h3>
+        <p style="color: var(--text-muted); font-size: 15px; margin-bottom: 24px; line-height: 1.5;">Müsait olduğunuz bir saati seçerek 30 dakikalık ücretsiz analiz görüşmemizi hemen planlayın.</p>
+        
+        <!-- Calendly link widget begin -->
+        <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+        <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+        <a class="btn" href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/vitrin48'});return false;" style="background-color: var(--accent); color: var(--bg); display: inline-block; width: 100%; border:none;">Online Görüşme Ayarla</a>
+        <!-- Calendly link widget end -->
       </div>
-      <div class="input-wrap">
-        <input type="tel" id="formPhone" placeholder="Telefon numaranız" required aria-label="Telefon numaranız" autocomplete="tel">
-        <span class="check-icon" id="phoneCheck">✓</span>
-      </div>
-      <div class="input-wrap">
-        <input type="text" id="formBusiness" placeholder="İşletmenizin adı" required aria-label="İşletmenizin adı">
-        <span class="check-icon" id="businessCheck">✓</span>
-      </div>
-      <textarea placeholder="Kısaca ihtiyacınız (isteğe bağlı)" aria-label="Mesajınız"></textarea>
-      <button class="btn" type="submit">İşletmemi Ücretsiz Analiz Et</button>
-      <div class="trustline">
-        <span>Fatura kesilir</span>
-        <span>Yazılı sözleşme</span>
-        <span>Onaysız kalan ödeme alınmaz</span>
-      </div>
-    </form>
+    </div>
   </div>
 </section>
 
@@ -1074,7 +1143,7 @@ dialog#kvkk .btn{margin-top:10px}
   <div style="display:grid;gap:8px">
     <a class="brand" href="#top">vitrin<b>48</b></a>
     <span>Yerel işletmeler için 48 saatte web siteleri</span>
-    <span>📧 <a data-mail href="mailto:merhaba@vitrin48.com">merhaba@vitrin48.com</a> &nbsp;·&nbsp; 📱 WhatsApp: <a data-wa href="#" id="waNumber">0 5xx xxx xx xx</a></span>
+    <span>📱 WhatsApp: <a data-wa href="https://wa.me/905000000000" id="waNumber">0 5xx xxx xx xx</a> &nbsp;·&nbsp; 📧 E-posta: <a data-mail href="mailto:merhaba@vitrin48.com">merhaba@vitrin48.com</a></span>
   </div>
   <nav>
     <a class="nl" href="#surec">Süreç</a>
@@ -1084,7 +1153,7 @@ dialog#kvkk .btn{margin-top:10px}
   </nav>
   <div style="display:grid;gap:6px;text-align:right">
     <span>© 2026 Vitrin48</span>
-    <span>Tüm hizmetler faturalı ve yazılı sözleşmelidir.</span>
+    <span>Tüm hizmetler yazılı sözleşme güvencesindedir.</span>
   </div>
 </footer>
 
@@ -1258,6 +1327,16 @@ document.querySelectorAll('.q button').forEach(btn=>{
 })();
 
 // ---- active nav highlighting ----
+
+  // Shop animation observer
+  const shopObserver = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      e.target.classList.toggle('running', e.isIntersecting);
+    });
+  }, {threshold: 0.1});
+  const shopSvg = document.querySelector('.shop');
+  if(shopSvg) shopObserver.observe(shopSvg);
+
 function updateActiveNav(){
   const sections=['surec','paketler','ornekler','sss'];
   const navLinks=document.querySelectorAll('header nav a.nl');

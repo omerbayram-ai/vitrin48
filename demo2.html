@@ -1,0 +1,1438 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<script>document.documentElement.classList.add('js-ready');</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Devir Oto Servis — Randevulu Bakım ve Onarım | İş Emri ile Şeffaf Servis</title>
+<meta name="description" content="Devir Oto Servis, marka bağımsız randevulu bakım ve onarım hizmeti verir. Değişen parça gösterilir, her işlem tork değeri ve süresiyle yazılı rapora geçirilir.">
+<link rel="canonical" href="https://vitrin48.com/demo2">
+<meta name="theme-color" content="#0E0F11">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Devir Oto Servis — Randevulu Bakım ve Onarım">
+<meta property="og:description" content="Marka bağımsız, ölçüme dayalı bakım-onarım servisi. Sökülen parça gösterilir, işlem raporu yazılı verilir.">
+<meta property="og:locale" content="tr_TR">
+<meta property="og:url" content="https://vitrin48.com/demo2">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Devir Oto Servis — Randevulu Bakım ve Onarım">
+<meta name="twitter:description" content="Marka bağımsız, ölçüme dayalı bakım-onarım servisi. Sökülen parça gösterilir, işlem raporu yazılı verilir.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AutoRepair",
+  "name": "Devir Oto Servis",
+  "description": "Marka bağımsız, randevulu bakım ve onarım servisi. Değişen parça gösterilir, işlem raporu yazılı teslim edilir.",
+  "openingHours": ["Mo-Fr 08:00-19:00", "Sa 09:00-17:00"],
+  "priceRange": "₺₺",
+  "sameAs": []
+}
+</script>
+<style>
+  :root{
+    --asphalt:#0E0F11;
+    --graphite:#191C1F;
+    --graphite-2:#1F2328;
+    --concrete:#9AA0A6;
+    --paper:#F1F0EC;
+    --signal:#E7C400;
+    --line: rgba(241,240,236,.14);
+    --line-strong: rgba(241,240,236,.30);
+    --f-display:'Barlow Condensed', sans-serif;
+    --f-body:'IBM Plex Sans', sans-serif;
+    --f-mono:'IBM Plex Mono', monospace;
+    --ease-out: cubic-bezier(.22,1,.36,1);
+    --ease-in-out: cubic-bezier(.65,0,.35,1);
+    --ease-pop: cubic-bezier(.34,1.56,.64,1);
+    --container: 1180px;
+    --gutter: clamp(1.25rem, 4vw, 3rem);
+  }
+
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  body{
+    margin:0;
+    background:var(--asphalt);
+    color:var(--paper);
+    font-family:var(--f-body);
+    font-size:16px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+    background-image:
+      repeating-linear-gradient(0deg, rgba(241,240,236,.028) 0px, rgba(241,240,236,.028) 1px, transparent 1px, transparent 64px),
+      repeating-linear-gradient(90deg, rgba(241,240,236,.028) 0px, rgba(241,240,236,.028) 1px, transparent 1px, transparent 64px);
+  }
+  h1,h2,h3,h4{ font-family:var(--f-display); font-weight:700; text-transform:uppercase; letter-spacing:.01em; margin:0; }
+  p{ margin:0; }
+  ul{ margin:0; padding:0; list-style:none; }
+  a{ color:inherit; }
+  img,svg{ display:block; max-width:100%; }
+  button{ font-family:inherit; }
+  .container{ max-width:var(--container); margin:0 auto; padding:0 var(--gutter); }
+
+  ::selection{ background:var(--signal); color:var(--asphalt); }
+
+  a:focus-visible,
+  button:focus-visible,
+  input:focus-visible,
+  select:focus-visible,
+  textarea:focus-visible,
+  [tabindex]:focus-visible{
+    outline:2px solid var(--signal);
+    outline-offset:3px;
+  }
+
+  .skip-link{
+    position:fixed; top:-100%; left:1rem; z-index:999;
+    background:var(--signal); color:var(--asphalt);
+    padding:.7rem 1.2rem; font-family:var(--f-mono); font-size:.85rem;
+    transition:top .2s var(--ease-out);
+  }
+  .skip-link:focus{ top:1rem; }
+
+  .mono-label{
+    font-family:var(--f-mono); font-size:.72rem; letter-spacing:.16em;
+    text-transform:uppercase; color:var(--signal);
+  }
+
+  /* ---------- reveal ---------- */
+  html.js-ready .reveal{ opacity:0; transform:translateY(18px); }
+  html.js-ready .reveal.in-view{
+    opacity:1; transform:translateY(0);
+    transition:opacity .7s var(--ease-out), transform .7s var(--ease-out);
+  }
+  .section-rule{
+    position:relative; height:1px; background:var(--line); margin-bottom:2.4rem;
+    overflow:hidden;
+  }
+  .section-rule::after{
+    content:''; position:absolute; inset:0; background:var(--signal);
+    transform:scaleX(0); transform-origin:left;
+  }
+  html.js-ready .reveal.in-view .section-rule::after{
+    transition:transform .8s var(--ease-out) .1s;
+    transform:scaleX(1);
+  }
+  html:not(.js-ready) .section-rule::after{ transform:scaleX(1); }
+
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior:auto; }
+    *,*::before,*::after{
+      animation-duration:.001ms !important;
+      transition-duration:.001ms !important;
+      scroll-behavior:auto !important;
+    }
+    html.js-ready .reveal{ opacity:1; transform:none; }
+  }
+
+  /* ---------- progress + header ---------- */
+  .scroll-progress{
+    position:fixed; top:0; left:0; right:0; height:2px; z-index:200;
+    background:var(--signal); transform:scaleX(0); transform-origin:left;
+    transition:transform .1s linear;
+  }
+  header{
+    position:fixed; top:2px; left:0; right:0; z-index:190;
+    border-bottom:1px solid var(--line);
+    background:rgba(14,15,17,.94);
+  }
+  .header-inner{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:1.05rem var(--gutter);
+    max-width:var(--container); margin:0 auto;
+  }
+  .logo{ font-family:var(--f-display); font-weight:700; font-size:1.5rem; text-transform:uppercase; line-height:1; letter-spacing:.01em; display:flex; align-items:baseline; gap:.4rem; }
+  .logo .accent{ color:var(--signal); }
+  .logo small{ font-family:var(--f-mono); font-weight:400; font-size:.62rem; letter-spacing:.14em; color:var(--concrete); text-transform:uppercase; display:block; margin-top:.15rem; }
+  nav.primary-nav{ display:flex; align-items:center; gap:2.1rem; }
+  nav.primary-nav a{
+    text-decoration:none; font-size:.86rem; color:var(--concrete);
+    text-transform:uppercase; letter-spacing:.06em; font-weight:500;
+    position:relative; padding:.25rem 0;
+  }
+  nav.primary-nav a::after{
+    content:''; position:absolute; left:0; right:0; bottom:0; height:1px;
+    background:var(--signal); transform:scaleX(0); transform-origin:left;
+    transition:transform .25s var(--ease-out);
+  }
+  nav.primary-nav a:hover, nav.primary-nav a:focus-visible{ color:var(--paper); }
+  nav.primary-nav a:hover::after, nav.primary-nav a:focus-visible::after{ transform:scaleX(1); }
+  .header-actions{ display:flex; align-items:center; gap:1rem; }
+
+  .btn{
+    display:inline-flex; align-items:center; gap:.5rem;
+    font-family:var(--f-mono); font-size:.8rem; letter-spacing:.04em;
+    text-transform:uppercase; text-decoration:none; cursor:pointer;
+    padding:.75rem 1.3rem; border:1px solid var(--line-strong);
+    background:transparent; color:var(--paper);
+    transition:transform .18s var(--ease-out), background-color .18s var(--ease-out), border-color .18s var(--ease-out), color .18s var(--ease-out);
+  }
+  .btn:hover{ border-color:var(--signal); color:var(--signal); transform:translateY(-1px); }
+  .btn:active{ transform:translateY(0); }
+  .btn-solid{ background:var(--signal); color:var(--asphalt); border-color:var(--signal); font-weight:600; }
+  .btn-solid:hover{ background:transparent; color:var(--signal); }
+  .btn[disabled]{ opacity:.55; cursor:default; transform:none; }
+
+  .menu-toggle{
+    display:none; background:none; border:1px solid var(--line-strong); color:var(--paper);
+    width:42px; height:38px; align-items:center; justify-content:center; cursor:pointer;
+  }
+  .menu-toggle svg{ width:18px; height:18px; }
+
+  .mobile-nav{
+    display:none; border-top:1px solid var(--line); background:var(--graphite);
+  }
+  .mobile-nav.open{ display:block; animation:panel-in .22s var(--ease-out); }
+  @keyframes panel-in{ from{ opacity:0; transform:translateY(-6px);} to{ opacity:1; transform:translateY(0);} }
+  .mobile-nav ul{ display:flex; flex-direction:column; padding:.5rem var(--gutter) 1.2rem; }
+  .mobile-nav a{ display:block; padding:.85rem 0; text-decoration:none; color:var(--paper); border-bottom:1px solid var(--line); font-size:1rem; text-transform:uppercase; letter-spacing:.04em; font-family:var(--f-display); font-weight:600; }
+  .mobile-nav .btn{ margin-top:1rem; width:100%; justify-content:center; }
+
+  main{ padding-top:73px; }
+
+  /* ---------- hero ---------- */
+  .hero{
+    padding:clamp(3rem,8vw,6.5rem) 0 clamp(2.5rem,6vw,4rem);
+    border-bottom:1px solid var(--line);
+  }
+  .hero-grid{
+    display:grid; grid-template-columns:1.35fr 1fr; gap:clamp(2rem,5vw,4rem);
+    align-items:start;
+  }
+  .hero-eyebrow{ display:flex; align-items:center; gap:.6rem; margin-bottom:1.4rem; }
+  .hero-eyebrow .dash{ width:28px; height:1px; background:var(--signal); }
+  h1.hero-title{
+    font-size:clamp(2.6rem, 6.2vw, 5rem); line-height:.98; letter-spacing:0;
+    margin-bottom:1.6rem;
+  }
+  h1.hero-title em{ font-style:normal; color:var(--signal); }
+  .hero-desc{
+    font-size:clamp(1rem,1.6vw,1.15rem); color:var(--concrete); max-width:46ch;
+    margin-bottom:2.1rem;
+  }
+  .hero-cta{ display:flex; gap:1rem; flex-wrap:wrap; }
+
+  .ticket{
+    border:1px solid var(--line-strong); background:var(--graphite);
+    font-family:var(--f-mono);
+  }
+  .ticket-head{
+    display:flex; justify-content:space-between; align-items:center;
+    padding:.9rem 1.2rem; border-bottom:1px dashed var(--line-strong);
+  }
+  .ticket-head .mono-label{ color:var(--concrete); }
+  .ticket-tag{
+    font-size:.68rem; letter-spacing:.1em; color:var(--signal);
+    border:1px solid var(--signal); padding:.15rem .5rem;
+  }
+  .ticket-body{ padding:1.2rem; }
+  .ticket-row{
+    display:flex; justify-content:space-between; gap:1rem;
+    padding:.65rem 0; border-bottom:1px solid var(--line);
+    font-size:.86rem;
+  }
+  .ticket-row:last-of-type{ border-bottom:none; }
+  .ticket-row span:first-child{ color:var(--concrete); }
+  .ticket-row span:last-child{ text-align:right; color:var(--paper); }
+  .ticket-foot{
+    padding:.9rem 1.2rem; border-top:1px dashed var(--line-strong);
+    font-size:.74rem; color:var(--concrete); line-height:1.5;
+  }
+
+  .credentials{
+    display:grid; grid-template-columns:repeat(3,1fr);
+    border-top:1px solid var(--line); margin-top:clamp(2.5rem,6vw,4rem);
+    padding-top:clamp(1.6rem,4vw,2.2rem);
+  }
+  .credential{ padding:0 1.4rem; border-left:1px solid var(--line); }
+  .credential:first-child{ border-left:none; padding-left:0; }
+  .credential .mono-label{ display:block; margin-bottom:.5rem; }
+  .credential strong{
+    font-family:var(--f-display); font-weight:700; font-size:clamp(1.3rem,2.6vw,1.9rem);
+    text-transform:uppercase; display:block; line-height:1.05;
+  }
+
+  /* ---------- section shell ---------- */
+  section{ padding:clamp(3.5rem,8vw,6rem) 0; border-bottom:1px solid var(--line); }
+  .section-head{ display:flex; justify-content:space-between; align-items:flex-end; gap:2rem; margin-bottom:2.4rem; flex-wrap:wrap; }
+  .section-index{ font-family:var(--f-mono); font-size:.78rem; color:var(--signal); letter-spacing:.1em; }
+  h2.section-title{ font-size:clamp(1.9rem,4.4vw,3rem); line-height:1.02; margin-top:.5rem; }
+  .section-intro{ max-width:52ch; color:var(--concrete); font-size:.98rem; }
+
+  /* ---------- services table ---------- */
+  .filter-row{ display:flex; flex-wrap:wrap; gap:.6rem; margin-bottom:1.8rem; }
+  .filter-btn{
+    font-family:var(--f-mono); font-size:.76rem; letter-spacing:.03em;
+    text-transform:uppercase; padding:.55rem 1rem; border:1px solid var(--line-strong);
+    background:transparent; color:var(--concrete); cursor:pointer;
+    transition:border-color .18s var(--ease-out), color .18s var(--ease-out), background-color .18s var(--ease-out);
+  }
+  .filter-btn:hover{ color:var(--paper); border-color:var(--paper); }
+  .filter-btn[aria-pressed="true"]{ background:var(--signal); color:var(--asphalt); border-color:var(--signal); }
+
+  .table-wrap{ overflow-x:auto; border:1px solid var(--line-strong); }
+  table.service-table{ width:100%; border-collapse:collapse; min-width:720px; }
+  .service-table thead th{
+    text-align:left; font-family:var(--f-mono); font-size:.72rem; letter-spacing:.08em;
+    text-transform:uppercase; color:var(--signal); padding:.9rem 1.1rem;
+    border-bottom:1px solid var(--line-strong); background:var(--graphite);
+    white-space:nowrap;
+  }
+  .service-table tbody td{
+    padding:1rem 1.1rem; border-bottom:1px solid var(--line); font-size:.92rem;
+    vertical-align:top;
+  }
+  .service-table tbody tr{ position:relative; transition:background-color .18s var(--ease-out); }
+  .service-table tbody tr::before{
+    content:''; position:absolute; left:0; top:0; bottom:0; width:3px;
+    background:var(--signal); transform:translateX(-3px); opacity:0;
+    transition:transform .18s var(--ease-out), opacity .18s var(--ease-out);
+  }
+  .service-table tbody tr:hover{ background:rgba(231,196,0,.045); }
+  .service-table tbody tr:hover::before{ transform:translateX(0); opacity:1; }
+  .service-table tbody tr:last-child td{ border-bottom:none; }
+  .code-cell{ font-family:var(--f-mono); color:var(--signal); white-space:nowrap; }
+  .scope-cell{ color:var(--concrete); font-size:.86rem; max-width:32ch; }
+  .price-cell{ font-family:var(--f-mono); white-space:nowrap; }
+  .service-table tbody tr[hidden]{ display:none; }
+
+  /* ---------- process ---------- */
+  .process-list{ display:flex; flex-direction:column; }
+  .process-item{
+    display:grid; grid-template-columns:96px 1fr; gap:1.6rem;
+    padding:1.8rem 0; border-top:1px solid var(--line);
+    position:relative;
+  }
+  .process-item:last-child{ border-bottom:1px solid var(--line); }
+  .process-num{ font-family:var(--f-display); font-size:clamp(2.4rem,5vw,3.4rem); font-weight:700; color:transparent; -webkit-text-stroke:1px var(--line-strong); line-height:1; }
+  .process-body h3{ font-family:var(--f-display); font-size:1.3rem; margin-bottom:.55rem; letter-spacing:.02em; }
+  .process-body p{ color:var(--concrete); max-width:58ch; font-size:.95rem; }
+  .process-out{ margin-top:.7rem; font-family:var(--f-mono); font-size:.74rem; color:var(--signal); letter-spacing:.04em; text-transform:uppercase; }
+
+  /* ---------- transparency ---------- */
+  .transparency-grid{ display:grid; grid-template-columns:1fr 1fr; gap:clamp(2rem,5vw,4rem); align-items:center; }
+  .checklist{ display:flex; flex-direction:column; gap:1.3rem; }
+  .checklist li{ display:flex; gap:1rem; align-items:flex-start; }
+  .checklist svg{ flex:none; width:20px; height:20px; margin-top:.2rem; color:var(--signal); }
+  .checklist p{ color:var(--paper); font-size:.98rem; }
+  .checklist span{ display:block; font-family:var(--f-mono); font-size:.7rem; letter-spacing:.08em; color:var(--concrete); text-transform:uppercase; margin-bottom:.3rem; }
+  .blueprint-frame{ border:1px solid var(--line-strong); padding:1.6rem; background:var(--graphite); }
+  .blueprint-frame svg{ width:100%; height:auto; color:var(--concrete); }
+  .blueprint-frame .mono-label{ display:block; margin-bottom:1rem; color:var(--concrete); }
+
+  /* ---------- equipment ---------- */
+  .equipment-grid{
+    display:grid; grid-template-columns:repeat(6,1fr); gap:1.1rem;
+  }
+  .eq-item{ border:1px solid var(--line-strong); background:var(--graphite); display:flex; flex-direction:column; }
+  .eq-item .eq-visual{ display:flex; align-items:center; justify-content:center; padding:1.4rem; flex:1; }
+  .eq-item svg{ width:100%; height:100%; color:var(--concrete); }
+  .eq-item:hover svg{ color:var(--signal); }
+  .eq-item svg{ transition:color .2s var(--ease-out); }
+  .eq-caption{ border-top:1px solid var(--line); padding:.9rem 1.1rem; }
+  .eq-caption .mono-label{ display:block; margin-bottom:.3rem; }
+  .eq-caption p{ font-size:.84rem; color:var(--concrete); }
+  .eq-1{ grid-column:span 3; aspect-ratio:4/5; }
+  .eq-2{ grid-column:span 3; aspect-ratio:4/5; }
+  .eq-3{ grid-column:span 2; aspect-ratio:1/1; }
+  .eq-4{ grid-column:span 2; aspect-ratio:1/1; }
+  .eq-5{ grid-column:span 2; aspect-ratio:1/1; }
+
+  /* ---------- faq ---------- */
+  .faq-list{ border-top:1px solid var(--line); }
+  .faq-item{ border-bottom:1px solid var(--line); }
+  .faq-q{
+    width:100%; text-align:left; background:none; border:none; color:var(--paper);
+    padding:1.4rem 0; display:flex; justify-content:space-between; align-items:center;
+    cursor:pointer; gap:1rem; font-size:1.05rem; font-family:var(--f-body); font-weight:500;
+  }
+  .faq-q:hover{ color:var(--signal); }
+  .faq-q .plus{ flex:none; width:20px; height:20px; position:relative; }
+  .faq-q .plus::before, .faq-q .plus::after{
+    content:''; position:absolute; background:currentColor; top:50%; left:50%;
+    transition:transform .25s var(--ease-out);
+  }
+  .faq-q .plus::before{ width:14px; height:1.5px; transform:translate(-50%,-50%); }
+  .faq-q .plus::after{ width:1.5px; height:14px; transform:translate(-50%,-50%); }
+  .faq-q[aria-expanded="true"] .plus::after{ transform:translate(-50%,-50%) rotate(90deg) scaleY(0); }
+  .faq-a{ padding:0 0 1.5rem; color:var(--concrete); max-width:62ch; font-size:.95rem; }
+  .faq-a[hidden]{ display:none; }
+  .faq-a:not([hidden]){ animation:faq-in .22s var(--ease-out); }
+  @keyframes faq-in{ from{ opacity:0; transform:translateY(-6px);} to{ opacity:1; transform:translateY(0);} }
+
+  /* ---------- visit ---------- */
+  .visit-grid{ display:grid; grid-template-columns:.9fr 1.1fr; gap:clamp(2rem,5vw,4rem); align-items:start; }
+  table.hours-table{ width:100%; border-collapse:collapse; font-family:var(--f-mono); font-size:.92rem; }
+  .hours-table td{ padding:.85rem .2rem; border-bottom:1px solid var(--line); }
+  .hours-table td:last-child{ text-align:right; color:var(--concrete); }
+  .hours-table tr.today td{ color:var(--signal); border-color:var(--line-strong); }
+  .hours-table tr.today td:first-child::before{ content:'▸ '; }
+  .visit-note{ margin-top:1.4rem; font-size:.86rem; color:var(--concrete); max-width:48ch; }
+  .map-frame{ border:1px solid var(--line-strong); background:var(--graphite); padding:1rem; }
+  .map-frame svg{ width:100%; height:auto; }
+  .map-actions{ display:flex; justify-content:space-between; align-items:center; margin-top:1rem; gap:1rem; flex-wrap:wrap; }
+
+  /* ---------- appointment form ---------- */
+  .form-shell{ display:grid; grid-template-columns:1fr 1.3fr; gap:clamp(2rem,5vw,4rem); }
+  .form-aside .mono-label{ display:block; margin-bottom:.9rem; }
+  .form-aside p{ color:var(--concrete); font-size:.92rem; max-width:38ch; }
+  .form-aside ul{ margin-top:1.6rem; display:flex; flex-direction:column; gap:.7rem; }
+  .form-aside li{ font-size:.86rem; color:var(--concrete); display:flex; gap:.6rem; }
+  .form-aside li::before{ content:'—'; color:var(--signal); flex:none; }
+
+  form#appointment-form{ border:1px solid var(--line-strong); padding:clamp(1.5rem,3vw,2.4rem); background:var(--graphite); }
+  .field-grid{ display:grid; grid-template-columns:1fr 1fr; gap:1.4rem; }
+  .field{ display:flex; flex-direction:column; gap:.5rem; margin-bottom:1.4rem; }
+  .field.full{ grid-column:1 / -1; }
+  .field label{ font-family:var(--f-mono); font-size:.74rem; letter-spacing:.06em; text-transform:uppercase; color:var(--concrete); }
+  .field .hint{ font-size:.74rem; color:var(--concrete); opacity:.75; }
+  .field input, .field select, .field textarea{
+    background:var(--asphalt); border:1px solid var(--line-strong); color:var(--paper);
+    font-family:var(--f-body); font-size:.95rem; padding:.75rem .85rem;
+    transition:border-color .18s var(--ease-out);
+  }
+  .field input:focus, .field select:focus, .field textarea:focus{ border-color:var(--signal); outline:none; }
+  .field textarea{ resize:vertical; min-height:90px; font-family:var(--f-body); }
+  .field-error{ font-size:.78rem; color:var(--signal); min-height:1.1em; }
+  .field.has-error input, .field.has-error select, .field.has-error textarea{ border-color:var(--signal); }
+  .form-status{ font-family:var(--f-mono); font-size:.82rem; margin-bottom:1.2rem; min-height:1.2em; }
+  .form-actions{ display:flex; align-items:center; gap:1rem; margin-top:.5rem; }
+
+  .success-panel{ text-align:left; padding:1rem 0; }
+  .success-panel[hidden]{ display:none; }
+  .success-code{
+    font-family:var(--f-mono); font-size:clamp(1.5rem,3vw,2rem); color:var(--signal);
+    border:1px dashed var(--signal); display:inline-block; padding:.6rem 1.1rem; margin:1rem 0 1.4rem;
+    letter-spacing:.04em;
+  }
+  .success-summary{ display:flex; flex-direction:column; gap:.5rem; margin-bottom:1.5rem; font-family:var(--f-mono); font-size:.85rem; }
+  .success-summary div{ display:flex; justify-content:space-between; border-bottom:1px solid var(--line); padding-bottom:.5rem; }
+  .success-summary span:first-child{ color:var(--concrete); }
+
+  /* ---------- footer ---------- */
+  footer{ padding:clamp(3rem,6vw,4rem) 0 6.5rem; }
+  .footer-grid{ display:grid; grid-template-columns:1.2fr 1fr 1fr; gap:2.5rem; margin-bottom:2.5rem; }
+  .footer-logo{ font-family:var(--f-display); font-size:1.6rem; text-transform:uppercase; font-weight:700; margin-bottom:.8rem; }
+  .footer-logo span{ color:var(--signal); }
+  .footer-grid p{ color:var(--concrete); font-size:.88rem; max-width:34ch; }
+  .footer-col .mono-label{ display:block; margin-bottom:1rem; }
+  .footer-col ul{ display:flex; flex-direction:column; gap:.6rem; }
+  .footer-col a{ text-decoration:none; color:var(--concrete); font-size:.9rem; transition:color .18s; }
+  .footer-col a:hover{ color:var(--signal); }
+  .social-row{ display:flex; gap:.8rem; margin-top:1rem; }
+  .social-row a{
+    width:36px; height:36px; border:1px solid var(--line-strong); display:flex;
+    align-items:center; justify-content:center; color:var(--concrete); transition:border-color .18s, color .18s;
+  }
+  .social-row a:hover{ border-color:var(--signal); color:var(--signal); }
+  .social-row svg{ width:16px; height:16px; }
+  .footer-bottom{ border-top:1px solid var(--line); padding-top:1.6rem; display:flex; justify-content:space-between; flex-wrap:wrap; gap:.6rem; font-family:var(--f-mono); font-size:.76rem; color:var(--concrete); }
+
+  /* ---------- fixed widgets ---------- */
+  .whatsapp-btn{
+    position:fixed; right:1.4rem; bottom:1.4rem; z-index:180;
+    width:54px; height:54px; border-radius:50%; background:var(--signal); color:var(--asphalt);
+    display:flex; align-items:center; justify-content:center; text-decoration:none;
+    border:none; cursor:pointer; transition:transform .18s var(--ease-out);
+  }
+  .whatsapp-btn:hover{ transform:scale(1.06); }
+  .whatsapp-btn svg{ width:26px; height:26px; }
+
+  .demo-badge{
+    position:fixed; left:1rem; bottom:1rem; z-index:180;
+    font-family:var(--f-mono); font-size:11px; letter-spacing:.04em;
+    background:var(--graphite); border:1px solid var(--line-strong); color:var(--concrete);
+    padding:.5rem .7rem; display:flex; align-items:center; gap:.5rem; cursor:default;
+    max-width:34px; overflow:hidden; white-space:nowrap;
+    transition:max-width .3s var(--ease-out), color .2s;
+  }
+  .demo-badge::before{ content:'●'; color:var(--signal); flex:none; }
+  .demo-badge:hover, .demo-badge:focus-within, .demo-badge.expanded{ max-width:320px; color:var(--paper); }
+  .demo-badge span{ opacity:0; transition:opacity .2s var(--ease-out) .1s; }
+  .demo-badge:hover span, .demo-badge:focus-within span, .demo-badge.expanded span{ opacity:1; }
+
+  .toast{
+    position:fixed; left:50%; bottom:1.4rem; transform:translate(-50%,120%);
+    background:var(--paper); color:var(--asphalt); font-family:var(--f-mono); font-size:.82rem;
+    padding:.85rem 1.3rem; z-index:300; max-width:min(420px,86vw); text-align:center;
+    transition:transform .3s var(--ease-out); border:1px solid var(--asphalt);
+  }
+  .toast.show{ transform:translate(-50%,0); }
+
+  /* ---------- responsive ---------- */
+  @media (max-width:1100px){
+    .hero-grid{ grid-template-columns:1fr; }
+    .credentials{ grid-template-columns:repeat(3,1fr); }
+    .transparency-grid{ grid-template-columns:1fr; }
+    .form-shell{ grid-template-columns:1fr; }
+    .visit-grid{ grid-template-columns:1fr; }
+  }
+  @media (max-width:860px){
+    nav.primary-nav{ display:none; }
+    .menu-toggle{ display:flex; }
+    .equipment-grid{ grid-template-columns:repeat(2,1fr); }
+    .eq-1,.eq-2,.eq-3,.eq-4,.eq-5{ grid-column:span 1; aspect-ratio:4/3; }
+  }
+  @media (max-width:620px){
+    .credentials{ grid-template-columns:1fr; row-gap:1.2rem; }
+    .credential{ border-left:none; border-top:1px solid var(--line); padding:1rem 0 0; }
+    .credential:first-child{ border-top:none; padding-top:0; }
+    .field-grid{ grid-template-columns:1fr; }
+    .process-item{ grid-template-columns:56px 1fr; gap:1rem; }
+    .footer-grid{ grid-template-columns:1fr; }
+    .map-actions{ flex-direction:column; align-items:flex-start; }
+  }
+  @media (max-width:380px){
+    .hero-cta{ flex-direction:column; align-items:stretch; }
+    .ticket-row{ flex-direction:column; gap:.15rem; }
+    .ticket-row span:last-child{ text-align:left; }
+  }
+</style>
+</head>
+<body>
+
+<a class="skip-link" href="#icerik">İçeriğe geç</a>
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<header>
+  <div class="header-inner">
+    <a href="#top" class="logo" aria-label="Devir Oto Servis, ana sayfa">
+      DEVİR <span class="accent">OTO</span>
+      <small>Randevulu Bakım · Onarım</small>
+    </a>
+    <nav class="primary-nav" aria-label="Ana menü">
+      <a href="#hizmetler">Hizmetler</a>
+      <a href="#surec">Süreç</a>
+      <a href="#seffaflik">Şeffaflık</a>
+      <a href="#ekipman">Ekipman</a>
+      <a href="#sss">S.S.S.</a>
+      <a href="#ziyaret">Ziyaret</a>
+    </nav>
+    <div class="header-actions">
+      <a href="#randevu" class="btn btn-solid">Randevu Oluştur</a>
+      <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mobileNav" aria-label="Menüyü aç">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+  <div class="mobile-nav" id="mobileNav" hidden>
+    <ul>
+      <li><a href="#hizmetler">Hizmetler</a></li>
+      <li><a href="#surec">Süreç</a></li>
+      <li><a href="#seffaflik">Şeffaflık</a></li>
+      <li><a href="#ekipman">Ekipman</a></li>
+      <li><a href="#sss">S.S.S.</a></li>
+      <li><a href="#ziyaret">Ziyaret</a></li>
+      <li><a href="#randevu" class="btn btn-solid">Randevu Oluştur</a></li>
+    </ul>
+  </div>
+</header>
+
+<main id="icerik">
+
+  <div id="top"></div>
+
+  <section class="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div>
+          <div class="hero-eyebrow">
+            <span class="dash" aria-hidden="true"></span>
+            <span class="mono-label">Marka Bağımsız Servis</span>
+          </div>
+          <h1 class="hero-title">Tahmin Etmeyiz,<br><em>Ölçeriz.</em></h1>
+          <p class="hero-desc">Devir Oto Servis, her aracı yazılı iş emriyle karşılar. Sökülen parça teslimattan önce size gösterilir, kullanılan tork değeri ve süre iş emrine işlenir.</p>
+          <div class="hero-cta">
+            <a href="#randevu" class="btn btn-solid">Randevu Oluştur</a>
+            <a href="#hizmetler" class="btn">İşlem Listesini Gör</a>
+          </div>
+          <div class="credentials">
+            <div class="credential">
+              <span class="mono-label">Kuruluş</span>
+              <strong>2011</strong>
+            </div>
+            <div class="credential">
+              <span class="mono-label">Çalışma Bölmesi</span>
+              <strong>6 Bölme</strong>
+            </div>
+            <div class="credential">
+              <span class="mono-label">Çalışma Saati</span>
+              <strong>Pzt–Cmt 08:00–19:00</strong>
+            </div>
+          </div>
+        </div>
+        <div class="ticket">
+          <div class="ticket-head">
+            <span class="mono-label">İş Emri Örneği</span>
+            <span class="ticket-tag">Demo</span>
+          </div>
+          <div class="ticket-body">
+            <div class="ticket-row"><span>Araç Sınıfı</span><span>Binek / SUV</span></div>
+            <div class="ticket-row"><span>İşlem</span><span>PRD-01 · Yağ Bakımı</span></div>
+            <div class="ticket-row"><span>Tahmini Süre</span><span>60 Dakika</span></div>
+            <div class="ticket-row"><span>Durum</span><span>Onay Bekliyor</span></div>
+          </div>
+          <div class="ticket-foot">Gerçek sitede her randevu için bu kart otomatik oluşturulur ve süreç boyunca güncellenir.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="hizmetler" class="reveal">
+    <div class="container">
+      <div class="section-rule"></div>
+      <div class="section-head">
+        <div>
+          <span class="section-index">OP / 01</span>
+          <h2 class="section-title">İşlem Listesi</h2>
+        </div>
+        <p class="section-intro">Fiyat aralıkları araç modeline ve parça seçimine göre değişir; kesin tutar onay aşamasında yazılı bildirilir.</p>
+      </div>
+
+      <div class="filter-row" role="group" aria-label="Hizmet kategorisi filtrele">
+        <button class="filter-btn" type="button" data-filter="all" aria-pressed="true">Tümü</button>
+        <button class="filter-btn" type="button" data-filter="periyodik" aria-pressed="false">Periyodik Bakım</button>
+        <button class="filter-btn" type="button" data-filter="fren-suspansiyon" aria-pressed="false">Fren &amp; Süspansiyon</button>
+        <button class="filter-btn" type="button" data-filter="motor-sanziman" aria-pressed="false">Motor &amp; Şanzıman</button>
+        <button class="filter-btn" type="button" data-filter="lastik-rot" aria-pressed="false">Lastik &amp; Rot Balans</button>
+      </div>
+
+      <div class="table-wrap">
+        <table class="service-table">
+          <thead>
+            <tr>
+              <th>Kod</th>
+              <th>İşlem</th>
+              <th>Kapsam</th>
+              <th>Süre</th>
+              <th>Fiyat Aralığı</th>
+            </tr>
+          </thead>
+          <tbody id="serviceTableBody">
+            <tr data-category="periyodik">
+              <td class="code-cell">PRD-01</td>
+              <td>Yağ ve Filtre Bakımı</td>
+              <td class="scope-cell">Motor yağı, yağ filtresi ve hava filtresi kontrol edilir, gerekirse değişir.</td>
+              <td>60 dk</td>
+              <td class="price-cell">1.800–2.600 ₺</td>
+            </tr>
+            <tr data-category="periyodik">
+              <td class="code-cell">PRD-02</td>
+              <td>Triger Seti Değişimi</td>
+              <td class="scope-cell">Triger kayışı, gergi rulmanı ve devirdaim pompası birlikte değiştirilir.</td>
+              <td>4 sa</td>
+              <td class="price-cell">6.500–9.000 ₺</td>
+            </tr>
+            <tr data-category="periyodik">
+              <td class="code-cell">PRD-03</td>
+              <td>Genel Kontrol (24 Kalem)</td>
+              <td class="scope-cell">Fren, süspansiyon, akü, lastik ve sıvı seviyeleri 24 kalemde kontrol edilir.</td>
+              <td>45 dk</td>
+              <td class="price-cell">650–900 ₺</td>
+            </tr>
+            <tr data-category="fren-suspansiyon">
+              <td class="code-cell">BRK-01</td>
+              <td>Ön Fren Balata &amp; Disk</td>
+              <td class="scope-cell">Aşınma ölçümü sonrası ihtiyaca göre balata ve disk değişir.</td>
+              <td>50 dk</td>
+              <td class="price-cell">1.400–2.200 ₺</td>
+            </tr>
+            <tr data-category="fren-suspansiyon">
+              <td class="code-cell">BRK-02</td>
+              <td>Arka Fren Balata Değişimi</td>
+              <td class="scope-cell">Kampana veya disk tipine göre balata değişimi ve ayar yapılır.</td>
+              <td>40 dk</td>
+              <td class="price-cell">900–1.500 ₺</td>
+            </tr>
+            <tr data-category="fren-suspansiyon">
+              <td class="code-cell">SUS-01</td>
+              <td>Amortisör Değişimi (Çift)</td>
+              <td class="scope-cell">Bir aks için amortisör takımı değişir, üst rulman kontrol edilir.</td>
+              <td>2 sa</td>
+              <td class="price-cell">3.200–5.400 ₺</td>
+            </tr>
+            <tr data-category="motor-sanziman">
+              <td class="code-cell">ENG-01</td>
+              <td>Motor Arıza Taraması</td>
+              <td class="scope-cell">Diagnostik cihazı ile hata kodu okunur, bulgular rapor edilir.</td>
+              <td>30 dk</td>
+              <td class="price-cell">500 ₺</td>
+            </tr>
+            <tr data-category="motor-sanziman">
+              <td class="code-cell">ENG-02</td>
+              <td>Devirdaim Pompası Değişimi</td>
+              <td class="scope-cell">Soğutma sistemi boşaltılır, pompa ve conta değişir, sistem vakumlanır.</td>
+              <td>2,5 sa</td>
+              <td class="price-cell">2.800–3.600 ₺</td>
+            </tr>
+            <tr data-category="motor-sanziman">
+              <td class="code-cell">TRN-01</td>
+              <td>Şanzıman Yağı &amp; Filtre</td>
+              <td class="scope-cell">Şanzıman yağı boşaltılır, filtre değişir, seviye fabrika değerine ayarlanır.</td>
+              <td>1,5 sa</td>
+              <td class="price-cell">2.200–3.100 ₺</td>
+            </tr>
+            <tr data-category="lastik-rot">
+              <td class="code-cell">TYR-01</td>
+              <td>Lastik Değişimi (4 Teker)</td>
+              <td class="scope-cell">Söküm, montaj ve balans dahildir; sökülen lastik size teslim edilir.</td>
+              <td>40 dk</td>
+              <td class="price-cell">800 ₺ · işçilik</td>
+            </tr>
+            <tr data-category="lastik-rot">
+              <td class="code-cell">TYR-02</td>
+              <td>Rot Ayarı (4 Teker)</td>
+              <td class="scope-cell">Lazer ölçüm cihazıyla ön-arka rot değerleri fabrika toleransına çekilir.</td>
+              <td>45 dk</td>
+              <td class="price-cell">1.100 ₺</td>
+            </tr>
+            <tr data-category="lastik-rot">
+              <td class="code-cell">TYR-03</td>
+              <td>Balans Ayarı</td>
+              <td class="scope-cell">Jant-lastik dengesizliği bilgisayarlı cihazla ağırlık eklenerek giderilir.</td>
+              <td>25 dk</td>
+              <td class="price-cell">600 ₺ · 4 teker</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section id="surec" class="reveal">
+    <div class="container">
+      <div class="section-rule"></div>
+      <div class="section-head">
+        <div>
+          <span class="section-index">OP / 02</span>
+          <h2 class="section-title">Servis Süreci</h2>
+        </div>
+        <p class="section-intro">Her araç aynı beş adımdan geçer. Adım atlanmaz, onay olmadan işleme başlanmaz.</p>
+      </div>
+      <div class="process-list">
+        <div class="process-item">
+          <div class="process-num">01</div>
+          <div class="process-body">
+            <h3>Kabul Formu</h3>
+            <p>Araç kilometresi, mevcut hasarlar ve müşteri talebi tek sayfalık kabul formuna işlenir; teslim öncesi durum fotoğraflarla değil, yazılı notla kayıt altına alınır.</p>
+            <div class="process-out">Çıktı — Kabul Formu</div>
+          </div>
+        </div>
+        <div class="process-item">
+          <div class="process-num">02</div>
+          <div class="process-body">
+            <h3>Arıza Tespiti</h3>
+            <p>Diagnostik cihazı ve elle kontrol birlikte kullanılır. Sorun kaynağı doğrulanmadan hiçbir parça değişime alınmaz.</p>
+            <div class="process-out">Çıktı — Diagnostik Kaydı</div>
+          </div>
+        </div>
+        <div class="process-item">
+          <div class="process-num">03</div>
+          <div class="process-body">
+            <h3>Onay</h3>
+            <p>Değişecek parça, işçilik bedeli ve tahmini süre yazılı olarak onaya sunulur. Onay verilmeden işleme geçilmez.</p>
+            <div class="process-out">Çıktı — Onay Kaydı</div>
+          </div>
+        </div>
+        <div class="process-item">
+          <div class="process-num">04</div>
+          <div class="process-body">
+            <h3>İşlem</h3>
+            <p>Atanan usta, kullanılan parça kodu ve uygulanan tork değerini iş emrine anlık olarak işler.</p>
+            <div class="process-out">Çıktı — İş Emri Satırları</div>
+          </div>
+        </div>
+        <div class="process-item">
+          <div class="process-num">05</div>
+          <div class="process-body">
+            <h3>Teslim &amp; Rapor</h3>
+            <p>Değişen parça araçla birlikte gösterilir; imzalı işlem raporu ve fatura teslim edilir.</p>
+            <div class="process-out">Çıktı — İşlem Raporu</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="seffaflik" class="reveal">
+    <div class="container">
+      <div class="section-rule"></div>
+      <div class="section-head">
+        <div>
+          <span class="section-index">OP / 03</span>
+          <h2 class="section-title">Şeffaflık &amp; Garanti</h2>
+        </div>
+      </div>
+      <div class="transparency-grid">
+        <ul class="checklist">
+          <li>
+            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 10.5l4.5 4.5L17 5"/></svg>
+            <p><span>Görünürlük</span>Değişen her parça teslim öncesi size gösterilir; eski parça talep halinde tarafınıza bırakılır.</p>
+          </li>
+          <li>
+            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 10.5l4.5 4.5L17 5"/></svg>
+            <p><span>Yazılı Kayıt</span>Uygulanan işlem, parça kodu ve tork değeri ile birlikte imzalı rapor halinde teslim edilir.</p>
+          </li>
+          <li>
+            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 10.5l4.5 4.5L17 5"/></svg>
+            <p><span>İşçilik Garantisi</span>Uygulanan işlem, iş emrinde belirtilen kapsam ve süre dahilinde ücretsiz yeniden kontrol edilir.</p>
+          </li>
+          <li>
+            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 10.5l4.5 4.5L17 5"/></svg>
+            <p><span>Parça Seçimi</span>Orijinal ve muadil parça seçenekleri, fiyat farkıyla birlikte onay öncesi sunulur.</p>
+          </li>
+        </ul>
+        <div class="blueprint-frame">
+          <span class="mono-label">Şema · İki Direkli Lift Üzerinde Kontrol</span>
+          <svg viewBox="0 0 400 300" fill="none" stroke="currentColor" stroke-width="1.4">
+            <line x1="0" y1="260" x2="400" y2="260" stroke-dasharray="2 4"/>
+            <rect x="40" y="30" width="14" height="230"/>
+            <rect x="346" y="30" width="14" height="230"/>
+            <line x1="70" y1="150" x2="150" y2="150"/>
+            <line x1="250" y1="150" x2="330" y2="150"/>
+            <path d="M90 150 C90 110 130 90 200 90 C270 90 310 110 310 150 L310 165 C310 178 296 190 270 190 L130 190 C104 190 90 178 90 165 Z"/>
+            <circle cx="140" cy="192" r="14"/>
+            <circle cx="260" cy="192" r="14"/>
+            <line x1="150" y1="150" x2="150" y2="120" stroke-dasharray="1 4"/>
+            <line x1="150" y1="120" x2="200" y2="120" stroke-dasharray="1 4"/>
+            <text x="204" y="123" font-family="IBM Plex Mono" font-size="9" fill="currentColor" stroke="none">1 · ŞASİ NOKTASI</text>
+            <line x1="330" y1="150" x2="360" y2="150" stroke-dasharray="1 4"/>
+            <text x="330" y="145" font-family="IBM Plex Mono" font-size="9" fill="currentColor" stroke="none">2 · KALDIRMA KOLU</text>
+            <line x1="200" y1="190" x2="200" y2="230" stroke-dasharray="1 4"/>
+            <text x="205" y="233" font-family="IBM Plex Mono" font-size="9" fill="currentColor" stroke="none">3 · ALT KONTROL HATTI</text>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="ekipman" class="reveal">
+    <div class="container">
+      <div class="section-rule"></div>
+      <div class="section-head">
+        <div>
+          <span class="section-index">OP / 04</span>
+          <h2 class="section-title">Atölye &amp; Ekipman</h2>
+        </div>
+        <p class="section-intro">Ölçüm ve kontrol her işlemde aynı ekipmanla, aynı sırayla yapılır.</p>
+      </div>
+      <div class="equipment-grid">
+        <div class="eq-item eq-1">
+          <div class="eq-visual">
+            <svg viewBox="0 0 120 150" fill="none" stroke="currentColor" stroke-width="1.4">
+              <rect x="18" y="10" width="8" height="120"/>
+              <rect x="94" y="10" width="8" height="120"/>
+              <line x1="26" y1="55" x2="60" y2="55"/>
+              <line x1="60" y1="55" x2="94" y2="55"/>
+              <rect x="30" y="70" width="60" height="26" rx="2"/>
+              <circle cx="42" cy="100" r="7"/>
+              <circle cx="78" cy="100" r="7"/>
+              <line x1="10" y1="140" x2="110" y2="140"/>
+            </svg>
+          </div>
+          <div class="eq-caption">
+            <span class="mono-label">İki Direkli Lift</span>
+            <p>Şasi noktalarından kaldırma, tam gövde kontrolü için.</p>
+          </div>
+        </div>
+        <div class="eq-item eq-2">
+          <div class="eq-visual">
+            <svg viewBox="0 0 130 150" fill="none" stroke="currentColor" stroke-width="1.4">
+              <circle cx="65" cy="60" r="34"/>
+              <circle cx="65" cy="60" r="6"/>
+              <line x1="65" y1="26" x2="65" y2="14"/>
+              <line x1="65" y1="94" x2="65" y2="106"/>
+              <line x1="31" y1="60" x2="19" y2="60"/>
+              <line x1="99" y1="60" x2="111" y2="60"/>
+              <rect x="30" y="118" width="70" height="20"/>
+              <line x1="40" y1="128" x2="90" y2="128" stroke-dasharray="2 3"/>
+            </svg>
+          </div>
+          <div class="eq-caption">
+            <span class="mono-label">Rot-Balans Cihazı</span>
+            <p>Lazer ölçümle rot ve dijital ekranla balans dengesi.</p>
+          </div>
+        </div>
+        <div class="eq-item eq-3">
+          <div class="eq-visual">
+            <svg viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="1.4">
+              <rect x="14" y="18" width="60" height="42" rx="1"/>
+              <line x1="20" y1="26" x2="68" y2="26"/>
+              <line x1="20" y1="34" x2="60" y2="34"/>
+              <line x1="20" y1="42" x2="64" y2="42"/>
+              <path d="M74 44 C88 44 96 52 96 66 L96 96"/>
+              <circle cx="96" cy="100" r="6"/>
+            </svg>
+          </div>
+          <div class="eq-caption">
+            <span class="mono-label">Diagnostik İstasyonu</span>
+            <p>OBD-II bağlantısı ile hata kodu okuma ve analiz.</p>
+          </div>
+        </div>
+        <div class="eq-item eq-4">
+          <div class="eq-visual">
+            <svg viewBox="0 0 130 100" fill="none" stroke="currentColor" stroke-width="1.4">
+              <rect x="8" y="60" width="114" height="10"/>
+              <circle cx="90" cy="45" r="22"/>
+              <circle cx="90" cy="45" r="5"/>
+              <line x1="24" y1="45" x2="68" y2="45"/>
+              <rect x="14" y="38" width="10" height="14"/>
+            </svg>
+          </div>
+          <div class="eq-caption">
+            <span class="mono-label">Disk &amp; Kampana Torna</span>
+            <p>Yüzey aşınmasında disk ve kampana traşlama.</p>
+          </div>
+        </div>
+        <div class="eq-item eq-5">
+          <div class="eq-visual">
+            <svg viewBox="0 0 130 110" fill="none" stroke="currentColor" stroke-width="1.4">
+              <rect x="16" y="20" width="24" height="72" rx="3"/>
+              <rect x="52" y="20" width="24" height="72" rx="3"/>
+              <circle cx="28" cy="34" r="5"/>
+              <circle cx="64" cy="34" r="5"/>
+              <line x1="92" y1="30" x2="112" y2="30"/>
+              <line x1="92" y1="46" x2="112" y2="46"/>
+              <line x1="92" y1="62" x2="106" y2="62"/>
+            </svg>
+          </div>
+          <div class="eq-caption">
+            <span class="mono-label">Klima Servis İstasyonu</span>
+            <p>Gaz dolumu, vakum ve sızıntı testi tek noktadan.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="sss" class="reveal">
+    <div class="container">
+      <div class="section-rule"></div>
+      <div class="section-head">
+        <div>
+          <span class="section-index">OP / 05</span>
+          <h2 class="section-title">Sık Sorulanlar</h2>
+        </div>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <h3><button class="faq-q" aria-expanded="false" aria-controls="faq-a1" id="faq-q1">Değişen parçaları görebilir miyim?<span class="plus" aria-hidden="true"></span></button></h3>
+          <div class="faq-a" id="faq-a1" role="region" aria-labelledby="faq-q1" hidden>
+            <p>Evet. Teslim sırasında sökülen parça size gösterilir; talep ederseniz eski parça tarafınıza bırakılır.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <h3><button class="faq-q" aria-expanded="false" aria-controls="faq-a2" id="faq-q2">Randevusuz gelebilir miyim?<span class="plus" aria-hidden="true"></span></button></h3>
+          <div class="faq-a" id="faq-a2" role="region" aria-labelledby="faq-q2" hidden>
+            <p>Genel kontrol ve küçük işlemler için mümkün, ancak bölme doluluğuna göre bekleme olabilir. Ağır bakım işlemlerinde randevu önerilir.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <h3><button class="faq-q" aria-expanded="false" aria-controls="faq-a3" id="faq-q3">Orijinal değil, muadil parça kullanıyor musunuz?<span class="plus" aria-hidden="true"></span></button></h3>
+          <div class="faq-a" id="faq-a3" role="region" aria-labelledby="faq-q3" hidden>
+            <p>Her iki seçenek de fiyat farkıyla birlikte onay öncesi sunulur; tercih tamamen size aittir.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <h3><button class="faq-q" aria-expanded="false" aria-controls="faq-a4" id="faq-q4">Aracımı bakımdan sonra nasıl teslim alıyorum?<span class="plus" aria-hidden="true"></span></button></h3>
+          <div class="faq-a" id="faq-a4" role="region" aria-labelledby="faq-q4" hidden>
+            <p>Teslimde değiştirilen parçalar gösterilir, imzalı işlem raporu ve fatura birlikte verilir.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <h3><button class="faq-q" aria-expanded="false" aria-controls="faq-a5" id="faq-q5">Garanti kapsamı nedir?<span class="plus" aria-hidden="true"></span></button></h3>
+          <div class="faq-a" id="faq-a5" role="region" aria-labelledby="faq-q5" hidden>
+            <p>Uygulanan işçilik, iş emrinde belirtilen süre boyunca ücretsiz yeniden kontrol kapsamındadır; kapsam her iş emrinde ayrıca yazılır.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="ziyaret" class="reveal">
+    <div class="container">
+      <div class="section-rule"></div>
+      <div class="section-head">
+        <div>
+          <span class="section-index">OP / 06</span>
+          <h2 class="section-title">Ziyaret</h2>
+        </div>
+      </div>
+      <div class="visit-grid">
+        <div>
+          <table class="hours-table" id="hoursTable">
+            <tbody>
+              <tr data-day="1"><td>Pazartesi</td><td>08:00–19:00</td></tr>
+              <tr data-day="2"><td>Salı</td><td>08:00–19:00</td></tr>
+              <tr data-day="3"><td>Çarşamba</td><td>08:00–19:00</td></tr>
+              <tr data-day="4"><td>Perşembe</td><td>08:00–19:00</td></tr>
+              <tr data-day="5"><td>Cuma</td><td>08:00–19:00</td></tr>
+              <tr data-day="6"><td>Cumartesi</td><td>09:00–17:00</td></tr>
+              <tr data-day="0"><td>Pazar</td><td>Kapalı</td></tr>
+            </tbody>
+          </table>
+          <p class="visit-note">Konum ve yol tarifi canlı sitede etkileşimli olarak görünür. Bu demoda harita soyut bir sanayi sitesi şeması olarak gösterilmektedir.</p>
+        </div>
+        <div class="map-frame">
+          <svg viewBox="0 0 400 260" fill="none" stroke="currentColor" stroke-width="1.3" style="color:var(--concrete)">
+            <line x1="0" y1="40" x2="400" y2="40"/>
+            <line x1="0" y1="150" x2="400" y2="150"/>
+            <line x1="90" y1="0" x2="90" y2="260"/>
+            <line x1="280" y1="0" x2="280" y2="260"/>
+            <rect x="20" y="60" width="55" height="70"/>
+            <rect x="110" y="55" width="80" height="80"/>
+            <rect x="210" y="60" width="55" height="70"/>
+            <rect x="300" y="55" width="80" height="80"/>
+            <rect x="110" y="170" width="80" height="60"/>
+            <rect x="210" y="170" width="55" height="60"/>
+            <path d="M150 95 C170 60 200 60 200 95" stroke-dasharray="3 4" stroke="var(--signal, #E7C400)"/>
+            <circle cx="150" cy="95" r="4" fill="var(--signal, #E7C400)" stroke="none"/>
+            <path d="M200 80 L206 92 L200 104 L194 92 Z" fill="var(--signal, #E7C400)" stroke="none"/>
+          </svg>
+          <div class="map-actions">
+            <span class="mono-label">Sanayi Sitesi · Blok C</span>
+            <button class="btn" type="button" id="directionsBtn">Yol Tarifi Al</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="randevu" class="reveal">
+    <div class="container">
+      <div class="section-rule"></div>
+      <div class="section-head">
+        <div>
+          <span class="section-index">OP / 07</span>
+          <h2 class="section-title">Randevu Oluştur</h2>
+        </div>
+      </div>
+      <div class="form-shell">
+        <div class="form-aside">
+          <span class="mono-label">Nasıl İşliyor</span>
+          <p>Form gönderildikten sonra bölme müsaitliğine göre randevu bir iş günü içinde onaylanır ve size bildirilir.</p>
+          <ul>
+            <li>Pazar günleri servis kapalıdır, randevu alınamaz.</li>
+            <li>Aynı gün için randevu, bölme doluluğuna bağlıdır.</li>
+            <li>Randevu değişikliği için talep kodunuzu saklayın.</li>
+          </ul>
+        </div>
+
+        <div>
+          <form id="appointment-form" novalidate>
+            <div class="form-status" id="formStatus" role="status" aria-live="polite"></div>
+
+            <div id="formFields">
+              <div class="field-grid">
+                <div class="field">
+                  <label for="f-name">Ad Soyad</label>
+                  <input type="text" id="f-name" name="name" aria-describedby="err-name">
+                  <span class="field-error" id="err-name"></span>
+                </div>
+                <div class="field">
+                  <label for="f-plate">Araç Plakası</label>
+                  <input type="text" id="f-plate" name="plate" aria-describedby="hint-plate err-plate">
+                  <span class="hint" id="hint-plate">Örnek biçim: 34 XX 1234</span>
+                  <span class="field-error" id="err-plate"></span>
+                </div>
+                <div class="field">
+                  <label for="f-class">Araç Sınıfı</label>
+                  <select id="f-class" name="vehicleClass" aria-describedby="err-class">
+                    <option value="" selected>Seçiniz</option>
+                    <option value="binek">Binek</option>
+                    <option value="suv">SUV / Crossover</option>
+                    <option value="ticari">Hafif Ticari</option>
+                  </select>
+                  <span class="field-error" id="err-class"></span>
+                </div>
+                <div class="field">
+                  <label for="f-service">İşlem Türü</label>
+                  <select id="f-service" name="service" aria-describedby="err-service">
+                    <option value="" selected>Seçiniz</option>
+                    <option value="periyodik">Periyodik Bakım</option>
+                    <option value="fren-suspansiyon">Fren &amp; Süspansiyon</option>
+                    <option value="motor-sanziman">Motor &amp; Şanzıman</option>
+                    <option value="lastik-rot">Lastik &amp; Rot Balans</option>
+                    <option value="diger">Diğer / Belirsiz Arıza</option>
+                  </select>
+                  <span class="field-error" id="err-service"></span>
+                </div>
+                <div class="field">
+                  <label for="f-date">Randevu Tarihi</label>
+                  <input type="date" id="f-date" name="date" aria-describedby="err-date">
+                  <span class="field-error" id="err-date"></span>
+                </div>
+                <div class="field">
+                  <label for="f-time">Saat Aralığı</label>
+                  <select id="f-time" name="timeRange" aria-describedby="err-time">
+                    <option value="" selected>Seçiniz</option>
+                    <option value="08-10">08:00–10:00</option>
+                    <option value="10-12">10:00–12:00</option>
+                    <option value="12-14">12:00–14:00</option>
+                    <option value="14-16">14:00–16:00</option>
+                    <option value="16-18">16:00–18:00</option>
+                  </select>
+                  <span class="field-error" id="err-time"></span>
+                </div>
+              </div>
+              <div class="field full">
+                <label for="f-note">Not <span class="hint">(opsiyonel — aracın belirtisi, gürültü, uyarı lambası vb.)</span></label>
+                <textarea id="f-note" name="note" rows="3" aria-describedby="err-note"></textarea>
+                <span class="field-error" id="err-note"></span>
+              </div>
+              <div class="form-actions">
+                <button type="submit" class="btn btn-solid" id="submitBtn">Randevu Talebini Gönder</button>
+              </div>
+            </div>
+
+            <div class="success-panel" id="successPanel" hidden>
+              <span class="mono-label">Talep Alındı</span>
+              <p style="margin-top:.8rem; color:var(--concrete)">Randevu talebiniz oluşturuldu. Bölme müsaitliği kontrol edildikten sonra onay bir iş günü içinde bildirilir.</p>
+              <div class="success-code" id="successCode">DVR-XXXXXX-XXX</div>
+              <div class="success-summary" id="successSummary"></div>
+              <button type="button" class="btn" id="resetForm">Yeni Talep Oluştur</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">DEVİR <span>OTO</span></div>
+        <p>Marka bağımsız, randevulu bakım ve onarım servisi. Ölçüm ve yazılı kayıt esastır.</p>
+        <div class="social-row">
+          <a href="#" data-demo="social" aria-label="Instagram (demo)">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="4"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1"/></svg>
+          </a>
+          <a href="#" data-demo="social" aria-label="X / Twitter (demo)">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="4" y1="4" x2="20" y2="20"/><line x1="20" y1="4" x2="4" y2="20"/></svg>
+          </a>
+          <a href="#" data-demo="social" aria-label="YouTube (demo)">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="6" width="18" height="12" rx="3"/><path d="M10 9.5l5 2.5-5 2.5z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <span class="mono-label">Bölümler</span>
+        <ul>
+          <li><a href="#hizmetler">İşlem Listesi</a></li>
+          <li><a href="#surec">Servis Süreci</a></li>
+          <li><a href="#seffaflik">Şeffaflık &amp; Garanti</a></li>
+          <li><a href="#ekipman">Atölye &amp; Ekipman</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <span class="mono-label">Servis</span>
+        <ul>
+          <li><a href="#sss">Sık Sorulanlar</a></li>
+          <li><a href="#ziyaret">Çalışma Saatleri</a></li>
+          <li><a href="#randevu">Randevu Oluştur</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Devir Oto Servis — İşletme ve içerik hayalidir, tanıtım amaçlı hazırlanmıştır.</span>
+      <span>Vitrin48 için tasarım demosu.</span>
+    </div>
+  </div>
+</footer>
+
+<button class="whatsapp-btn" type="button" data-demo="whatsapp" aria-label="WhatsApp üzerinden yaz (demo)">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.36 2 11.72c0 2.02.63 3.9 1.72 5.46L2.5 21.5l4.46-1.16A10.1 10.1 0 0 0 12 21.44c5.52 0 10-4.36 10-9.72S17.52 2 12 2Zm0 17.62c-1.62 0-3.13-.44-4.43-1.2l-.32-.19-2.64.69.71-2.55-.21-.33a7.83 7.83 0 0 1-1.29-4.32c0-4.36 3.7-7.9 8.18-7.9s8.18 3.54 8.18 7.9-3.7 7.9-8.18 7.9Zm4.47-5.92c-.24-.12-1.44-.7-1.66-.78-.22-.08-.39-.12-.55.12-.16.24-.63.78-.78.94-.14.16-.29.18-.53.06-.24-.12-1.03-.38-1.96-1.2-.72-.64-1.21-1.43-1.35-1.67-.14-.24-.02-.37.11-.49.11-.11.24-.29.36-.43.12-.14.16-.24.24-.4.08-.16.04-.31-.02-.43-.06-.12-.55-1.32-.76-1.8-.2-.48-.4-.42-.55-.42h-.47c-.16 0-.43.06-.65.31-.22.24-.86.84-.86 2.04 0 1.2.88 2.36 1 2.52.12.16 1.73 2.64 4.19 3.7.59.25 1.05.4 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.44-.59 1.64-1.16.2-.57.2-1.06.14-1.16-.06-.1-.22-.16-.46-.28Z"/></svg>
+</button>
+
+<div class="demo-badge" id="demoBadge" tabindex="0">
+  <span>Bu bir örnek çalışmadır — işletme hayalidir · Vitrin48 · Demo</span>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+(function(){
+  "use strict";
+
+  /* toast */
+  var toastEl = document.getElementById('toast');
+  var toastTimer = null;
+  function showToast(msg){
+    if(!toastEl) return;
+    toastEl.textContent = msg;
+    toastEl.classList.add('show');
+    if(toastTimer) clearTimeout(toastTimer);
+    toastTimer = setTimeout(function(){ toastEl.classList.remove('show'); }, 3200);
+  }
+
+  /* scroll progress + header state */
+  var progressEl = document.getElementById('scrollProgress');
+  var ticking = false;
+  function updateProgress(){
+    var doc = document.documentElement;
+    var scrollTop = doc.scrollTop || document.body.scrollTop;
+    var height = (doc.scrollHeight - doc.clientHeight) || 1;
+    var frac = Math.min(1, Math.max(0, scrollTop / height));
+    if(progressEl) progressEl.style.transform = 'scaleX(' + frac + ')';
+    ticking = false;
+  }
+  window.addEventListener('scroll', function(){
+    if(!ticking){ window.requestAnimationFrame(updateProgress); ticking = true; }
+  }, { passive:true });
+  updateProgress();
+
+  /* mobile menu */
+  var menuToggle = document.getElementById('menuToggle');
+  var mobileNav = document.getElementById('mobileNav');
+  if(menuToggle && mobileNav){
+    menuToggle.addEventListener('click', function(){
+      var open = mobileNav.classList.toggle('open');
+      menuToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      mobileNav.hidden = !open;
+    });
+    mobileNav.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('click', function(){
+        mobileNav.classList.remove('open');
+        mobileNav.hidden = true;
+        menuToggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+  }
+
+  /* reveal on scroll */
+  var revealEls = document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window && revealEls.length){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          entry.target.classList.add('in-view');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    revealEls.forEach(function(el){ io.observe(el); });
+  } else {
+    revealEls.forEach(function(el){ el.classList.add('in-view'); });
+  }
+
+  /* service filter */
+  var filterBtns = document.querySelectorAll('.filter-btn');
+  var rows = document.querySelectorAll('#serviceTableBody tr');
+  filterBtns.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      filterBtns.forEach(function(b){ b.setAttribute('aria-pressed','false'); });
+      btn.setAttribute('aria-pressed','true');
+      var cat = btn.getAttribute('data-filter');
+      rows.forEach(function(row){
+        var match = (cat === 'all') || (row.getAttribute('data-category') === cat);
+        row.hidden = !match;
+      });
+    });
+  });
+
+  /* faq accordion */
+  document.querySelectorAll('.faq-q').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var expanded = btn.getAttribute('aria-expanded') === 'true';
+      var panel = document.getElementById(btn.getAttribute('aria-controls'));
+      btn.setAttribute('aria-expanded', expanded ? 'false' : 'true');
+      if(panel) panel.hidden = expanded;
+    });
+  });
+
+  /* hours: highlight today */
+  try{
+    var todayIdx = new Date().getDay();
+    var todayRow = document.querySelector('#hoursTable tr[data-day="' + todayIdx + '"]');
+    if(todayRow) todayRow.classList.add('today');
+  }catch(e){}
+
+  /* directions demo button */
+  var directionsBtn = document.getElementById('directionsBtn');
+  if(directionsBtn){
+    directionsBtn.addEventListener('click', function(){
+      showToast('Konum ve yol tarifi canlı sitede aktif olur. Bu bir demo gösterimidir.');
+    });
+  }
+
+  /* whatsapp + social demo buttons */
+  document.querySelectorAll('[data-demo="whatsapp"], [data-demo="social"]').forEach(function(el){
+    el.addEventListener('click', function(ev){
+      ev.preventDefault();
+      showToast('Bu bir demo sitedir. Gerçek sitede bu buton doğrudan iletişime açılır.');
+    });
+  });
+
+  /* demo badge tap toggle (touch) */
+  var demoBadge = document.getElementById('demoBadge');
+  if(demoBadge){
+    demoBadge.addEventListener('click', function(){
+      demoBadge.classList.toggle('expanded');
+    });
+  }
+
+  /* appointment form */
+  var form = document.getElementById('appointment-form');
+  var dateInput = document.getElementById('f-date');
+  if(dateInput){
+    try{
+      var today = new Date();
+      var iso = today.toISOString().slice(0,10);
+      dateInput.setAttribute('min', iso);
+    }catch(e){}
+  }
+
+  function setError(fieldId, errId, message){
+    var field = document.getElementById(fieldId);
+    var err = document.getElementById(errId);
+    if(err) err.textContent = message || '';
+    if(field){
+      var wrap = field.closest('.field');
+      if(wrap) wrap.classList.toggle('has-error', !!message);
+    }
+  }
+
+  function validateForm(){
+    var valid = true;
+    var firstInvalid = null;
+
+    function check(id, errId, condition, message){
+      if(!condition){
+        setError(id, errId, message);
+        valid = false;
+        if(!firstInvalid) firstInvalid = document.getElementById(id);
+      } else {
+        setError(id, errId, '');
+      }
+    }
+
+    var name = document.getElementById('f-name').value.trim();
+    check('f-name','err-name', name.length >= 2, 'Ad soyad giriniz.');
+
+    var plate = document.getElementById('f-plate').value.trim();
+    check('f-plate','err-plate', plate.length >= 5, 'Plaka bilgisini giriniz.');
+
+    var vClass = document.getElementById('f-class').value;
+    check('f-class','err-class', !!vClass, 'Araç sınıfı seçiniz.');
+
+    var service = document.getElementById('f-service').value;
+    check('f-service','err-service', !!service, 'İşlem türü seçiniz.');
+
+    var dateVal = document.getElementById('f-date').value;
+    var dateOk = false;
+    var sundayClosed = false;
+    if(dateVal){
+      var picked = new Date(dateVal + 'T00:00:00');
+      var now = new Date();
+      now.setHours(0,0,0,0);
+      if(picked.getTime() >= now.getTime()){
+        dateOk = true;
+      }
+      if(picked.getDay() === 0){
+        sundayClosed = true;
+        dateOk = false;
+      }
+    }
+    if(!dateVal){
+      check('f-date','err-date', false, 'Randevu tarihi seçiniz.');
+    } else if(sundayClosed){
+      check('f-date','err-date', false, 'Pazar günleri servis kapalıdır.');
+    } else {
+      check('f-date','err-date', dateOk, 'Geçmiş bir tarih seçilemez.');
+    }
+
+    var timeRange = document.getElementById('f-time').value;
+    check('f-time','err-time', !!timeRange, 'Saat aralığı seçiniz.');
+
+    return { valid: valid, firstInvalid: firstInvalid, data: { name:name, plate:plate, vClass:vClass, service:service, dateVal:dateVal, timeRange:timeRange } };
+  }
+
+  var serviceLabels = {
+    'periyodik':'Periyodik Bakım',
+    'fren-suspansiyon':'Fren & Süspansiyon',
+    'motor-sanziman':'Motor & Şanzıman',
+    'lastik-rot':'Lastik & Rot Balans',
+    'diger':'Diğer / Belirsiz Arıza'
+  };
+  var classLabels = { 'binek':'Binek', 'suv':'SUV / Crossover', 'ticari':'Hafif Ticari' };
+  var timeLabels = { '08-10':'08:00–10:00','10-12':'10:00–12:00','12-14':'12:00–14:00','14-16':'14:00–16:00','16-18':'16:00–18:00' };
+
+  function generateCode(dateVal){
+    var d = dateVal ? dateVal.replace(/-/g,'').slice(2) : '000000';
+    var rand = Math.floor(100 + Math.random() * 900);
+    return 'DVR-' + d + '-' + rand;
+  }
+
+  if(form){
+    var statusEl = document.getElementById('formStatus');
+    var submitBtn = document.getElementById('submitBtn');
+    var fieldsWrap = document.getElementById('formFields');
+    var successPanel = document.getElementById('successPanel');
+    var successCode = document.getElementById('successCode');
+    var successSummary = document.getElementById('successSummary');
+    var resetBtn = document.getElementById('resetForm');
+
+    form.addEventListener('submit', function(ev){
+      ev.preventDefault();
+      var result = validateForm();
+      if(!result.valid){
+        if(statusEl) statusEl.textContent = 'Formda eksik veya hatalı alanlar var. Lütfen işaretli alanları kontrol edin.';
+        if(result.firstInvalid) result.firstInvalid.focus();
+        return;
+      }
+      if(statusEl) statusEl.textContent = 'Gönderiliyor…';
+      if(submitBtn){ submitBtn.setAttribute('disabled','disabled'); submitBtn.textContent = 'Gönderiliyor…'; }
+
+      setTimeout(function(){
+        var code = generateCode(result.data.dateVal);
+        if(successCode) successCode.textContent = code;
+        if(successSummary){
+          successSummary.innerHTML = '';
+          var rowsData = [
+            ['Ad Soyad', result.data.name],
+            ['Plaka', result.data.plate],
+            ['Araç Sınıfı', classLabels[result.data.vClass] || result.data.vClass],
+            ['İşlem Türü', serviceLabels[result.data.service] || result.data.service],
+            ['Tarih', result.data.dateVal],
+            ['Saat Aralığı', timeLabels[result.data.timeRange] || result.data.timeRange]
+          ];
+          rowsData.forEach(function(r){
+            var div = document.createElement('div');
+            var s1 = document.createElement('span'); s1.textContent = r[0];
+            var s2 = document.createElement('span'); s2.textContent = r[1];
+            div.appendChild(s1); div.appendChild(s2);
+            successSummary.appendChild(div);
+          });
+        }
+        if(fieldsWrap) fieldsWrap.style.display = 'none';
+        if(successPanel) successPanel.hidden = false;
+        if(statusEl) statusEl.textContent = '';
+        if(submitBtn){ submitBtn.removeAttribute('disabled'); submitBtn.textContent = 'Randevu Talebini Gönder'; }
+      }, 900);
+    });
+
+    if(resetBtn){
+      resetBtn.addEventListener('click', function(){
+        form.reset();
+        document.querySelectorAll('.field').forEach(function(f){ f.classList.remove('has-error'); });
+        document.querySelectorAll('.field-error').forEach(function(e){ e.textContent = ''; });
+        if(fieldsWrap) fieldsWrap.style.display = '';
+        if(successPanel) successPanel.hidden = true;
+        if(statusEl) statusEl.textContent = '';
+        var nameInput = document.getElementById('f-name');
+        if(nameInput) nameInput.focus();
+      });
+    }
+  }
+
+})();
+</script>
+
+</body>
+</html>
