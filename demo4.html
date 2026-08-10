@@ -728,6 +728,45 @@ html.js-ready .archive-grid .note-card.is-new{animation:noteIn .5s var(--e1) bot
   .note-cover::after{display:none}
   .pageslide{display:none}
 }
+
+/* Hukuk bürosuna özgü, karar öncesi dosya kabul kartı */
+.case-register{
+  display:grid;grid-template-columns:auto 1fr;gap:10px 14px;align-items:start;
+  margin-top:24px;padding:13px 0;border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);
+  max-width:34rem;
+}
+.case-register b{font-size:.67rem;letter-spacing:.13em;text-transform:uppercase;color:var(--ox-deep)}
+.case-register p{margin:0;font-size:.82rem;line-height:1.55;color:var(--muted)}
+.case-register .case-no{font-family:var(--f-display);font-size:1.3rem;line-height:1;color:var(--ink)}
+@media(max-width:680px){.case-register{margin-top:19px}}
+
+/* Anasayfa: editoryal bir landing yerine kapak/açılış dosyası hissi.
+   Böylece salon demosunun açık zeminli başlık kompozisyonundan ayrışır. */
+#sf-anasayfa .hero{
+  margin-top:clamp(1rem,2.8vw,2.4rem);padding:clamp(1.45rem,3.2vw,3.25rem);
+  background:var(--ink);color:var(--ivory);border:1px solid var(--ink);
+}
+#sf-anasayfa .hero-grid{grid-template-columns:minmax(0,1.08fr) minmax(280px,.92fr);align-items:stretch}
+#sf-anasayfa .hero .eyebrow,#sf-anasayfa .hero .hero-claim{color:var(--ivory-70)}
+#sf-anasayfa .hero .d-hero{font-size:clamp(3.15rem,8.2vw,6.55rem);max-width:8.6ch}
+#sf-anasayfa .hero .display em{color:var(--ox-dark-bg)}
+#sf-anasayfa .hero-figure{min-height:22rem;aspect-ratio:auto;background:#27262B;border-color:var(--rule-inv)}
+#sf-anasayfa .hero-figure .art .bg{fill:#27262B}
+#sf-anasayfa .hero-figure .art .s{stroke:var(--ivory)}
+#sf-anasayfa .hero-figure .art .h{stroke:var(--ivory);opacity:.22}
+#sf-anasayfa .hero-figure .art .a{stroke:var(--ox-dark-bg)}
+#sf-anasayfa .hero-figure .art .fa{fill:var(--ox-dark-bg)}
+#sf-anasayfa .hero-strip{border-color:var(--rule-inv)}
+#sf-anasayfa .hero-strip span{color:var(--ivory-70)}
+#sf-anasayfa .hero-strip b{color:var(--ivory)}
+#sf-anasayfa .case-register{border-color:var(--rule-inv)}
+#sf-anasayfa .case-register .case-no{color:var(--ivory)}
+#sf-anasayfa .case-register b{color:var(--ox-dark-bg)}
+#sf-anasayfa .case-register p{color:var(--ivory-70)}
+@media(max-width:720px){
+  #sf-anasayfa .hero{margin-top:0;padding:1.25rem var(--gutter) 2rem}
+  #sf-anasayfa .hero-figure{min-height:17rem}
+}
 </style>
 </head>
 <body>
@@ -849,6 +888,10 @@ html.js-ready .archive-grid .note-card.is-new{animation:noteIn .5s var(--e1) bot
       <span><b>Çalışma alanı</b> 4</span>
       <span><b>Dil</b> Türkçe · İngilizce</span>
       <span><b>Görüşme</b> ön değerlendirme sonrası randevu ile</span>
+    </div>
+    <div class="case-register fade fade-3" data-reveal>
+      <span class="case-no">01</span>
+      <div><b>Dosya kabul notu</b><p>İlk görüşmeden önce kapsam, süre ve olası çıkar çatışması birlikte değerlendirilir. Dosya, bu üç başlık netleşmeden açılmaz.</p></div>
     </div>
   </div>
 
@@ -2209,7 +2252,7 @@ html.js-ready .archive-grid .note-card.is-new{animation:noteIn .5s var(--e1) bot
 
 <div class="v48-badge">
   <span class="vb-pill" tabindex="0" role="note" aria-describedby="vb-note">
-    <span class="vb-dot" aria-hidden="true"></span>Vitrin48 · Demo
+    <span class="vb-dot" aria-hidden="true"></span>Hukuk bürosu konsepti
   </span>
   <span class="vb-note" id="vb-note">Bu bir örnek çalışmadır — işletme hayalidir.</span>
 </div>

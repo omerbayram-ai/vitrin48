@@ -127,13 +127,13 @@ button,input,select,textarea{font:inherit;color:inherit}
 .accent-i{font-style:italic;color:var(--pine);font-weight:500}
 .lede{font-size:clamp(1.05rem,1.4vw,1.28rem);line-height:1.56;letter-spacing:-.005em;max-width:38ch;margin:0}
 .col{max-width:62ch}
-.mut{color:var(--ink-55)}
+.mut{color:var(--ink-70)}
 .eyebrow{
   display:inline-flex;align-items:center;gap:8px;
   font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:var(--pine);margin:0;
 }
 .eyebrow::before{content:"";width:14px;height:1px;background:var(--pine);display:block}
-.lbl{font-size:12px;letter-spacing:.08em;color:var(--ink-55);margin:0}
+.lbl{font-size:12px;letter-spacing:.08em;color:var(--ink-70);margin:0}
 p{margin:0 0 1em}
 p:last-child{margin-bottom:0}
 h2,h3,h4{margin:0}
@@ -340,17 +340,21 @@ html.js-ready .hero.is-in .hero-title .ln:nth-child(3)>i{transition-delay:.16s}
 .filters button:hover{border-color:var(--pine)}
 .filters button[aria-pressed="true"]{background:var(--pine);border-color:var(--pine);color:var(--paper)}
 
-.tgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--gap)}
-.tcard{border:1px solid var(--line);border-radius:var(--r);background:var(--paper);padding:0;cursor:pointer;text-align:left;display:flex;flex-direction:column;overflow:hidden;transition:border-color .25s var(--e-out),transform .25s var(--e-out)}
-.tcard:hover{border-color:var(--pine);transform:translateY(-3px)}
-.tcard .plate{aspect-ratio:16/10;background:var(--paper-2);border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:center;padding:18px}
-.tcard .plate svg{width:100%;height:100%;color:var(--pine)}
-.tcard .body{padding:clamp(14px,2vw,20px);display:flex;flex-direction:column;gap:8px;flex:1}
-.tcard .cat{font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--pine);font-weight:700}
-.tcard h3{font-family:var(--f-display);font-weight:560;font-size:1.12rem;letter-spacing:-.005em}
-.tcard p{font-size:13px;color:var(--ink-55)}
-.tcard .meta{display:flex;justify-content:space-between;gap:10px;font-size:11.5px;color:var(--ink-55);border-top:1px solid var(--line);padding-top:9px;margin-top:auto}
-.tcard .price{font-weight:700;color:var(--ink)}
+.tgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.tcard{border:1px solid var(--line);border-radius:14px;background:var(--paper);padding:0;cursor:pointer;text-align:left;display:grid;grid-template-columns:108px minmax(0,1fr);overflow:hidden;min-height:192px;transition:border-color .25s var(--e-out),box-shadow .25s var(--e-out),transform .25s var(--e-out)}
+.tcard:hover{border-color:var(--pine);transform:translateY(-2px);box-shadow:0 14px 30px rgba(20,23,26,.07)}
+.tcard .plate{background:linear-gradient(160deg,#EAF0EA,#DFE8E1);border-right:1px solid var(--line);display:flex;align-items:center;justify-content:center;padding:22px}
+.tcard .plate svg{width:100%;height:92px;color:var(--pine)}
+.tcard .body{padding:18px 20px 15px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.tcard .cat{font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:var(--pine);font-weight:700}
+.tcard h3{font-family:var(--f-display);font-weight:560;font-size:1.17rem;line-height:1.18;letter-spacing:-.012em}
+.tcard p{font-size:13.5px;line-height:1.55;color:var(--ink-70)}
+.tcard .meta{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:end;gap:12px;font-size:11.5px;line-height:1.35;color:var(--ink-70);border-top:1px solid var(--line);padding-top:10px;margin-top:auto}
+.tcard .price{font-weight:700;color:var(--pine);white-space:nowrap}
+.tcard[data-cat="implant"] .plate{background:linear-gradient(160deg,#E7EEEA,#D8E5DE)}
+.tcard[data-cat="ortodonti"] .plate{background:linear-gradient(160deg,#EDF0E9,#E2E9DE)}
+.tcard[data-cat="estetik"] .plate{background:linear-gradient(160deg,#F2EDE7,#EAE1D7)}
+.tcard[data-cat="genel"] .plate{background:linear-gradient(160deg,#E9EFF0,#DDE7E8)}
 .tempty{padding:60px 0;color:var(--ink-55);grid-column:1/-1}
 
 /* tedavi detay diyaloğu */
@@ -557,7 +561,6 @@ html.route-panel .badge{left:12px}
 @media (max-width:1100px){
   .qgrid{grid-template-columns:repeat(2,minmax(0,1fr))}
   .miniSteps{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .tgrid{grid-template-columns:repeat(2,minmax(0,1fr))}
   .addbox .form{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
 @media (max-width:860px){
@@ -573,6 +576,10 @@ html.route-panel .badge{left:12px}
   .stats div:nth-child(2){border-right:0}
   .stats div:nth-child(1),.stats div:nth-child(2){border-bottom:1px solid var(--line)}
   .qgrid,.miniSteps,.tgrid,.opts,.form,.addbox .form,.techlist,.portraits{grid-template-columns:minmax(0,1fr)}
+  .tcard{grid-template-columns:86px minmax(0,1fr);min-height:166px}
+  .tcard .plate{padding:16px}
+  .tcard .plate svg{height:72px}
+  .tcard .body{padding:15px 16px 13px}
   .dock{right:12px;bottom:calc(var(--pad) + 42px)}
   .badge{left:12px;bottom:12px}
   .foot-cols{grid-template-columns:minmax(0,1fr)}
@@ -622,7 +629,6 @@ html.route-panel .badge{left:12px}
       <a href="#/klinik" data-route="clinic" data-i18n="nav.clinic">Klinik</a>
       <a href="#/hasta-yolculugu" data-route="journey" data-i18n="nav.journey">Hasta Yolculuğu</a>
       <a href="#/iletisim" data-route="contact" data-i18n="nav.contact">İletişim</a>
-      <a class="adm" href="#/panel" data-route="panel" data-i18n="nav.panel">Panel</a>
     </nav>
     <div class="hdr-tools">
       <div class="lang" role="group" aria-label="Dil / Language">
@@ -643,7 +649,6 @@ html.route-panel .badge{left:12px}
     <li><a href="#/hasta-yolculugu" data-route="journey"><i>04</i><span data-i18n="nav.journey">Hasta Yolculuğu</span></a></li>
     <li><a href="#/randevu" data-route="booking"><i>05</i><span data-i18n="nav.booking">Randevu</span></a></li>
     <li><a href="#/iletisim" data-route="contact"><i>06</i><span data-i18n="nav.contact">İletişim</span></a></li>
-    <li><a href="#/panel" data-route="panel"><i>07</i><span data-i18n="nav.panel">Panel</span></a></li>
   </ul>
   <p class="mmenu-foot" data-i18n="brand.founded">Meridyen · 2014'ten beri</p>
 </nav>
@@ -1075,7 +1080,7 @@ html.route-panel .badge{left:12px}
   </a>
 </div>
 
-<a class="badge" href="#" data-demo="badge" data-cursor><i></i><b style="font-weight:600">Vitrin48 · Demo</b><span> — Bu bir örnek çalışmadır; işletme hayalidir.</span></a>
+<a class="badge" href="#" data-demo="badge" data-cursor><i></i><b style="font-weight:600">MERİDYEN / KLİNİK DENEYİMİ</b><span> — Bu bir örnek çalışmadır; klinik hayalidir.</span></a>
 
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
@@ -1727,7 +1732,7 @@ function setTreatments(list) { store.set('treatments', list); }
 function findTreatment(id) { var l = getTreatments(); for (var i = 0; i < l.length; i++) if (l[i].id === id) return l[i]; return null; }
 var tFilter = 'all';
 function tCardHTML(x) {
-  return '<button class="tcard reveal" type="button" data-id="' + esc(x.id) + '" data-cursor>' +
+  return '<button class="tcard reveal" type="button" data-id="' + esc(x.id) + '" data-cat="' + esc(x.cat) + '" data-cursor aria-label="' + esc(trName(x.title)) + ' ayrıntılarını aç">' +
     '<div class="plate"><svg viewBox="0 0 120 96" aria-hidden="true"><use href="#' + esc(x.draw) + '"/></svg></div>' +
     '<div class="body"><span class="cat">' + esc(catLabel(x.cat)) + '</span><h3>' + esc(trName(x.title)) + '</h3><p>' + esc(trName(x.summary)) + '</p>' +
     '<div class="meta"><span>' + esc(trName(x.sessions)) + '</span><span class="price">' + money(x.priceMin) + '–' + money(x.priceMax) + '</span></div></div></button>';

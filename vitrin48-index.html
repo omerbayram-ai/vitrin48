@@ -535,6 +535,21 @@ a.browser{cursor:pointer}
 .case-flow .b4{color:var(--muted)}
 .case-flow .aft{color:#C9D2E0}
 .case-flow b{color:var(--amber);font-weight:800;letter-spacing:.5px;font-size:.74rem;text-transform:uppercase}
+.browser.case--starter{border-radius:10px;border-color:rgba(255,180,84,.22)}
+.case--starter .bbar{background:#101820;padding:10px 12px}
+.case--starter .badge-demo{background:#D9EAD3;color:#18331B;border-radius:4px;letter-spacing:1px}
+.case--starter .case-flow{background:rgba(255,180,84,.025)}
+.browser.case--corporate{border-radius:3px;border-left:3px solid var(--amber)}
+.case--corporate .bbar{background:linear-gradient(90deg,#171C27,#111927)}
+.case--corporate .badge-demo{border-radius:0;background:transparent;color:var(--amber);border:1px solid rgba(255,180,84,.5);padding:4px 8px}
+.case--corporate .blabel{background:rgba(255,255,255,.018)}
+.browser.case--premium{border-radius:24px;background:linear-gradient(145deg,#182133,#0E131D 72%);border-color:rgba(255,180,84,.3)}
+.case--premium .bbar{padding:13px 16px;background:transparent;border-bottom-color:rgba(255,255,255,.1)}
+.case--premium .bbar i{display:none}
+.case--premium .bbar .url{margin-left:0;background:transparent;padding:0;border-radius:0;color:#D9C49A;letter-spacing:.12em;text-transform:uppercase}
+.case--premium .badge-demo{background:linear-gradient(90deg,#FFB454,#F28035);border-radius:999px;box-shadow:0 6px 18px rgba(242,128,53,.25)}
+.case--premium .case-flow{border-top-color:rgba(255,255,255,.1)}
+.case--premium .blabel{border-top-color:rgba(255,255,255,.1)}
 @media(max-width:960px){.demos{grid-template-columns:1fr;max-width:460px;margin-inline:auto}}
 
 /* ---------- SSS ---------- */
@@ -964,7 +979,7 @@ dialog#kvkk .btn{margin-top:10px}
   <div class="reveal">
     <span class="sec-eyebrow">Çalışmalarımız / Portföy</span>
     <h2 class="sec-title">Sektörünüz için çalışan demolar.</h2>
-    <p class="sec-sub">Aşağıdaki siteler tamamen bizim tarafımızdan hazırlandı ve gerçekten açılıyor — kartlara dokunup canlı gezebilirsiniz. Anlaştığımızda sizinki de bunlar gibi kendi renginiz, menünüz ve fotoğraflarınızla kurulur.</p>
+    <p class="sec-sub">Her demo, farklı bir sektörün karar verme biçimine göre kurgulandı. Kartı açıp tasarım dilini, içerik ritmini ve kullanıcı akışını inceleyin.</p>
   </div>
   <style>
     .iframe-sim { position: relative; width: 100%; padding-top: 55%; overflow: hidden; background: #111; }
@@ -973,80 +988,80 @@ dialog#kvkk .btn{margin-top:10px}
   <div class="demos">
     <!-- ROW 1 -->
     <!-- Başlangıç 1 -->
-    <a class="browser reveal stagger-1" href="demo1.html" target="_blank" rel="noopener">
-      <span class="badge-demo">BAŞLANGIÇ</span>
-      <div class="bbar"><i></i><i></i><i></i><span class="url">demo1.html</span></div>
+    <a class="browser case--starter reveal stagger-1" href="demo1.html" target="_blank" rel="noopener" aria-label="Bakırcı Ocakbaşı başlangıç paketi demosunu aç">
+      <span class="badge-demo">TEK SAYFA</span>
+      <div class="bbar"><i></i><i></i><i></i><span class="url">Restoran / hızlı vitrin</span></div>
       <div class="iframe-sim"><iframe src="demo1.html" tabindex="-1"></iframe></div>
       <div class="case-flow">
-        <span class="b4"><b>İçerik</b> — Sekmeli menü, rezervasyon, mekân, konum</span>
+        <span class="b4"><b>İçerik</b> — Menü, mekân hikâyesi, konum ve iletişim</span>
         <span class="aft"><b>Tarz</b> — Editoryal, sıcak kâğıt & kor tonları</span>
-        <span style="font-size: 0.7rem; color: var(--muted); margin-top: 4px; display: block; font-style: italic;">*(Yönetim paneli ve alt sayfalar demo sürümünde gizlenmiştir)*</span>
+        <span style="font-size: 0.7rem; color: var(--muted); margin-top: 4px; display: block; font-style: italic;">Rezervasyon alanı, işletmeye göre eklenebilen örnek bir akıştır.</span>
       </div>
       <div class="blabel"><b>Ocakbaşı Restoranı (Demo 1)</b><span>Tasarım Önizlemesi →</span></div>
     </a>
     
     <!-- Kurumsal 1 -->
-    <a class="browser reveal stagger-2" href="demo3.html" target="_blank" rel="noopener">
-      <span class="badge-demo">KURUMSAL</span>
-      <div class="bbar"><i></i><i></i><i></i><span class="url">demo3.html</span></div>
+    <a class="browser case--corporate reveal stagger-2" href="demo3.html" target="_blank" rel="noopener" aria-label="NEF Saç Atölyesi kurumsal paket demosunu aç">
+      <span class="badge-demo">5 BÖLÜMLÜ</span>
+      <div class="bbar"><i></i><i></i><i></i><span class="url">Güzellik / editoryal kurumsal</span></div>
       <div class="iframe-sim"><iframe src="demo3.html" tabindex="-1"></iframe></div>
       <div class="case-flow">
-        <span class="b4"><b>İçerik</b> — 5 sayfa, filtreli portföy, fiyat, SSS</span>
+        <span class="b4"><b>İçerik</b> — Atölye, hizmetler, portföy, SSS ve iletişim</span>
         <span class="aft"><b>Tarz</b> — Moda dergisi editoryali, didone tipografi</span>
-        <span style="font-size: 0.7rem; color: var(--muted); margin-top: 4px; display: block; font-style: italic;">*(Yönetim paneli ve alt sayfalar demo sürümünde gizlenmiştir)*</span>
+        <span style="font-size: 0.7rem; color: var(--muted); margin-top: 4px; display: block; font-style: italic;">İçerik mimarisi, hizmeti anlatan markalar için kurgulandı.</span>
       </div>
       <div class="blabel"><b>Saç & Güzellik Atölyesi (Demo 3)</b><span>Tasarım Önizlemesi →</span></div>
     </a>
     
     <!-- Premium 1 -->
-    <a class="browser reveal stagger-3" href="demo5.html" target="_blank" rel="noopener">
+    <a class="browser case--premium reveal stagger-3" href="demo5.html" target="_blank" rel="noopener" aria-label="KADEM Mimarlık premium paket demosunu aç">
       <span class="badge-demo">PREMİUM</span>
-      <div class="bbar"><i></i><i></i><i></i><span class="url">demo5.html</span></div>
+      <div class="bbar"><i></i><i></i><i></i><span class="url">Mimarlık / marka deneyimi</span></div>
       <div class="iframe-sim"><iframe src="demo5.html" tabindex="-1"></iframe></div>
       <div class="case-flow">
         <span class="b4"><b>İçerik</b> — 7 sayfa, randevu sihirbazı, yönetim paneli, TR/EN</span>
         <span class="aft"><b>Tarz</b> — Işık/karanlık kontrastı, sinyal turuncusu aksan</span>
-        <span style="font-size: 0.7rem; color: var(--muted); margin-top: 4px; display: block; font-style: italic;">*(Yönetim paneli ve alt sayfalar demo sürümünde gizlenmiştir)*</span>
+        <span style="font-size: 0.7rem; color: var(--muted); margin-top: 4px; display: block; font-style: italic;">Randevu ve panel bölümleri, canlı kurulum öncesi etkileşim prototipidir.</span>
       </div>
       <div class="blabel"><b>Mimarlık Stüdyosu (Demo 5)</b><span>Tasarım Önizlemesi →</span></div>
     </a>
 
     <!-- ROW 2 -->
     <!-- Başlangıç 2 -->
-    <a class="browser reveal stagger-1" href="demo2.html" target="_blank" rel="noopener">
-      <span class="badge-demo">BAŞLANGIÇ</span>
-      <div class="bbar"><i></i><i></i><i></i><span class="url">demo2.html</span></div>
+    <a class="browser case--starter reveal stagger-1" href="demo2.html" target="_blank" rel="noopener" aria-label="Devir Oto Servis başlangıç paketi demosunu aç">
+      <span class="badge-demo">TEK SAYFA</span>
+      <div class="bbar"><i></i><i></i><i></i><span class="url">Oto servis / net bilgi</span></div>
       <div class="iframe-sim"><iframe src="demo2.html" tabindex="-1"></iframe></div>
       <div class="case-flow">
-        <span class="b4"><b>İçerik</b> — İşlem tablosu, süreç, randevu, konum</span>
+        <span class="b4"><b>İçerik</b> — İşlem listesi, süreç, garanti, konum ve talep</span>
         <span class="aft"><b>Tarz</b> — Teknik servis kılavuzu, spec-sheet dizgisi</span>
-        <span style="font-size: 0.7rem; color: var(--muted); margin-top: 4px; display: block; font-style: italic;">*(Yönetim paneli ve alt sayfalar demo sürümünde gizlenmiştir)*</span>
+        <span style="font-size: 0.7rem; color: var(--muted); margin-top: 4px; display: block; font-style: italic;">Fiyat ve süreç şeffaflığı, bu sektörün ana karar tetikleyicisidir.</span>
       </div>
       <div class="blabel"><b>Oto Servis (Demo 2)</b><span>Tasarım Önizlemesi →</span></div>
     </a>
 
     <!-- Kurumsal 2 -->
-    <a class="browser reveal stagger-2" href="demo4.html" target="_blank" rel="noopener">
-      <span class="badge-demo">KURUMSAL</span>
-      <div class="bbar"><i></i><i></i><i></i><span class="url">demo4.html</span></div>
+    <a class="browser case--corporate reveal stagger-2" href="demo4.html" target="_blank" rel="noopener" aria-label="Aksel Hukuk Bürosu kurumsal paket demosunu aç">
+      <span class="badge-demo">5 BÖLÜMLÜ</span>
+      <div class="bbar"><i></i><i></i><i></i><span class="url">Hukuk / güven ve içerik</span></div>
       <div class="iframe-sim"><iframe src="demo4.html" tabindex="-1"></iframe></div>
       <div class="case-flow">
         <span class="b4"><b>İçerik</b> — 5 sayfa, bilgi notu arşivi, çalışma alanları, SSS</span>
         <span class="aft"><b>Tarz</b> — Hukuki belge dizgisi, fildişi & bordo</span>
-        <span style="font-size: 0.7rem; color: var(--muted); margin-top: 4px; display: block; font-style: italic;">*(Yönetim paneli ve alt sayfalar demo sürümünde gizlenmiştir)*</span>
+        <span style="font-size: 0.7rem; color: var(--muted); margin-top: 4px; display: block; font-style: italic;">Bilgi notları, uzmanlığı reklam dili yerine içerikle gösterir.</span>
       </div>
       <div class="blabel"><b>Hukuk Bürosu (Demo 4)</b><span>Tasarım Önizlemesi →</span></div>
     </a>
 
     <!-- Premium 2 -->
-    <a class="browser reveal stagger-3" href="demo6.html" target="_blank" rel="noopener">
+    <a class="browser case--premium reveal stagger-3" href="demo6.html" target="_blank" rel="noopener" aria-label="Meridyen Ağız ve Diş Sağlığı premium paket demosunu aç">
       <span class="badge-demo">PREMİUM</span>
-      <div class="bbar"><i></i><i></i><i></i><span class="url">demo6.html</span></div>
+      <div class="bbar"><i></i><i></i><i></i><span class="url">Klinik / hasta deneyimi</span></div>
       <div class="iframe-sim"><iframe src="demo6.html" tabindex="-1"></iframe></div>
       <div class="case-flow">
         <span class="b4"><b>İçerik</b> — 7 sayfa, çok adımlı randevu, yönetim paneli, TR/EN</span>
         <span class="aft"><b>Tarz</b> — Baskın orman yeşili, porselen ferahlığı</span>
-        <span style="font-size: 0.7rem; color: var(--muted); margin-top: 4px; display: block; font-style: italic;">*(Yönetim paneli ve alt sayfalar demo sürümünde gizlenmiştir)*</span>
+        <span style="font-size: 0.7rem; color: var(--muted); margin-top: 4px; display: block; font-style: italic;">Çok adımlı randevu ve panel, klinik akışını anlatan etkileşim prototipidir.</span>
       </div>
       <div class="blabel"><b>Diş Kliniği (Demo 6)</b><span>Tasarım Önizlemesi →</span></div>
     </a>

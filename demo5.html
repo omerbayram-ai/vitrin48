@@ -1315,7 +1315,7 @@ html.route-panel .dock{display:none}
   </a>
 </div>
 
-<a class="badge" href="#" data-demo="badge" data-cursor><i></i><b style="font-weight:500">Vitrin48 · Demo</b><span> — Bu bir örnek çalışmadır; işletme hayalidir.</span></a>
+<a class="badge" href="#" data-demo="badge" data-cursor><i></i><b style="font-weight:500">KADEM / PORTFÖY PROTOTİPİ</b><span> — Bu bir örnek çalışmadır; stüdyo hayalidir.</span></a>
 
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
@@ -2640,7 +2640,9 @@ setTimeout(function () {
   if (pl && pl.parentNode) pl.parentNode.removeChild(pl);
   D.body.style.overflow = '';
   var h = $('hero');
-  if (h && !h.classList.contains('is-in')) {
+  if (h) {
+    /* GSAP yüklense bile bazı tarayıcılarda başlangıç dönüşümü satırda kalabiliyor.
+       Başlık hiçbir koşulda perdenin arkasında kalmamalı. */
     qsa('.hero-title .ln > i', h).forEach(function (e) { e.style.transform = 'none'; });
     h.classList.add('is-in');
   }
