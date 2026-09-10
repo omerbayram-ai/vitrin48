@@ -501,19 +501,18 @@ html:not(.js-ready) .tile-art::after{display:none}
   padding-top:.6rem;font-size:.76rem;letter-spacing:.06em;color:var(--graphite)}
 .tile figcaption .tc-cat{color:var(--clay-deep);letter-spacing:.18em;text-transform:uppercase;font-size:.62rem}
 
-/* ---------- Referans ---------- */
+/* ---------- Renk defteri kayıtları ---------- */
 .quotes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;border-top:1px solid var(--rule)}
-.quotes blockquote{
+.quotes article{
   margin:0;padding:clamp(1.3rem,2.6vw,2.2rem) clamp(1rem,2vw,1.8rem) clamp(1.3rem,2.6vw,2rem) 0;
   border-right:1px solid var(--rule-soft);
 }
-.quotes blockquote:last-child{border-right:0}
-.quotes q{
-  quotes:"\201C" "\201D";
+.quotes article:last-child{border-right:0}
+.quotes article strong{
   font-family:"Petrona",serif;font-size:clamp(1.1rem,1.6vw,1.32rem);
   line-height:1.35;display:block;
 }
-.quotes footer{margin-top:.9rem;font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+.quotes article p{margin-top:.9rem;font-size:.82rem;line-height:1.55;color:var(--muted)}
 
 /* ---------- Koyu bölüm / CTA ---------- */
 .dark{background:var(--ink);color:var(--bone)}
@@ -712,8 +711,8 @@ html.js-ready .gal-grid .tile.is-new{animation:tileIn .5s var(--e1) both}
   .cols-2,.cols-3,.crew,.notes,.cta-grid,.form-grid{grid-template-columns:minmax(0,1fr)}
   .imprint{grid-template-columns:repeat(2,minmax(0,1fr))}
   .quotes{grid-template-columns:minmax(0,1fr)}
-  .quotes blockquote{border-right:0;border-bottom:1px solid var(--rule-soft);padding-right:0}
-  .quotes blockquote:last-child{border-bottom:0}
+  .quotes article{border-right:0;border-bottom:1px solid var(--rule-soft);padding-right:0}
+  .quotes article:last-child{border-bottom:0}
   .gal-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
   .rowitem{grid-template-columns:auto minmax(0,1fr);row-gap:.5rem}
   .rowitem .rl-price{grid-column:2;justify-self:start}
@@ -1043,29 +1042,17 @@ html.js-ready .gal-grid .tile.is-new{animation:tileIn .5s var(--e1) both}
     </p>
   </div>
 
-  <!-- Referans -->
+  <!-- Renk defterinin somut içeriği -->
   <div class="shell block">
     <p class="snum">§ 04</p>
     <h2 class="display d-2 lines" data-reveal style="margin-bottom:clamp(1.2rem,2.6vw,2rem)">
-      <span class="ln"><span>Deftere düşülen notlar</span></span>
+      <span class="ln"><span>Her randevudan kalan kayıt</span></span>
     </h2>
     <div class="quotes">
-      <blockquote class="fade" data-reveal>
-        <q>Formülü not ettikleri için her gelişimde aynı tonu alıyorum.</q>
-        <footer>Düzenli misafir</footer>
-      </blockquote>
-      <blockquote class="fade fade-1" data-reveal>
-        <q>Teşhiste ne yapılamayacağını da söylediler. Beklentimi buna göre kurdum.</q>
-        <footer>İlk randevu</footer>
-      </blockquote>
-      <blockquote class="fade fade-2" data-reveal>
-        <q>Prova ve gün planı tek sayfada yazılıydı, saat kaymadı.</q>
-        <footer>Gelin randevusu</footer>
-      </blockquote>
+      <article class="fade" data-reveal><strong>Formül ve gramaj</strong><p>Kullanılan boya kodu, oksidan seviyesi ve toplam gramaj aynı sonucu yeniden üretebilmek için saklanır.</p></article>
+      <article class="fade fade-1" data-reveal><strong>Saçın işlem geçmişi</strong><p>Açıcı, boya ve bakım tarihleri kaydedilir. Bir sonraki işlem bu geçmişe göre planlanır.</p></article>
+      <article class="fade fade-2" data-reveal><strong>Sonraki kontrol</strong><p>Rengin veya kesimin kontrol tarihi not edilir; yeni randevuda aynı teşhis baştan tekrarlanmaz.</p></article>
     </div>
-    <p class="small" style="margin-top:1rem">
-      Görüşler örnek metindir; bu bir demo çalışmasıdır.
-    </p>
   </div>
 
   <!-- CTA -->

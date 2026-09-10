@@ -270,30 +270,7 @@ h2,h3,h4{margin:0;font-weight:700;letter-spacing:-.02em;line-height:1.15}
 .mmenu li a i{font-style:normal;font-size:11px;letter-spacing:.2em;color:var(--concrete);font-family:var(--f-body);font-weight:500}
 .mmenu-foot{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--concrete);padding-top:18px;border-top:1px solid var(--line-ink)}
 
-/* ============================================================
-   preloader + perde + imleç
-   ============================================================ */
-.preload{
-  position:fixed;inset:0;z-index:300;background:var(--bone);
-  display:flex;align-items:flex-end;justify-content:space-between;
-  padding:var(--pad);gap:20px;
-}
-.preload .pl-mark{width:clamp(52px,9vw,104px);height:auto;color:var(--ink)}
-.preload .pl-mark .pm{transform:translateY(101%)}
-.preload .pl-num{
-  font-family:var(--f-display);font-weight:800;letter-spacing:-.05em;
-  font-size:clamp(3rem,14vw,9rem);line-height:.8;
-}
-.preload .pl-line{
-  position:absolute;left:var(--pad);right:var(--pad);bottom:calc(var(--pad) - 1px);
-  height:1px;background:var(--ink);transform:scaleX(0);transform-origin:left;
-}
-.preload .pl-cap{
-  position:absolute;left:var(--pad);top:var(--pad);
-  font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-55);
-}
-html:not(.js-ready) .preload{display:none}
-
+/* sayfa geçiş perdesi + imleç */
 .curtain{position:fixed;inset:0;z-index:250;pointer-events:none;display:flex}
 .curtain i{flex:1;background:var(--ink);transform:scaleY(0);transform-origin:bottom;display:block}
 html:not(.js-ready) .curtain{display:none}
@@ -339,7 +316,7 @@ html.js-ready .reveal.is-in{
 .hero-title{margin-left:-.055em}
 .ln{display:block;overflow:hidden;padding-top:.16em;margin-top:-.16em;padding-bottom:.06em}
 .ln>i{display:block;font-style:normal}
-html.js-ready .hero-title .ln>i{transform:translateY(132%)}
+html.js-ready .hero-title .ln>i{transform:none}
 html.js-ready .hero.is-in .hero-title .ln>i{transform:none;transition:transform .95s var(--e-strong)}
 html.js-ready .hero.is-in .hero-title .ln:nth-child(2)>i{transition-delay:.08s}
 html.js-ready .hero.is-in .hero-title .ln:nth-child(3)>i{transition-delay:.16s}
@@ -805,20 +782,6 @@ html.route-panel .dock{display:none}
 <a class="skip" href="#main" data-i18n="a11y.skip">İçeriğe geç</a>
 
 <div class="gridlines" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
-
-<div class="preload" id="preload" aria-hidden="true">
-  <div class="pl-cap">KADEM · Mimarlık Stüdyosu</div>
-  <svg class="pl-mark" viewBox="0 0 120 150" fill="none" aria-hidden="true">
-    <clipPath id="plClip"><rect x="0" y="0" width="120" height="150"/></clipPath>
-    <g clip-path="url(#plClip)">
-      <g class="pm">
-        <path d="M14 12v126M14 75L92 12M14 75l78 63" stroke="currentColor" stroke-width="9"/>
-      </g>
-    </g>
-  </svg>
-  <div class="pl-num" id="plNum">000</div>
-  <div class="pl-line" id="plLine"></div>
-</div>
 
 <div class="curtain" id="curtain" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
 <div class="cur" id="cur" aria-hidden="true"></div>
@@ -2594,46 +2557,17 @@ on(D, 'click', function (e) {
 var booted = false;
 function heroIntro() {
   var hero = $('hero'); if (!hero) return;
-  var lines = qsa('.hero-title .ln > i', hero);
-  if (REDUCED || !HAS_GSAP || !lines.length) { hero.classList.add('is-in'); return; }
-  gsap.set(lines, { yPercent: 132 });
-  gsap.timeline()
-    .to(lines, { yPercent: 0, duration: 1.05, ease: 'power4.out', stagger: .075 })
-    .from(qsa('.hero-top > *, .hero-lead > *, .hero-aside > *', hero), { y: 26, opacity: 0, duration: .8, ease: 'power3.out', stagger: .06 }, '-=0.72')
-    .add(function () { hero.classList.add('is-in'); });
+  hero.classList.add('is-in');
 }
-function runPreload(done) {
-  var pl = $('preload');
-  if (!pl) { done(); return; }
-  if (REDUCED || !HAS_GSAP) { if (pl.parentNode) pl.parentNode.removeChild(pl); done(); return; }
-  var num = $('plNum'), line = $('plLine'), mark = qs('.pm', pl);
-  var counter = { v: 0 };
-  D.body.style.overflow = 'hidden';
-  if (mark) gsap.set(mark, { yPercent: 101 });
-  gsap.timeline({ onComplete: function () {
-      D.body.style.overflow = '';
-      if (pl.parentNode) pl.parentNode.removeChild(pl);
-      done();
-    } })
-    .to(line, { scaleX: 1, duration: 1.15, ease: 'power2.inOut' }, 0)
-    .to(mark, { yPercent: 0, duration: .95, ease: 'power4.out' }, .12)
-    .to(counter, { v: 100, duration: 1.15, ease: 'power2.inOut',
-      onUpdate: function () { if (num) num.textContent = pad3(Math.round(counter.v)); } }, 0)
-    .to(pl, { yPercent: -100, duration: .72, ease: 'expo.inOut' }, '+=0.12');
-}
-
 /* ---------- başlat ---------- */
 applyI18n();
 initCursor();
 initMagnetic();
 handleRoute(false);
-runPreload(function () {
-  booted = true;
-  root.setAttribute('data-booted', '1');
-  heroIntro();
-  if (HAS_GSAP) { try { ScrollTrigger.refresh(); } catch (e) {} }
-});
+booted = true;
 root.setAttribute('data-booted', '1');
+heroIntro();
+if (HAS_GSAP) { try { ScrollTrigger.refresh(); } catch (e) {} }
 /* güvenlik ağı: animasyon zinciri herhangi bir sebeple tamamlanmazsa içerik yine görünür olur */
 setTimeout(function () {
   var pl = $('preload');
