@@ -1,0 +1,68 @@
+/* Vitrin48: shared brand roles. Demo sites have independent visual identities. */
+:root {
+  color-scheme: dark;
+  --v48-accent: #ffb454;
+  --v48-accent-hover: #ffc47a;
+  --v48-accent-hot: #ff8a1e;
+  --v48-accent-soft: rgba(255,180,84,.08);
+  --v48-bg: #0a0e15;
+  --v48-bg-elevated: #0e141f;
+  --v48-surface: #131c29;
+  --v48-surface-hover: #192435;
+  --v48-text-primary: #f5efe3;
+  --v48-text-secondary: #a9b4c5;
+  --v48-text-tertiary: #96a3b7;
+  --v48-border-subtle: rgba(172,188,211,.16);
+  --v48-border-strong: rgba(172,188,211,.35);
+  --v48-radius-sm: 8px;
+  --v48-radius-md: 12px;
+  --v48-radius-lg: 18px;
+  --v48-radius-xl: 24px;
+  --v48-space-1: .25rem;
+  --v48-space-2: .5rem;
+  --v48-space-3: 1rem;
+  --v48-space-4: 1.5rem;
+  --v48-space-5: 2rem;
+  --v48-space-6: 3rem;
+  --v48-space-7: 4rem;
+  --v48-section-space: clamp(4rem,8vw,7rem);
+  --v48-gutter: clamp(1.25rem,4vw,3rem);
+  --v48-container: 1240px;
+  --v48-shadow-card: 0 2px 4px #0002, 0 12px 32px #0002;
+  --v48-shadow-floating: 0 2px 8px #0003, 0 24px 64px #0005;
+  --v48-shadow-accent: 0 4px 20px rgba(255,138,30,.12);
+  --v48-ease-standard: cubic-bezier(.2,.7,.3,1);
+  --v48-ease-emphasized: cubic-bezier(.16,1,.3,1);
+  --v48-duration-fast: 160ms;
+  --v48-duration-enter: 240ms;
+  --v48-font-display: 'Unbounded',system-ui,sans-serif;
+  --v48-font-body: 'Manrope',system-ui,sans-serif;
+  --v48-display-xl: clamp(2rem,3.55vw,3.25rem);
+  --v48-display-lg: clamp(1.85rem,3.4vw,3rem);
+  --v48-heading-xl: clamp(1.65rem,2.7vw,2.5rem);
+  --v48-heading-lg: clamp(1.3rem,2vw,1.75rem);
+  --v48-heading-md: 1.125rem;
+  --v48-body-lg: 1.125rem;
+  --v48-body-md: 1rem;
+  --v48-body-sm: .9375rem;
+  --v48-label: .875rem;
+  --v48-caption: .8125rem;
+  /* Compatibility aliases for retained components. */
+  --bg: var(--v48-bg);
+  --bg2: var(--v48-bg-elevated);
+  --card: var(--v48-surface);
+  --card2: var(--v48-bg-elevated);
+  --panel: var(--v48-surface);
+  --cream: var(--v48-text-primary);
+  --muted: var(--v48-text-secondary);
+  --amber: var(--v48-accent);
+  --amber-hot: var(--v48-accent-hot);
+  --accent: var(--v48-accent);
+  --text: var(--v48-text-primary);
+  --text-muted: var(--v48-text-secondary);
+  --line: var(--v48-border-strong);
+  --line-soft: var(--v48-border-subtle);
+  --radius: var(--v48-radius-lg);
+}
+:focus-visible { outline: 2px solid var(--v48-accent); outline-offset: 5px; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto !important; } }

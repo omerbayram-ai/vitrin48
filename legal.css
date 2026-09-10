@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Unbounded:wght@500;600;700&display=swap');
 
-:root{--bg:#0a0e15;--panel:#111826;--cream:#f5efe3;--muted:#9aa5b8;--amber:#ffb454;--line:rgba(255,180,84,.24);--line-soft:rgba(255,255,255,.08)}
+@import url("vitrin48-tokens.css");
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{margin:0;background:var(--bg);color:var(--cream);font:16px/1.75 'Manrope','Segoe UI',sans-serif}
