@@ -1,0 +1,38 @@
+import fs from 'node:fs';
+import vm from 'node:vm';
+import {execFileSync} from 'node:child_process';
+const current=fs.readFileSync('vitrin48-index.html','utf8').replace(/\r\n/g,'\n');
+const original=execFileSync('git',['show','e2d03b2:vitrin48-index.html'],{encoding:'utf8'}).replace(/\r\n/g,'\n');
+const checks={};
+for(const script of current.matchAll(/<script([^>]*)>([\s\S]*?)<\/script>/g)){
+  if(script[1].includes('application/ld+json'))JSON.parse(script[2]);
+  else new vm.Script(script[2]);
+}
+checks.syntax=true;
+const head=h=>h.match(/<head>([\s\S]*?)<\/head>/)[1].match(/<title>[\s\S]*?<\/title>|<meta[^>]+>|<link rel="canonical"[^>]+>|<script type="application\/ld\+json">[\s\S]*?<\/script>/g);
+checks.metadataUnchanged=JSON.stringify(head(current))===JSON.stringify(head(original));
+const formLogic=h=>h.match(/\/\/ ---- form validation ----([\s\S]*?)\/\/ ---- kişiselleştirilmiş/)[1].trim();
+checks.formLogicUnchanged=formLogic(current)===formLogic(original);
+const prices=h=>[...h.matchAll(/class="price">([^<]+)/g)].map(x=>x[1]);
+checks.pricesUnchanged=JSON.stringify(prices(current))===JSON.stringify(prices(original));
+const per=h=>[...h.matchAll(/class="per">([^<]+)/g)].map(x=>x[1]);
+checks.deliveryUnchanged=JSON.stringify(per(current))===JSON.stringify(per(original));
+const features=h=>[...h.matchAll(/<li(?: class="no")?>[^<]+<\/li>/g)].map(x=>x[0]);
+checks.featuresUnchanged=JSON.stringify(features(current))===JSON.stringify(features(original));
+checks.demoFilesUnchanged=execFileSync('git',['diff','e2d03b2','--','demo1.html','demo2.html','demo3.html','demo4.html','demo5.html','demo6.html'],{encoding:'utf8'}).trim()==='';
+const ids=[...current.matchAll(/\bid="([^"]+)"/g)].map(x=>x[1]);
+checks.uniqueIds=new Set(ids).size===ids.length;
+checks.localLinks=[...current.matchAll(/(?:href|src)="([^"#]+)(?:#[^"]*)?"/g)].map(x=>x[1].split('#')[0]).filter(x=>!x.includes(':')).every(x=>fs.existsSync(x));
+checks.anchors=[...current.matchAll(/href="#([^"]+)"/g)].every(x=>ids.includes(x[1]));
+const css=fs.readFileSync('vitrin48-tokens.css','utf8')+fs.readFileSync('vitrin48-design.css','utf8')+fs.readFileSync('legal.css','utf8');
+const defs=new Set([...css.matchAll(/(--[\w-]+)\s*:/g)].map(x=>x[1]));
+checks.cssVariablesDefined=[...css.matchAll(/var\((--[\w-]+)/g)].every(x=>defs.has(x[1]));
+const luma=hex=>{const rgb=hex.match(/\w\w/g).map(v=>parseInt(v,16)/255).map(v=>v<=.04045?v/12.92:((v+.055)/1.055)**2.4);return rgb[0]*.2126+rgb[1]*.7152+rgb[2]*.0722;};
+const ratio=(a,b)=>{const x=luma(a),y=luma(b);return +((Math.max(x,y)+.05)/(Math.min(x,y)+.05)).toFixed(2);};
+const contrast={body:ratio('f5efe3','0a0e15'),secondaryOnSurface:ratio('a9b4c5','131c29'),tertiaryOnSurface:ratio('96a3b7','131c29'),primaryButton:ratio('0a0e15','ffb454')};
+checks.contrastTokens=Object.values(contrast).every(x=>x>=4.5);
+const sizes={beforeHTML:Buffer.byteLength(original),afterHTML:Buffer.byteLength(current),css:Buffer.byteLength(css),previews:fs.readdirSync('assets/previews').map(name=>({name,bytes:fs.statSync('assets/previews/'+name).size}))};
+const report={checks,contrast,sizes};
+fs.writeFileSync('qa/static-results.json',JSON.stringify(report,null,2));
+console.log(JSON.stringify(report,null,2));
+if(Object.values(checks).some(x=>!x))process.exitCode=1;

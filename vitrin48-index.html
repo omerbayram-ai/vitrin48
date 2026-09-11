@@ -239,7 +239,7 @@
   </div>
 
   <div class="signature reveal">
-    
+
     <div class="sig-body">
       <span class="sig-tag">Signature</span>
       <h3>Sıradan bir site değil — bir marka deneyimi.</h3>
@@ -295,7 +295,7 @@
     <h2 class="sec-title">Sektörünüz için çalışan demolar.</h2>
     <p class="sec-sub">Her demo, farklı bir sektörün karar verme biçimine göre kurgulandı. Kartı açıp tasarım dilini, içerik ritmini ve kullanıcı akışını inceleyin.</p>
   </div>
-  
+
   <div class="demos">
     <!-- ROW 1 -->
     <!-- Başlangıç 1 -->
@@ -310,7 +310,7 @@
       </div>
       <div class="blabel"><b>Ocakbaşı Restoranı (Demo 1)</b><span>Demoyu Aç ↗</span></div>
     </a>
-    
+
     <!-- Kurumsal 1 -->
     <a class="browser case--corporate reveal stagger-2" href="demo3.html" target="_blank" rel="noopener" aria-label="NEF Saç Atölyesi kurumsal paket demosunu aç">
       <span class="badge-demo">5 BÖLÜMLÜ</span>
@@ -323,7 +323,7 @@
       </div>
       <div class="blabel"><b>Saç & Güzellik Atölyesi (Demo 3)</b><span>Demoyu Aç ↗</span></div>
     </a>
-    
+
     <!-- Premium 1 -->
     <a class="browser case--premium reveal stagger-3" href="demo5.html" target="_blank" rel="noopener" aria-label="KADEM Mimarlık premium paket demosunu aç">
       <span class="badge-demo">PREMİUM</span>
@@ -457,7 +457,7 @@
       <div class="calendly-box">
         <h3>Takvimden Randevu Alın</h3>
         <p>Müsait olduğunuz bir saati seçerek 30 dakikalık ücretsiz analiz görüşmemizi hemen planlayın.</p>
-        
+
         <!-- Calendly link widget begin -->
         <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
         <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
@@ -619,6 +619,14 @@ document.addEventListener('keydown',event=>{
 });
 matchMedia('(min-width:761px)').addEventListener('change',e=>{if(e.matches&&!mobileMenu.hidden)setMobileMenu(false,false);});
 updateScrollState();
+
+// Keep floating controls clear of the contact form on small screens.
+if('IntersectionObserver' in window){
+  const contactObserver=new IntersectionObserver(entries=>{
+    document.body.classList.toggle('contact-visible',entries[0].isIntersecting);
+  });
+  contactObserver.observe(document.getElementById('iletisim'));
+}
 
 // ---- form validation ----
 (function(){

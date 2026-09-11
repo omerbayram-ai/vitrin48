@@ -1,0 +1,17 @@
+{
+  "checks": {
+    "zoom200": true,
+    "menuWrapBack": true,
+    "menuWrapForward": true,
+    "contactFloatsHidden": true,
+    "focusRing": true,
+    "calendlyLoaded": true,
+    "calendlyFallback": true,
+    "gizlilik.html320": true,
+    "kullanim-sartlari.html320": true,
+    "highContrast": true,
+    "reducedMotion": true
+  },
+  "errors": [],
+  "failedRequests": []
+}

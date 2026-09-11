@@ -1,0 +1,122 @@
+{
+  "results": [
+    {
+      "width": 1440,
+      "scrollWidth": 1440,
+      "overflow": [],
+      "iframes": 0,
+      "heading": "İşletmenizin\ndijital vitrini.\n48 saatte yayında.",
+      "loadedFonts": [
+        "Manrope",
+        "Unbounded"
+      ],
+      "images": true,
+      "resourceBytes": 473059,
+      "initialMetrics": {
+        "lcp": 1048,
+        "cls": 0,
+        "resourceBytes": 106722
+      }
+    },
+    {
+      "width": 1024,
+      "scrollWidth": 1024,
+      "overflow": [],
+      "iframes": 0,
+      "heading": "İşletmenizin\ndijital vitrini.\n48 saatte yayında.",
+      "loadedFonts": [
+        "Manrope",
+        "Unbounded"
+      ],
+      "images": true,
+      "resourceBytes": 471913,
+      "initialMetrics": {
+        "lcp": 120,
+        "cls": 0,
+        "resourceBytes": 105576
+      }
+    },
+    {
+      "width": 768,
+      "scrollWidth": 768,
+      "overflow": [],
+      "iframes": 0,
+      "heading": "İşletmenizin dijital vitrini.\n48 saatte yayında.",
+      "loadedFonts": [
+        "Manrope",
+        "Unbounded"
+      ],
+      "images": true,
+      "resourceBytes": 471913,
+      "initialMetrics": {
+        "lcp": 448,
+        "cls": 0,
+        "resourceBytes": 105576
+      }
+    },
+    {
+      "width": 390,
+      "scrollWidth": 390,
+      "overflow": [],
+      "iframes": 0,
+      "heading": "İşletmenizin\ndijital vitrini.\n48 saatte yayında.",
+      "loadedFonts": [
+        "Manrope",
+        "Unbounded"
+      ],
+      "images": true,
+      "resourceBytes": 471913,
+      "initialMetrics": {
+        "lcp": 84,
+        "cls": 0,
+        "resourceBytes": 105576
+      }
+    },
+    {
+      "width": 320,
+      "scrollWidth": 320,
+      "overflow": [],
+      "iframes": 0,
+      "heading": "İşletmenizin\ndijital vitrini.\n48 saatte yayında.",
+      "loadedFonts": [
+        "Manrope",
+        "Unbounded"
+      ],
+      "images": true,
+      "resourceBytes": 471913,
+      "initialMetrics": {
+        "lcp": 84,
+        "cls": 0,
+        "resourceBytes": 105576
+      }
+    },
+    {
+      "page": "/gizlilik.html",
+      "width": 390,
+      "scrollWidth": 390
+    },
+    {
+      "page": "/kullanim-sartlari.html",
+      "width": 390,
+      "scrollWidth": 390
+    }
+  ],
+  "interactions": {
+    "personalization": "👋 Test Atolyesi için ücretsiz dijital analiz hazırladık. Google Haritalar profiliniz incelendi — detaylar için formu doldurun, raporunuzu gönderelim.",
+    "menuExpanded": "true",
+    "mainInert": true,
+    "menuClosed": "false",
+    "focusReturned": true,
+    "faqOpen": "true",
+    "faqPreviousClosed": "false",
+    "dialogOpen": true,
+    "dialogClosed": true,
+    "formLabels": true,
+    "validationStyle": true,
+    "noJsContentVisible": true,
+    "noJsFaqVisible": true,
+    "noJsHero": true
+  },
+  "errors": [],
+  "failedRequests": []
+}

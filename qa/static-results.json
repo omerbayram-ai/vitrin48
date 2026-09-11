@@ -1,0 +1,53 @@
+{
+  "checks": {
+    "syntax": true,
+    "metadataUnchanged": true,
+    "formLogicUnchanged": true,
+    "pricesUnchanged": true,
+    "deliveryUnchanged": true,
+    "featuresUnchanged": true,
+    "demoFilesUnchanged": true,
+    "uniqueIds": true,
+    "localLinks": true,
+    "anchors": true,
+    "cssVariablesDefined": true,
+    "contrastTokens": true
+  },
+  "contrast": {
+    "body": 16.88,
+    "secondaryOnSurface": 8.18,
+    "tertiaryOnSurface": 6.71,
+    "primaryButton": 10.96
+  },
+  "sizes": {
+    "beforeHTML": 76724,
+    "afterHTML": 41435,
+    "css": 28952,
+    "previews": [
+      {
+        "name": "demo1.jpg",
+        "bytes": 78573
+      },
+      {
+        "name": "demo2.jpg",
+        "bytes": 82238
+      },
+      {
+        "name": "demo3.jpg",
+        "bytes": 77588
+      },
+      {
+        "name": "demo4.jpg",
+        "bytes": 69018
+      },
+      {
+        "name": "demo5.jpg",
+        "bytes": 60007
+      },
+      {
+        "name": "demo6.jpg",
+        "bytes": 75986
+      }
+    ]
+  }
+}
